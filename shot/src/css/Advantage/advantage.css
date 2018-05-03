@@ -1,0 +1,441 @@
+.advantagepage{
+    height: 100%;
+}
+/*ysmid*/
+.rseachlist{
+    height: 70px;
+    background-color: #4E93BA;
+    font-size: 15px;
+    margin: 20px 0 0 0;
+}
+/*addetil.css*/
+.addet{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.addet1{
+    width: 750px;
+    height: 400px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.addet1 a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.addet1 a.close:active{
+    position: absolute;
+    top:4px;
+}
+.addet2{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.addet3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.addet3 span{
+    width: 420px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left:30px;
+    color: #000000;
+}
+.addet3 ul {
+    width: 250px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.addet3 ul li{
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.addet3 ul li a{
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.addet4{
+    width: 700px;
+    height: 350px;
+}
+.addet4 ul{}
+.addet4 ul li{
+    width: 350px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    margin: 10px auto;
+    font-size: 16px;
+}
+.addet4 ul li span.addsp{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: right;
+    float: left;
+}
+.addet4 ul li p{
+    width: 230px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    margin-left: 15px;
+}
+.addet4 ul li p.addet5{
+    width: 50px;
+    height: 30px;
+    color: #34ACCF;
+    font-weight: bolder;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px 0 0 15px;
+}
+/*adlistall.css*/
+.adlists{
+    background-color: #4E93BA;
+    display: inline-block;
+    margin: 5px 0 0 0;
+}
+.adlists1{
+    width: 970px;
+    margin: 10px 40px;
+    font-size: 13px;
+}
+.adlists1 .adl1{
+    width: 970px;
+    height: 50px;
+    background-color: #67C8FF;
+}
+.adl1 li{
+    width: 110px;
+    height: 50px;
+    background-color: #67C8FF;
+    margin: 0 0 0 5px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: #000011;
+}
+.adl2{
+    float: left;
+    background-color: #E9F1F3;
+    margin: 5px 0 3px 0;
+    height: 70px;
+    width: 970px;
+}
+.adl3{
+    float: left;
+    width: 110px;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 70px;
+    height: 70px;
+    font-size: 15px;
+    overflow: hidden;
+    color: #000011;
+}
+.adl4{
+    width: 110px;
+    height: 70px;
+    line-height: 70px;
+    color:#529CB5;
+}
+.adl4:active{
+    position: relative;
+    top: 1px;
+}
+.adl3 p.adl5{
+    width: 110px;
+    height: 70px;
+    color: #34ACCF;
+    font-weight: bolder;
+    line-height: 70px;
+    text-align: center;
+}
+/*admid.css*/
+.adchange{
+    font-size: 15px;
+    margin: 10px auto;
+    height: 45px;
+}
+.adchange ul{
+    width: 450px;
+    height: 45px;
+    display: inline-block;
+    text-align: center;
+}
+.adchange ul li{
+    width: 100px;
+    height: 45px;
+    float: left;
+    margin-right: 25px;
+}
+.adchange ul li a{
+    width: 100px;
+    height: 45px;
+    display: inline-block;
+    line-height: 45px;
+    font-size: 17px;
+    background-color: #ADD3E0;
+    color: #000011;
+}
+.adchange ul li.spys{
+    width: 150px;
+}
+.adchange ul li.spys a{
+    width: 150px;
+}
+.adchange ul li a:active{
+    position: relative;
+    top: 1px;
+}
+.adchange ul li a:hover{
+    background-color: #1299D9;
+}
+.adchange ul li a.activad{
+    background-color: #1299D9;
+}
+/*adnew.css*/
+.adnew{
+    height: 60px;
+    width: 1050px;
+}
+.adnew1{
+    width: 90px;
+    height: 60px;
+    background-color: #005983;
+    box-shadow: 0 1px 1px 0 #000000;
+    float: left;
+}
+.adnew1 a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 10px 0 0 25px;
+    letter-spacing: 2px;
+}
+.adnew1 a:active{
+    position: relative;
+    top: 1px;
+}
+/*adnewadd.css*/
+.adnad{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.adnad1{
+    width: 750px;
+    height: 400px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.adnad1 a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.adnad1 a.close:active{
+    position: absolute;
+    top:4px;
+}
+.adnad2{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.adnad3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.adnad3 span{
+    width: 130px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left:30px;
+    color: #000000;
+}
+.adnad3 .adnad7{
+    width: 440px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 12px;
+}
+.adnad3 .adnad7 a{
+    width: 80px;
+    height: 20px;
+    float: left;
+    display: inline-block;
+    line-height: 20px;
+    margin: 20px 0 0 0;
+    color: #000000;
+    text-align: center;
+    background-color: #B4B4B4;
+}
+.adnad3 .adnad7 a:active{
+    position: relative;
+    top: 1px;
+}
+.adnad3 .adnad7 a:hover{
+    background-color: #1C9ED8;
+}
+.adnad3 ul {
+    width: 100px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.adnad3 ul li{
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.adnad3 ul li a{
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.adnad4{
+    width: 700px;
+    height: 350px;
+}
+.adnad4 ul{}
+.adnad4 ul li.adnadli{
+    width: 350px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    margin: 10px auto;
+    font-size: 16px;
+}
+.adnad4 ul li .adnad6{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: right;
+    float: left;
+}
+.adnad4 ul li p{
+    width: 230px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    margin-left: 15px;
+}
+.adnad4 ul li .adselect{
+    margin-left: 15px;
+}
+.adnad3 .adnad7 .activcolor{
+    background-color:#1C9ED8;
+}
+
+/*adseach.css*/
+.adsch{
+    width: 1050px;
+    height: 80px;
+}
+.adsch1{
+    width: 1050px;
+    height: 40px;
+    border-bottom: 1px solid #000000;
+    margin: 10px 0 0 0;
+    background-color:#67C8FF;
+    box-shadow: 0 1px 1px #000000;
+}
+.adsch2{
+    width: 1050px;
+    height: 40px;
+    background-color:#67C8FF;
+    box-shadow: 0 1px 1px #000000;
+}
+.adsch1 ul{  }
+.adsch1 ul li.adsli,.adsch2 ul li.adsli{
+    width: 250px;
+    height: 35px;
+    float: left;
+    color: #000011;
+    font-size: 16px;
+    text-align: right;
+}
+.adsch2 ul li.adsli .adage{
+    background-color: #5895B2;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin: 5px 10px;
+    box-shadow: 0 1px 1px #000000;
+    color: #000;
+    text-align: center;
+}
+.adsch2 ul li.adsli .adage:active{
+    position: relative;
+    top: 1px;
+}

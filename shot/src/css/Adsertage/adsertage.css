@@ -1,0 +1,197 @@
+/*adslistall.css*/
+.adlists1 .adsl1{
+    width: 970px;
+    height: 50px;
+    background-color: #67C8FF;
+}
+.adsl1 li{
+    width: 130px;
+    height: 50px;
+    background-color: #67C8FF;
+    margin: 0 0 0 5px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: #000011;
+}
+.adsl2{
+    float: left;
+    background-color: #E9F1F3;
+    margin: 5px 0 3px 0;
+    height: 70px;
+    width: 970px;
+}
+.adsl3{
+    float: left;
+    width: 130px;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 70px;
+    height: 70px;
+    font-size: 15px;
+    overflow: hidden;
+    color: #000011;
+}
+.adsl4{
+    width: 110px;
+    height: 70px;
+    line-height: 70px;
+    color:#529CB5;
+}
+.adl4:active{
+    position: relative;
+    top: 1px;
+}
+.adsl3 p.adsl5{
+    width: 110px;
+    height: 70px;
+    color: #34ACCF;
+    font-weight: bolder;
+    line-height: 70px;
+    text-align: center;
+}
+/*adsnewadd.css*/
+.adsnad{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.adsnad1{
+    width: 750px;
+    height: 400px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.adsnad1 a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.adsnad1 a.close:active{
+    position: absolute;
+    top:4px;
+}
+.adsnad2{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.adsnad3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.adsnad3 span{
+    width: 570px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left:30px;
+    color: #000000;
+}
+.adsnad3 .adnad7 a{
+    width: 80px;
+    height: 20px;
+    float: left;
+    display: inline-block;
+    line-height: 20px;
+    margin: 20px 0 0 0;
+    color: #000000;
+    text-align: center;
+    background-color: #B4B4B4;
+}
+.adsnad3 .adnad7 a:active{
+    position: relative;
+    top: 1px;
+}
+.adsnad3 .adnad7 a:hover{
+    background-color: #1C9ED8;
+}
+.adsnad3 ul {
+    width: 100px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.adsnad3 ul li{
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.adsnad3 ul li a{
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.adsnad4{
+    width: 700px;
+    height: 350px;
+}
+.adsnad4 ul{
+    height: 250px;
+    margin: 20px auto;
+}
+.adsnad4 ul li.adnadli{
+    width: 350px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    margin: 10px auto;
+    font-size: 16px;
+}
+.adsnad4 ul li .adsnad6{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: right;
+    float: left;
+}
+.adsnad4 ul li p{
+    width: 230px;
+    height: 50px;
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    margin-left: 15px;
+}
+.adsnad4 ul li .adselect{
+    margin-left: 15px;
+}
+.adsnad3 .adsnad7 .activcolor{
+    background-color:#1C9ED8;
+}
+.adsnad4 ul li p.adsnad5{
+    width: 50px;
+    height: 30px;
+    color: #34ACCF;
+    font-weight: bolder;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px 0 0 15px;
+}

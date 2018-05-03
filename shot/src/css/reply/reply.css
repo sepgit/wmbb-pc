@@ -1,0 +1,346 @@
+.replypage{
+    height: 100%;
+}
+/*rdetils.css*/
+.hfdetils{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.rhf1{
+    width: 750px;
+    height: 450px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.rhf1 a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.rhf1 a.close:active{
+    position: absolute;
+    top:4px;
+}
+.rhf2{
+    width: 700px;
+    height: 450px;
+    margin: 0 auto;
+}
+.rhf3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.rhf3 span{
+    width: 270px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left:30px;
+}
+.rhf3 ul{
+    width: 400px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.hfdetils .rhf3 ul li{
+    width: 90px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.hfdetils .rhf3 ul li a{
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.bntact:active{
+    position: relative;
+    top:1px;
+}
+.bntact:hover{
+    background-color:#2db7f5
+}
+.bntactB{
+    font-weight: bolder;
+}
+.bntactB:active{
+    position: relative;
+    top:1px;
+}
+.bntactB:hover{
+    background-color:#2db7f5
+}
+.rhf4{
+    width: 700px;
+    height: 180px;
+    font-size: 15px;
+    border-bottom: 1px solid #000000;
+}
+.rhf4 span.refspan{
+    width: 80px;
+    text-align: right;
+    display: inline-block;
+    height: 30px;
+    float: left;
+}
+.rhf5{
+    width: 700px;
+    height: 40px;
+    float: left;
+    line-height: 30px;
+}
+.rhf5 p{
+    width: 370px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    margin-left: 10px;
+}
+.rhf6{
+    width: 700px;
+    height: 60px;
+    float: left;
+    line-height: 30px;
+}
+.rhf6 span{
+    line-height: 20px;
+}
+.rhf6 p{
+    width: 600px;
+    height: 60px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    word-break: break-all;
+    line-height: 20px;
+    margin-left: 10px;
+}
+.rhf7{
+    width: 700px;
+    height: 200px;
+    font-size: 15px;
+}
+.rhf7 span{
+    width: 80px;
+    text-align: right;
+    display: inline-block;
+    height: 30px;
+    float: left;
+}
+.rhf7 ul.rhf5ul{
+    width: 650px;
+    height: 40px;
+    float: right;
+}
+.rhf7 ul.rhf5ul li{
+    float: left;
+    height: 40px;
+    width: 210px;
+    text-align: left;
+    margin: 0;
+    background-color: #EEEEEE;
+}
+.rhf7 ul.rhf5ul li span{
+    width: 70px;
+    height: 40px;
+    display: inline-block;
+    float: left;
+}
+.rhf7 ul.rhf5ul li p{
+    display: inline-block;
+    width: 115px;
+    height: 35px;
+    float: left;
+    margin-left: 5px;
+}
+.rhf7 ul.rhf5ul li img{
+    float: left;
+}
+.refcz{
+    width: 22px;
+    height: 30px;
+    color: #BDBDBD;
+    font-size: 20px;
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+}
+.refcz:active{
+    position: relative;
+    top:1px;
+}
+.refstext{
+    color: #000000;
+    height: 100px;
+    width: 530px;
+    overflow: hidden;
+    resize: none;
+    margin-left: 15px;
+    border: 1px solid #D9D9D9;
+}
+/*rhfnew.css*/
+.rhf8{
+    width: 700px;
+    height: 40px;
+    float: left;
+    line-height: 30px;
+}
+.rhf8 span{
+    width: 80px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+}
+.rhf8 p{
+    width: 370px;
+    height: 30px;
+    display: inline-block;
+    margin-left: 10px;
+    float: left;
+}
+.rhf8 a{
+    float: left;
+}
+.rhf8 .ffiles{
+    width: 25px;
+    height: 25px;
+    float: left;
+    background-image: url(../../image/hxz.png);
+    cursor: pointer;
+}
+/*rlist.css*/
+.replylist{
+    background-color: #4E93BA;
+    display: -webkit-box;
+}
+ul.replylistul {
+    width: 970px;
+    margin: 10px 40px;
+    font-size: 13px;
+}
+ul.replylistul li.replis{
+    float: left;
+    background-color: #E9F1F3;
+    margin: 5px 0 0 0;
+    height: 70px;
+    width: 970px;
+    color: #000;
+}
+ul.replylistul li.reply1{
+    width: 970px;
+    height: 50px;
+    background-color: #67C8FF;
+}
+ul.replylistul li.reply1 li{
+    width: 150px;
+    height: 50px;
+    background-color: #67C8FF;
+    margin: 0 0 0 5px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    font-size: 15px;
+    color: #000011;
+}
+.reply2{
+    float: left;
+    width: 150px;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 70px;
+    height: 70px;
+    font-size: 15px;
+    overflow: hidden;
+}
+.reply3{
+    width: 30px;
+    height: 70px;
+    text-align: left;
+    line-height: 70px;
+    float: left;
+    font-size: 25px;
+    color:#529CB5;
+}
+.reply3:active{
+    position: relative;
+    top: 1px;
+}
+/*rseach.css*/
+.rhfn{
+    width: 1050px;
+    background-color: #67C8FF;
+}
+.rhfn1{
+    height: 43px;
+    border-bottom: 1px solid #000000;
+}
+.rhfn1 ul.rseachuls{
+    width: 1000px;
+    height: 35px;
+    display: inline-block;
+}
+.rhfn1 ul.rseachuls li{
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 0 0 20px;
+    display: inline-block;
+    float: left;
+    text-align: right;
+    font-size: 16px;
+    color: #000000;
+}
+.rhfn2{
+    height: 43px;
+}
+.rhfn2 ul{ }
+.rhfn2 ul li{
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    display: inline-block;
+    float: right;
+    font-size: 16px;
+    color: #000000;
+}
+.replyas{
+    background-color: #5895B2;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin: 0 10px;
+    box-shadow: 0 1px 1px #000000;
+    line-height: 30px;text-align: center;
+    color: #000000;
+}
+.replyas:active{
+    position: relative;
+    top: 1px;
+}

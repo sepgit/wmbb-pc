@@ -1,0 +1,552 @@
+.advisorypage{
+    height: 100%;
+}
+/*alist.css*/
+.zxvlist{
+    background-color: #4E93BA;
+    display: inline-block;
+}
+.zxvlistul{
+    width: 970px;
+    margin: 0 40px;
+    font-size: 13px;
+}.zxvlistul li.zxlis{
+     float: left;
+     background-color: #E9F1F3;
+     margin: 5px 0 0 0;
+     height: 70px;
+     width: 970px;
+     color: #000;
+ }
+
+.zxvlistul .zx2{
+    float: left;
+    width: 185px;
+    text-align: center;
+    margin-left: 5px;
+    line-height: 70px;
+    height: 70px;
+    font-size: 15px;
+}
+.zx2 h5{
+    display: inline-block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    font-weight: normal;
+}
+.zx3{
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    color:#529CB5;
+    float: left;
+}
+.zx4{
+    display: inline-block;
+    float: left;
+    width: 180px;
+    height: 30px;
+    line-height: 30px;
+}
+.zx5{
+    display: inline-block;
+    float: left;
+    width: 165px;
+    height: 30px;
+    line-height: 30px;
+    color: red;
+}
+/*amid.css*/
+.azxnew{
+    height: 70px;
+    background-color: #4E93BA;
+    font-size: 15px;
+    margin: 20px 0 0 0;
+}
+.adda1{
+    width: 90px;
+    height: 60px;
+    background-color: #005983;
+    box-shadow: 0 1px 1px 0 #000000;
+    float: left;
+    text-align: center;
+}
+.adda1 a{
+    display: inline-block;
+    width:50px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 10px 0 0 0;
+    letter-spacing: 3px;
+}
+.adda1 a:active{
+    position: relative;
+    top: 1px;
+}
+/*anewadd.css*/
+.zxnewdiv{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.zxnd{
+    width: 750px;
+    height: 400px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.zxnd a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.zxnd a.close:active{
+    position: absolute;
+    top:4px;
+}
+.zxnd1{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+}
+.zxnd2{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.zxnd1 .zxnd2 span{
+    display:inline-block;
+    width: 450px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    float: left;
+    margin-left: 30px;
+}
+.zxnd1 .zxnd2 ul{
+    float: left;
+    width: 220px;
+    height: 49px;
+    position: inherit;
+}
+.zxnd1 .zxnd2 ul li{
+    width: 55px;
+    text-align: center;
+    float: left;
+    height: 49px;
+    line-height: 49px;
+    font-size: 17px;
+    background-color: #EEEEEE;
+    margin: 0;
+}
+.zxnd1 .zxnd2 ul li a{
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+}
+.bntact:active{
+    position: relative;
+    top:1px;
+}
+.bntact:hover{
+    background-color:#2db7f5
+}
+.zxnd1 .zxnd3{
+    width: 700px;
+    height: 350px;
+}
+.zxnd1 .zxnd3 ul.zxnd7{
+    display: inline-block;
+    width: 700px;
+    height: 220px;
+    float: left;
+    position:inherit;
+}
+.zxnd1 .zxnd3 ul.zxnd7 li.zxnd8{
+    width: 700px;
+    height: 40px;
+    float: left;
+    line-height: inherit;
+    font-size: 16px;
+    margin: 10px 0 20px 0;
+}
+.zxnd4{
+    width: 340px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    position: relative;
+}
+.zxnd4 p{
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    text-align: right;
+}
+.zxnd4 .chke{
+    margin-left: 20px;
+    float: left;
+    font-size: 16px;
+}
+.zxnd5{
+    width: 700px;
+    height: 100px;
+    float: left;
+}
+.zxnd5 span{
+    display: inline-block;
+    font-size: 16px;
+    width: 120px;
+    height: 20px;
+    text-align: right;
+    float: left;
+}
+.zxnd5 textarea{
+    color:#000000;
+    height:100px;
+    width: 550px;
+    overflow: hidden;
+    resize: none;
+    margin-left: 5px;
+    border: 1px solid #D9D9D9;
+}
+.zxspan{
+    width: 22px;
+    height: 30px;
+    color: #BDBDBD;
+    font-size: 20px;
+    position: absolute;
+    top: 2px;
+    right: 15px;
+    cursor: pointer;
+}
+.zxspan:active{
+    position: absolute;
+    top:3px;
+}
+/*anewlist.css*/
+.adda2{
+    width: 700px;
+    float: left;
+    background-color: #67C8FF;
+}
+.retuns{
+    width: 610px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+.adda2 ul.add2ul{
+    position: absolute;
+}
+.adda2 ul li.add2li{
+    width: 120px;
+    height: 60px;
+    float: left;
+    line-height: 60px;
+    font-size: 18px;
+    text-align: center;
+}
+.adda2 ul li a{
+    width: 80px;
+    height: 60px;
+    display: inline-block;
+    color: #000000;
+}
+.adda2 ul li a:hover{
+    background-color: #3D7BA0;
+    border-radius: 2px;
+    box-shadow:0 1px 1px 0 #000000;
+}
+.adda2 .tleft{
+    display:inline-block;
+    width:0;
+    height:0;
+    border-right: 15px solid #3D7BA0;
+    border-bottom:15px solid transparent;
+    border-top:15px solid transparent;
+    float: left;
+    margin: 15px 10px 0 10px;
+}
+.adda2 .tright{
+    display:inline-block;
+    width:0;
+    height:0;
+    border-left: 15px solid #3D7BA0;
+    border-bottom:15px solid transparent;
+    border-top:15px solid transparent;
+    float: left;
+    margin: 15px 10px 0 10px;
+}
+.adda2 a:active{
+    position: relative;
+    top: 1px;
+}
+
+/*aseach.css*/
+.azxlist{
+    height: 86px;
+    background-color: #67C8FF;
+    font-size: 15px;
+    box-shadow: 0 1px 1px 0 #000000;
+}
+.azxlist .zxn1{
+    height: 43px;
+    border-bottom: 1px solid #000000;
+}
+.azxlist .zxn1 .tjlist{
+    height: 43px;
+}
+.azxlist .zxn1 .tjlist li{
+    width: 200px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 0 0 20px;
+    display: inline-block;
+    float: left;
+    text-align: right;
+    font-size: 16px;
+    color: #000000;
+}
+.azxlist .zxn2{
+    height: 43px;
+}
+.zxn2 ul{}
+.zxn2 ul li{
+    width: 300px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 0 0 20px;
+    display: inline-block;
+    float: right;
+    font-size: 16px;
+    color: #000000;
+}
+/*azxdetil.css*/
+.zxdetils{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.zxd1{
+    width: 750px;
+    height: 600px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.zxd1 a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.zxd1 a.close:active{
+    position: absolute;
+    top:4px;
+}
+.zxd2{
+    width: 700px;
+    height: 600px;
+    margin: 0 auto;
+}
+.zxd3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.zxd3 span.zxd3sp{
+    display:inline-block;
+    width: 320px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    float: left;
+    margin-left: 30px;
+}
+.zxd3 ul{
+    float: left;
+    width: 340px;
+}
+.zxd3 ul li{
+    width: 75px;
+    text-align: center;
+    float: left;
+    height: 49px;
+    line-height: 49px;
+    font-size: 17px;
+    background-color: #EEEEEE;
+    margin: 0;
+    position: relative;
+}
+.zxd3 ul li a{
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+}
+.bntact:active{
+    position: relative;
+    top:1px;
+}
+.bntact:hover{
+    background-color:#2db7f5
+}
+.zxd4{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+}
+.zxd5{
+    width: 700px;
+    height: 200px;
+    border: 1px solid #000000;
+}
+.zxd5 ul{
+    width: 700px;
+    height: 120px;
+}
+.zxd5 ul li{
+    width: 220px;
+    float: left;
+    height: 38px;
+    line-height: 38px;
+    font-size: 15px;
+    background-color: #EEEEEE;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+}
+.zxd5 ul li img{
+    cursor:pointer;
+}
+.zxd8{
+    height: 79px;
+}
+.zxd8 span{
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    font-size: 15px;
+    line-height: 20px;
+    margin-left:10px;
+    float: left;
+}
+.zxd8 p{
+    width:605px;
+    height:75px;
+    float:right;
+    font-size: 14px;
+    padding: 2px;
+    overflow: hidden;
+    line-height: 18px;
+    word-break: break-all;
+}
+.zxd6{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    margin: 10px 0 0 0;
+    font-size: 15px;
+}
+.zxd2 .zxd7{
+    display: inline-block;
+    width: 700px;
+    height: 280px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.zxd2 .zxd7 li{
+    height: 88px;
+    width: 680px;
+    float: left;
+    font-size: 15px;
+    background-color: #EEEEEE;
+    border: 1px solid #000000;
+    overflow: hidden;
+    margin: 5px 0 0 0;
+}
+.zxd9{
+    width: 200px;
+    height: 88px;
+    float: left;
+}
+.zxd10{
+    width: 200px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+}
+.zxd10 img{
+    width: 25px;
+    height: 25px;
+    float: left;
+    cursor: pointer;
+}
+.zxd10 span{
+    display: inline-block;
+    float: left;
+    width: 170px;
+    height: 27px;
+    overflow: hidden;
+}
+.zxd10 i{
+    display: inline-block;
+    width: 17px;
+    height: 20px;
+    background-image: url(../../image/vip.png);
+    float: left;
+}
+p.zxd11{
+    display: inline-block;
+    width: 475px;
+    height: 88px;
+    overflow: hidden;
+}
+.zxd3 li i {
+    display: inline-block;
+    height: 17px;
+    width: 18px;
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    background-image: url(/images/uploady.png);
+}

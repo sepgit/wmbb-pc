@@ -1,0 +1,717 @@
+.homepage{
+    height: 100%;
+}
+/*Hfin.css*/
+.hf{
+    height: 200px;
+}
+.hf .hfa{
+    height: 35px;
+    border-bottom: 1px solid #000000;
+}
+.hf .hfa h4{
+    font-size: 14px;
+    display:inline-block;
+    letter-spacing:5px;
+    margin:10px 0 0 20px;
+}
+.hf .hfa a{
+    float: right;
+    margin: 10px 20px 0 0;
+    display: inline-block;
+    font-size: 14px;
+    color: #000000;
+}
+/*Hfone.css*/
+.hfb{
+    width: 970px;
+    height: 140px;
+    margin: 10px auto;
+}
+.hfb .replis{
+    float: left;
+    background-color: #E9F1F3;
+    margin: 5px 0 0 0;
+    height: 70px;
+    width: 970px;
+    color: #000;
+}
+/*hgrxx.css*/
+.hgrxx{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.grxx{
+    width: 450px;
+    height: 350px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.grxx1{
+    width: 450px;
+    height: 25px;
+    background-color: #4392BD;
+    float: left;
+}
+.grxx1 h5{
+    color:#ffffff;
+    width: 100px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+    margin: 0 0 0 20px;
+}
+.grxx2{
+    height: 265px;
+    color:#000000;
+    float: left;
+}
+.grxx2 ul{}
+.grxx2 ul li{
+    width: 225px;
+    height: 33px;
+    float: left;
+    margin: 10px 0 0 0;
+}
+.grxx2 .grxxs{
+    width: 80px;
+    text-align: right;
+    color: #000011;
+    float: left;
+}
+.grxx2 .grxxs2{
+    width: 40px;
+    text-align: right;
+    color: #000011;
+    float: left;
+    font-weight: normal;
+    margin-left: 5px;
+}
+.grxx2 .grxxs3{
+    margin-left: 20px;
+    float: left;
+}
+.grxx2 p{
+    width: 120px;
+    height: 33px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+.grxx3{
+    height: 35px;
+    float: right;
+}
+.grxx3 a{
+    width: 50px;
+    height: 30px;
+    color: #000011;
+    margin: 0 25px 0 0;
+}
+.grxx2 .grxxs4{
+    width: 60px;
+    text-align: right;
+    color: #000011;
+    float: left;
+}
+.grxx2 ul li img{
+    margin: -3px 0 0 0;
+    float: left;
+}
+/*hgsxx.css*/
+.hgsxx{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.gsxx{
+    width: 450px;
+    height: 500px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.gsxx1{
+    width: 450px;
+    height: 25px;
+    background-color: #4392BD;
+    float: left;
+}
+.gsxx1 h5{
+    color:#ffffff;
+    width: 100px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+    margin: 0 0 0 20px;
+}
+.gsxx1 span{
+    color: red;
+}
+.gsxx2{
+    height: 265px;
+    color:#000000;
+    float: left;
+}
+.gsxx2 ul{}
+.gsxx2 ul li{
+    width: 450px;
+    height: 30px;
+    float: left;
+    margin: 4px 0 0 0;
+}
+.gsxx2 .gsxxs{
+    width: 80px;
+    text-align: right;
+    color: #000011;
+    float: left;
+}
+.gsxx2 p{
+    width: 300px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+.gsxx2 .gsxxs4{
+    width: 60px;
+    text-align: right;
+    color: #000011;
+    float: left;
+}
+.gsxx2 ul li img{
+    margin: -3px 0 0 0;
+    float: left;
+}
+.gsxx3{
+    height: 35px;
+    float: right;
+}
+.gsxx3 a{
+    width: 50px;
+    height: 30px;
+    color: #000011;
+    margin: 0 25px 0 0;
+}
+.sjgs2{
+    width: 450px;
+    height: 180px;
+    color:#000000;
+    float: left;
+}
+.sjgs3{
+    height: 35px;
+    float: right;
+}
+.sjgs3 a{
+    width: 50px;
+    height: 30px;
+    color: #000011;
+    margin: 0 25px 0 0;
+}
+.sjgs4{
+    width: 450px;
+    height: 60px;
+}
+.sjgs4 p{
+    width: 200px;
+    height: 20px;
+    margin: 10px 0 0 40px;
+}
+.sjgs4 span{
+    display: inline-block;
+    float: left;
+    width: 300px;
+    margin:5px 0 0 40px;
+    background-color: #ffffff;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+    overflow: hidden;
+    font-size: 12px;
+}
+.sjgs4 .upl1{
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    overflow: hidden;
+    color: #000000;
+    background-color: #4192BD;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    height: 25px;
+    margin: 5px 0 0 -1px;
+}
+.sjgs4 .upl1 input{
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.sjgs5{
+    width: 450px;
+    height: 115px;
+}
+.sjgs5 p{
+    width: 250px;
+    height: 20px;
+    margin: 0 0 0 40px;
+}
+.sjgs5 p span{
+    color:#666666;
+}
+.sjgs5 .upl3{
+    width: 300px;
+    height: 25px;
+}
+.sjgs5 .upl3 img{
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    float: left;
+    margin: 0 0 0 40px;
+}
+.sjgs5 .upl3 h5{
+    text-decoration:underline;
+    color:#000000;
+    font-size: 14px;
+    width: 250px;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 0 0 5px;
+}
+.sjgs5 .upl5{
+    display: inline-block;
+    float: left;
+    width: 300px;
+    margin:5px 0 0 40px;
+    background-color: #ffffff;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+    overflow: hidden;
+    font-size: 12px;
+}
+.sjgs5 .upl6{
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    overflow: hidden;
+    color: #000000;
+    background-color: #4192BD;
+    line-height: 25px;
+    text-align: center;
+    width: 60px;
+    height: 25px;
+    margin: 5px 0 0 -1px;
+}
+.sjgs5 .upl6 input{
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.gsxx2 .gsxxinp{
+    width: 300px;
+    height: 28px;
+    float: left;
+}
+/*Hpin.css*/
+.hp{
+    height: 270px;
+}
+.hp .hpa{
+    height: 35px;
+    border-bottom: 1px solid #000000;
+}
+.hp .hpa h4{
+    font-size: 14px;
+    display:inline-block;
+    letter-spacing:5px;
+    margin:10px 0 0 20px;
+}
+.hp .hpa a{
+    float: right;
+    margin: 10px 20px 0 0;
+    display: inline-block;
+    font-size: 14px;
+    color: #000000;
+}
+/*Hpone.css*/
+.hpb{
+    width: 970px;
+    height: 210px;
+    margin: 10px auto;
+}
+.hpb li.bplt{
+    width: 970px;
+    height: 95px;
+    background-color: #E9F1F3;
+    margin:7px auto;
+    font-size: 15px;
+}
+/*hxgmm.css*/
+.hxgmm{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.xgmm{
+    width: 450px;
+    height: 300px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.xgmm1{
+    width: 450px;
+    height: 25px;
+    background-color: #4392BD;
+    float: left;
+}
+.xgmm1 h5{
+    color:#ffffff;
+    width: 100px;
+    line-height: 25px;
+    height: 25px;
+    display: inline-block;
+    margin: 0 0 0 20px;
+}
+.xgmm2{
+    height: 225px;
+    color:#000000;
+    float: left;
+}
+.xgmm2 ul{
+    width: 450px;
+    height: 150px;
+    margin: 30px 0 0 0;
+}
+.xgmm2 ul li{
+    width: 450px;
+    height: 30px;
+    float: left;
+    margin: 20px 0 0 0;
+}
+.xgmm2 .xgmms{
+    width: 150px;
+    text-align: right;
+    color: #000011;
+    float: left;
+}
+.xgmm2 p{
+    width: 250px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+}
+.xgmm3{
+    height: 35px;
+    float: right;
+}
+.xgmm3 a{
+    width: 50px;
+    height: 30px;
+    color: #000011;
+    margin: 0 25px 0 0;
+}
+/*Logo.css*/
+.logo{
+    float:left;
+    padding-top:20px;
+    margin:0 0 0 70px;
+    width: 230px;
+}
+/*mid.css*/
+.mid{
+    width: 1050px;
+    margin: 10px auto;
+}
+/*Name.css*/
+.userinfo{
+    width: 150px;
+    position: absolute;
+    right: 50px;
+    top:5px;
+    padding: 2px;
+}
+.userinfo:hover{
+    background: rgba(220, 238, 248, 0.4);
+}
+.userinfo .ico{
+    width: 14px;
+    height: 21px;
+    background-image: url(../../../src/image/rb.png);
+    background-repeat: no-repeat;
+    float: left;
+}
+.userinfo span.infosp{
+    width:110px;
+    height: 30px;
+    display: inline-block;
+    float: left;
+    color: #FFF;
+    margin: 0 0 0 5px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.userinfo .uinfo{
+    background: rgba(220, 238, 248, 0.4);
+    width: 150px;
+    margin: -2px 0 0 -2px;
+    float: left;
+}
+.userinfo .uinfo li{
+    width:150px;
+    height: 25px;
+    color: #000011;
+    font-size: 14px;
+    float: left;
+    text-align: center;
+}
+.userinfo .uinfo li a{
+    width:150px;
+    height: 25px;
+    color: #000011;
+    display: inline-block;
+}
+.userinfo .uinfo li a:hover{
+    background-color:#3F657A;
+    color: #ffffff;
+}
+.userinfo i{
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-top: 5px solid #ffffff;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    margin: 8px 0 0 0;
+    float: left;
+}
+/*Nav.css*/
+.nav ul{
+    padding-top:20px;
+}
+.nav li{
+    float:left;
+    height:30px;
+    line-height:30px;
+    position:relative;
+    width:72px;
+    display:inline;
+    padding:0px 4px;
+}
+.nav li a{
+    display:block;
+    text-align:center;
+    color:#FFF;
+    font-size:16px;
+}
+.nav li a:hover{
+    border-bottom: 2px solid #FFF;
+}
+.active{
+    border-bottom: 2px solid #FFF;
+}
+/*top.css*/
+.toper{
+    height:10%;
+    background-color: #4391BD;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 3px 3px #979797;
+}
+/*Xpin.css*/
+.xp{
+    height: 210px;
+}
+.xp .xpa{
+    height: 35px;
+    border-bottom: 1px solid #000000;
+}
+.xp .xpa h4{
+    font-size: 14px;
+    display:inline-block;
+    letter-spacing:5px;
+    margin:10px 0 0 20px;
+}
+.xp .xpa a{
+    float: right;
+    margin: 10px 20px 0 0;
+    display: inline-block;
+    font-size: 14px;
+    color: #000000;
+}
+/*Xpone.css*/
+.xpb{
+    width: 970px;
+    height: 160px;
+    margin: 10px auto;
+}
+/*Xptwo.css*/
+.xpc{
+    float: left;
+    background-color: #E9F1F3;
+    margin: 5px 0 0 0;
+    height: 70px;
+    width: 970px;
+}
+.xpd{
+    width: 130px;
+    height: 70px;
+    float: left;
+}
+.xpd span{
+    display: block;
+    margin: 7px 0 20px 25px;
+}
+.xpd p{
+    margin: 0 0 0 25px;
+}
+.xpe{
+    float: left;
+    width: 650px;
+    height: 70px;
+    text-align: center;
+}
+.xpe span{
+    display: block;
+    margin: 20px 0 0 0;
+    width: 120px;
+    overflow: hidden;
+    float: left;
+}
+.xpe1{
+    width: 400px;
+    height:70px;
+    float: left;
+    margin:0 5px 0 5px;
+}
+.xpe1 p{
+    text-align: center;
+    font-size: 14px;
+    height: 20px;
+    margin: 5px 0 5px 0;
+}
+.xpe1 div{
+    border: 1px solid #4491BD;
+    margin: 5px 0 5px 0;
+}
+.xpe1 ul{
+}
+.xpe1 ul li{
+    width: 80px;
+    height: 20px;
+    margin: 5px auto;
+    float: left;
+    text-align: center;
+}
+.xpe1 ul li h5{
+    display: inline-block;
+    color: #FA1616;
+}
+.xpf{
+    width: 160px;
+    height: 70px;
+    float: left;
+}
+.xpf1{
+    width:130px;
+    height: 70px;
+    float: left;
+}
+.xpf1 span{
+    display: block;
+    margin: 7px 0 20px 25px;
+}
+.xpf1 p{
+    margin: 0 0 0 25px;
+}
+.xpf2{
+    width:30px;
+    height: 70px;
+    float: left;
+}
+.xpf2 a{
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    margin: 7px 0 0 0;
+    color:#4390BE;
+}
+.xpf2 span{
+    display: inline-block;
+    margin: 5px 25px 0 0;
+    color: red;
+}
+.zt1{
+    color:#548DD4;
+}
+.zt2{
+    color:#808080;
+}
+.zt3{
+    color:#00B050;
+}
+.zt4{
+    color:#FFCC00;
+}
+.zt5{
+    color:#FF0000;
+}
+.xpe1 div.servsdetil{
+    width: 400px;
+    height: 30px;
+    border: none;
+}
+.servsdetil ul{}
+.servsdetil ul li{
+    width: 200px;
+    height: 20px;
+    float: left;
+}
+/*Zxin.css*/
+.zx{
+    height: 200px;
+}
+.zx .zxa{
+    height: 35px;
+    border-bottom: 1px solid #000000;
+}
+.zx .zxa h4{
+    font-size: 14px;
+    display:inline-block;
+    letter-spacing:5px;
+    margin:10px 0 0 20px;
+}
+.zx .zxa a{
+    float: right;
+    margin: 10px 20px 0 0;
+    display: inline-block;
+    font-size: 14px;
+    color: #000000;
+}

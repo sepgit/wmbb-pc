@@ -1,0 +1,69 @@
+.Pmanagefwpage{
+    height: 100%;
+}
+/*pfwmid.css*/
+.pmc6{
+    width: 700px;
+    height: 20px;
+    float: right;
+    font-size: 12px;
+    margin: -10px 0 0 0;
+}
+.pmc6 ul{  }
+.pmc6 ul li{
+    width: 160px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+}
+.pmc6 ul li img{
+    display: inline-block;
+    float: left;
+    margin: 0 5px 0 0;
+}
+.pmc6 ul li .pmc7{
+    width: 65px;
+    height: 20px;
+    display: inline-block;
+    float: left;
+    margin: 2px 0 0 0;
+}
+.pmc6 ul li i{
+    width: 35px;
+    height: 15px;
+    display: inline-block;
+    background-color: #EB6A40;
+    float: left;
+    margin: 5px 5px 0 0;
+}
+.pmc6 ul li.pmc8{
+    width: 210px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+}
+.pmc6 ul li .pmc9{
+    width: 150px;
+    height: 20px;
+    display: inline-block;
+    float: left;
+}
+.pmc6 ul li p{
+    width: 50px;
+    height: 20px;
+    float: left;
+    display: inline-block;
+    margin: 2px 0 0 0;
+}
+.pmc6 ul li a{
+    width: 50px;
+    height: 20px;
+    display: inline-block;
+    background-color: #4291BC;
+    color: #ffffff;
+    float: left;
+}
+.pmc6 ul li a:active{
+    position: relative;
+    top: 1px;
+}

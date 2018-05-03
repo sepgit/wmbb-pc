@@ -1,0 +1,365 @@
+.loginpage{
+    height: 100%;
+}
+/*accjh.css*/
+.ajhdiv{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.ajh1{
+    width: 300px;
+    height:200px;
+    background-color: #FFFFFF;
+    margin: 250px auto;
+    position: relative;
+    font-size: 12px;
+}
+.ajh1 span.dvsp{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    font-size: 20px;
+    color: #ccc;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+}
+.ajh1 .dvsp:active {
+    right: 10px;
+    top:11px;
+}
+.ajh1 p{
+    display: inline-block;
+    width: 300px;
+    margin: 20px 0 0 0;
+    font-size:17px;
+    text-align: center;
+}
+.ajh2{}
+.ajh2 ul{}
+.ajh2 ul li{
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    margin: 5px 0 0 0;
+}
+.ajh2 ul li a{
+    color: red;
+}
+.ajh2 ul li .inps{
+    width: 90px;
+    height: 25px;
+    border-radius: 1px;
+}
+.ajh2 ul li button{
+    border: 1px solid #696969;
+    border-radius: 4px;
+}
+.ajh2 ul li button:active {
+    position: relative;
+    top: 1px;
+}
+.ajh2 ul li .qr{
+    width: 40px;
+    height: 24px;
+    margin: 0 0 0 -1px;
+    border-radius: 1px;
+}
+.ajh2 ul li .bsend{
+    width: 50px;
+    height: 20px;
+    margin: 0 0 0 10px;
+    border-radius: 3px;
+}
+/*alertmsg*/
+.divmsg{
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    display: none;
+}
+.divinfo{
+    width: 300px;
+    height:200px;
+    background-color: #FFFFFF;
+    margin: 250px auto;
+    position: relative;
+}
+.divinfo span.dvsp{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    font-size: 20px;
+    color: #ccc;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 22px;
+    cursor: pointer;
+}
+.divinfo .dvsp:active {
+    right: 10px;
+    top:11px;
+}
+.divinfo p{
+    display: inline-block;
+    width: 300px;
+    margin: 20px 0 0 0;
+    font-size:17px;
+    text-align: center;
+}
+.getinfo{}
+.getinfo ul{}
+.getinfo ul li{
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    margin: 5px 0 0 0;
+}
+.getinfo ul li a{
+    color: red;
+}
+.getinfo ul li .inps{
+    width: 90px;
+    height: 25px;
+    border-radius: 1px;
+}
+.getinfo ul li button{
+    border: 1px solid #696969;
+    border-radius: 4px;
+}
+.getinfo ul li button:active {
+    position: relative;
+    top: 1px;
+}
+.getinfo ul li .qr{
+    width: 40px;
+    height: 24px;
+    margin: 0 0 0 -1px;
+    border-radius: 1px;
+}
+.getinfo ul li .bsend{
+    width: 50px;
+    height: 20px;
+    margin: 0 0 0 10px;
+    border-radius: 3px;
+}
+/*down.css*/
+.download{
+    float:left;
+    margin:27px 0 0 -40px;
+    padding: 0 0 0 10px;
+    width: 110px;
+    height: 25px;
+    border-left: 2px solid #ffffff;
+}
+.download a{
+    color:#ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+}
+/*lmid.css*/
+.lmid{
+    clear: both;
+    height:90%;
+    overflow:hidden;
+    background-color: #4F9BD3;
+    background:-webkit-radial-gradient(contain,#6FC6E7,#4189CB);
+    background:-moz-linear-gradient(top,#6FC6E7 0%, #4189CB 100%); /* 适合 FF3.6+*/
+    /*适合 Chrome,Safari4+*/
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#6FC6E7), color-stop(100%,#4189CB));
+    background:-webkit-linear-gradient(top,#6FC6E7 0%,#4189CB 100%); /* 适合Chrome10+,Safari5.1+*/
+    background:-o-linear-gradient(top,#6FC6E7 0%,#4189CB 100%);  /*适合Opera 11.10+*/
+    background:-ms-linear-gradient(top,#6FC6E7 0%,#4189CB 100%); /*适合IE10+*/
+    background:linear-gradient(top,#6FC6E7 0%,#4189CB 100%);     /*适合W3C*/
+}
+.logink{
+    width: 400px;
+    height: 250px;
+    margin: 155px auto;
+    background-color: #BEDCEB;
+    font-size: 15px;
+}
+.la{
+    font-weight: bolder;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    color: #000011;
+}
+.logink ul.logul{
+    width: 300px;
+    height: 200px;
+    display:inline-block;
+    margin:30px 0 0 80px;
+}
+.logink ul.logul li{
+    margin: 15px 0 0 0;
+    width: 300px;
+    height: 30px;
+    float: left;
+}
+.logink ul.logul li .inp{
+    margin: 0 0 0 10px;
+    width: 180px;
+    height: 27px;
+}
+.logink ul.logul li .logina{
+    margin: 0 0 0 5px;
+    font-size: 15px;
+    color: #4391BD;
+}
+.logink ul.logul li .logina:active{
+    position: relative;
+    top:1px;
+}
+.logink ul.logul li .errmsg{
+    font-weight: bolder;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    color: red;
+}
+
+.formbnt{
+    width: 100px;
+    height: 30px;
+    margin: 0 0 0 20px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 5px 0 0 0;
+}
+.formbnt:active {
+    position: relative;
+    top: 1px;
+}
+/*ltop.css*/
+.toper{
+    height:10%;
+    background-color: #4391BD;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 3px 3px #979797;
+}
+/*rmid.css*/
+.rmid{
+    clear: both;
+    height:90%;
+    overflow:hidden;
+    background-color: #4F9BD3;
+    background:-webkit-radial-gradient(contain,#6FC6E7,#4189CB);
+    background:-moz-linear-gradient(top,#6FC6E7 0%, #4189CB 100%); /* 适合 FF3.6+*/
+    /*适合 Chrome,Safari4+*/
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#6FC6E7), color-stop(100%,#4189CB));
+    background:-webkit-linear-gradient(top,#6FC6E7 0%,#4189CB 100%); /* 适合Chrome10+,Safari5.1+*/
+    background:-o-linear-gradient(top,#6FC6E7 0%,#4189CB 100%);  /*适合Opera 11.10+*/
+    background:-ms-linear-gradient(top,#6FC6E7 0%,#4189CB 100%); /*适合IE10+*/
+    background:linear-gradient(top,#6FC6E7 0%,#4189CB 100%);     /*适合W3C*/
+}
+.loginr{
+    width: 470px;
+    height: 400px;
+    margin: 70px auto;
+    font-size: 16px;
+}
+.loginr ul{}
+.loginr ul li{
+    width: 470px;
+    height: 35px;
+    margin: 20px auto;
+    display: inline-block;
+    position: relative;
+}
+.loginr .inpr{
+    margin: 0 0 0 10px;
+    width: 250px;
+}
+.loginr .inpry{
+    margin: 0 10px 0 25px;
+    width: 150px;
+}
+.loginr ul li img{
+    position: absolute;
+    top:1px;
+    right: 130px;
+    width: 80px;
+    height:25px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.gorest{
+    background-color: #169BD5;
+    display: inline-block;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    color: #ffffff;
+    line-height: 50px;
+    margin: 0 0 0 20px;
+}
+.gorest:active {
+    position: relative;
+    top: 1px;
+}
+.viad{
+    font-size: 12px;
+    color: red;
+}
+.laa{
+    font-weight: bolder;
+    margin: 0 10px 0 0;
+    font-size: 15px;
+    color: #000011;
+    display: inline-block;
+    width: 70px;
+}
+.inprya{
+    margin: 0 10px 0 10px;
+    width: 150px;
+}
+.hqyzm{
+    width: 100px;
+    height: 30px;
+    margin: 0 0 0 10px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
+    color: #000000;
+    font-size: 13px;
+}
+.hqyzm:active{
+    position: relative;
+    top:1px;
+}
+.jylog{
+    width: 470px;
+    height: 35px;
+    margin: 10px auto;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
+}

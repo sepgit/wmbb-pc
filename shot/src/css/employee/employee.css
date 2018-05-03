@@ -1,0 +1,341 @@
+.employeepage{
+    height: 100%;
+}
+/*emadd.css*/
+.emad{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.emad1{
+    width: 750px;
+    height: 400px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.emad1 a.close{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color: #CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.emad1 a.close:active{
+    position: absolute;
+    top: 4px;
+}
+.emad2{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.emad3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.emad3 span{
+    width: 570px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left: 30px;
+    color: #000000;
+}
+.emad3 ul {
+    width: 100px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.emad3 ul li {
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.emad3 ul li a {
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.emad4{
+    height: 350px;
+}
+.emad4 ul{  }
+.emad4 ul li{
+    width: 350px;
+    height: 50px;
+    margin: 25px 0 0 0;
+    float: left;
+}
+.emad4 ul li .emsp{
+    width: 80px;
+    height: 40px;
+    text-align: right;
+    float: left;
+}
+.emad4 ul li .emspinp{
+    float: left;
+    margin: 0 0 0 15px;
+}
+/*emdel.css*/
+.emds{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.emds1{
+    width: 750px;
+    height: 400px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.emds1 a.close{
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color: #CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.emds1 a.close:active{
+    position: absolute;
+    top: 4px;
+}
+.emds2{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    font-size: 15px;
+}
+.emds3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.emds3 span{
+    width: 470px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left: 30px;
+    color: #000000;
+}
+.emds3 ul {
+    width: 200px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.emds3 ul li {
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.emds3 ul li a {
+    width: 50px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.emds4{
+    height: 290px;
+}
+.emds4 ul{  }
+.emds4 ul li{
+    width: 350px;
+    height: 50px;
+    margin: 25px 0 0 0;
+    float: left;
+}
+.emsp{
+    width: 80px;
+    height: 40px;
+    text-align: right;
+    float: left;
+}
+.emds4 ul li .emspinp{
+    float: left;
+    margin: 0 0 0 15px;
+}
+.emds4 ul li p{
+    margin:0 0 0 15px;
+    display: inline-block;
+    width: 250px;
+    height: 30px;
+    overflow: hidden;
+}
+.emds5{
+    height: 50px;
+    margin: 10px 0 0 0;
+}
+.emds5 ul{}
+.emds5 ul li{
+    width: 160px;
+    height: 50px;
+    float: left;
+    text-align: center;
+}
+.emsp9{
+    width: 40px;
+    height: 40px;
+    text-align: right;
+    float: left;
+}
+/*emid.css*/
+.emlist{
+    width: 1050px;
+    background-color: #4E93BA;
+}
+.emp{
+    height: 60px;
+    width: 1050px;
+}
+.emp1{
+    width: 70px;
+    height: 60px;
+    background-color: #005983;
+    box-shadow: 0 1px 1px 0 #000000;
+    float: left;
+}
+.emp1 a{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 10px 0 0 15px;
+    letter-spacing: 2px;
+}
+.emp1 a:active{
+    position: relative;
+    top: 1px;
+}
+.emp2{
+    width: 300px;
+    height: 30px;
+    float: right;
+    color:#ffffff;
+    margin: 30px 0 0 0;
+}
+/*eseach.css*/
+.eseach{
+    width: 1050px;
+    display: inline-block;
+}
+.eseach .emls{
+    width: 1050px;
+    margin: 10px 0 0 0;
+    font-size: 13px;
+}
+.eseach .emls .emls1{
+    width: 1050px;
+    height: 50px;
+    background-color: #67C8FF;
+    box-shadow: 0 1px 1px #000000;
+}
+.eseach .emls .emls1 ul{}
+.eseach .emls .emls1 ul li{
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    float: left;
+    font-size: 17px;
+    color: #000011;
+    text-align: center;
+}
+.eseach .emls .emls1 ul li.newsx{
+    width: 60px;
+}
+.newsx img{
+    width: 30px;
+    height: 20px;
+    display: inline-block;
+    float: left;
+    margin: 15px 0 0 0;
+}
+.newsx a{
+    width: 60px;
+    height: 20px;
+    color: #000011;
+    font-size: 14px;
+    display: inline-block;
+}
+.newsx a:active{
+    position: relative;
+    top:1px;
+}
+.emls2{
+    width: 1030px;
+    height: 45px;
+    background-color: #FFFFFF;
+    margin: 7px 10px;
+    font-size: 15px;
+}
+.emls3{
+    width: 158px;
+    height: 45px;
+    float: left;
+    text-align: center;
+    line-height: 45px;
+}
+.emls4{
+    width: 40px;
+    height: 35px;
+    float: left;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+.emls4 a:active{
+    position: relative;
+    top:1px;
+}
+.emlxq:active{
+    position: relative;
+    top:1px;
+}

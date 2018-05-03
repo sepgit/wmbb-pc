@@ -1,0 +1,964 @@
+.backplatepage{
+    height: 100%;
+}
+/*bch.css*/
+.btcolor{
+    position: absolute;
+    top:3px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    color: red;
+}
+.bdel23{
+    height: 45px;
+}
+.bdel23 img{
+    width: 30px;
+    height: 27px;
+    float: left;
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+.bdel23 h5{
+    width: 110px;
+    height: 45px;
+    text-align: right;
+    line-height: 45px;
+    font-weight: normal;
+    float: left;
+    display: inline-block;
+}
+.bdel23 p{
+    width: 550px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+}
+.bdel24{
+    width: 550px;
+    height: 40px;
+    float: left;
+    line-height: 40px;
+    margin: 0 0 0 10px;
+}
+.bdel25{
+    width: 22px;
+    height: 30px;
+    color: #BDBDBD;
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    right: 20px;
+    cursor: pointer;
+}
+.bdel25:active{
+    position: relative;
+    top:6px;
+}
+.delsel{
+    height: 22px;
+    margin: -2px 0 0 0;
+}
+.delsel div{
+    height: 23px;
+    border-radius: 1px;
+}
+.delinp{
+    width: 112px;
+    height: 22px;
+    margin:-5px 0 0 0 ;
+}
+.delinp8{
+    width: 100px;
+    height: 22px;
+    margin: -2px 0 0 0;
+}
+.bdel10 textarea{
+    color: #000000;
+    width: 565px;
+    height: 85px;
+    overflow: hidden;
+    resize: none;
+    margin: 5px 0 0 0;
+    border: 1px solid #D9D9D9;
+}
+.bdel15 .btcolor15{
+    position: absolute;
+    top: 0;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    color: red;
+}
+/*bdel.css*/
+.bdeldiv{
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+.bdel1{
+    width: 750px;
+    height: 600px;
+    position: relative;
+    background-color: #EEEEEE;
+    margin: 30px auto;
+    text-align: left;
+}
+.bdel1 a.close{
+    position: absolute;
+    top:3px;
+    right: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    color:#CECECE;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+    font-weight: bolder;
+}
+.bdel1 a.close:active{
+    position: absolute;
+    top:4px;
+}
+.bdel2{
+    width: 700px;
+    height: 600px;
+    margin: 0 auto;
+}
+.bdel3{
+    height: 50px;
+    border-bottom: 1px solid #000000;
+}
+.bdel3 span{
+    width: 270px;
+    height: 49px;
+    float: left;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 50px;
+    margin-left:30px;
+}
+.bdel3 ul{
+    width: 400px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+    text-align: center;
+}
+.bdel3 ul li{
+    width: 90px;
+    height: 48px;
+    line-height: 48px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 5px;
+    background-color: #EEEEEE;
+}
+.bdel3 ul li a{
+    width: 90px;
+    height: 30px;
+    display: inline-block;
+    line-height:30px;
+    border-radius: 5px;
+    color: #000000;
+    font-size: 17px;
+}
+.bntact:active{
+    position: relative;
+    top:1px;
+}
+.bntact:hover{
+    background-color:#2db7f5
+}
+.bdel4{
+    height: 275px;
+    border-bottom: 1px solid #000000;
+}
+.bdel6{
+    height: 45px;
+}
+.bdel6 img{
+    width: 30px;
+    height: 27px;
+    float: left;
+    display: inline-block;
+    margin: 10px 0 0 0;
+}
+.bdel6 span{
+    width: 80px;
+    height: 45px;
+    text-align: right;
+    line-height: 45px;
+    float: left;
+    display: inline-block;
+}
+.bdel6 p{
+    width: 550px;
+    height: 45px;
+    line-height: 45px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+}
+.bdel7{
+    height: 75px;
+}
+.bdel7 h5{
+    width: 110px;
+    font-weight: normal;
+    height: 25px;
+    text-align: right;
+    line-height: 25px;
+    float: left;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+.bdel7 ul{
+    width: 580px;
+    height: 75px;
+    float: left;
+    display: inline-block;
+}
+.bdel7 ul li{
+    width: 290px;
+    height: 25px;
+    float: left;
+    line-height: 25px;
+    display: inline-block;
+    position: relative;
+}
+.bdel7 ul li span.bdel7sp{
+    width: 80px;
+    height: 25px;
+    float: left;
+}
+.bdel7 ul li p{
+    width: 210px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+}
+.bdel8{
+    height: 30px;
+}
+.bdel8 ul{}
+.bdel8 ul li{
+    width: 232px;
+    height: 30px;
+    float: left;
+    position: relative;
+}
+.bdel8 ul li span.bdel8sp{
+    width: 110px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    text-align: right;
+    float: left;
+}
+.bdel8 ul li p{
+    width: 110px;
+    height: 30px;
+    display: inline-block;
+    line-height: 30px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel9{
+    height: 25px;
+}
+.bdel9 ul{}
+.bdel9 ul li{
+    width: 232px;
+    height: 25px;
+    float: left;
+    position: relative;
+}
+.bdel9 ul li span.bdel9sp{
+    width: 110px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+    text-align: right;
+    float: left;
+}
+.bdel9 ul li p{
+    width: 110px;
+    height: 25px;
+    display: inline-block;
+    line-height: 25px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel10{
+    height: 90px;
+}
+.bdel10 span{
+    width: 110px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel10 p{
+    width: 565px;
+    height: 90px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel5{
+    height: 275px;
+    position: relative;
+}
+.bdel5 .fzjs{
+    position: absolute;
+    top:3px;
+    right: 0;
+    width: 60px;
+    height: 25px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bolder;
+}
+.bdel5 .fzjs:active{
+    position: absolute;
+    top: 4px;
+}
+.bdel11{
+    height: 75px;
+    margin: 15px 0 0 0;
+}
+.bdel11 ul{
+    height: 75px;
+    display: inline-block;
+    float: left;
+}
+.bdel11 ul li{
+    width: 350px;
+    height: 25px;
+    float: left;
+}
+.bdel11 ul li span{
+    width: 110px;
+    height: 25px;
+    text-align: right;
+    float: left;
+}
+.bdel11 ul li p{
+    width: 230px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel11 ul li p.bdel11p{
+    width: 170px;
+}
+.bdel11 ul li img{
+    float: left;
+}
+.bdel12{
+    width: 350px;
+    float: left;
+    height: 25px;
+}
+.bdel12 span{
+    width: 110px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel12 p{
+    width: 230px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel13{
+    height: 75px;
+    float: left;
+}
+.bdel13 span{
+    width: 110px;
+    height: 25px;
+    text-align: right;
+    float: left;
+}
+.bdel13 ul{
+    width: 580px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+.bdel13 ul li{
+    width: 280px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+}
+.bdel31{
+    height: 50px;
+    float: left;
+}
+.bdel31 span{
+    width: 110px;
+    height: 25px;
+    text-align: right;
+    float: left;
+}
+.bdel31 ul{
+    width: 580px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+.bdel31 ul li{
+    width: 280px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+}
+.bdel14{
+    height: 85px;
+    float: left;
+}
+.bdel14 span{
+    width: 110px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel14 p{
+    width: 550px;
+    height: 80px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel15{
+    width: 370px;
+    height: 25px;
+    position: relative;
+}
+.bdel15 span.bdel15sp{
+    width: 110px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel15 p{
+    width: 250px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel16{
+    height: 75px;
+}
+.bdel16 ul li{
+    width: 350px;
+    height: 25px;
+    float: left;
+}
+.bdel16 ul li span{
+    width: 110px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel16 ul li p{
+    width: 210px;
+    height: 25px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+.bdel17{
+    height: 150px;
+    margin: 15px 0 0 0;
+}
+.bdel17 ul{}
+.bdel17 ul li{
+    width: 230px;
+    height: 35px;
+    float: left;
+}
+.bdel17 ul li span{
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+    float: left;
+}
+.bdel17 ul li p{
+    width: 120px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 5px;
+}
+.bdel17 ul li img{
+    float: left;
+ }
+.bdel18{
+    width: 350px;
+    float: left;
+    height: 25px;
+}
+.bdel18 span{
+    width: 80px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel18 p{
+    width: 260px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel19{
+    height: 85px;
+    float: left;
+}
+.bdel19 span{
+    width: 80px;
+    height: 25px;
+    float: left;
+    text-align: right;
+}
+.bdel19 p{
+    width: 580px;
+    height: 80px;
+    float: left;
+    overflow: hidden;
+    margin: 0 0 0 10px;
+}
+.bdel20{
+    height: 25px;
+}
+.bdel20 h5{
+    width: 110px;
+    font-weight: normal;
+    height: 25px;
+    text-align: right;
+    line-height: 25px;
+    float: left;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+.bdel20 ul{
+    width: 580px;
+    height: 25px;
+    float: left;
+    display: inline-block;
+}
+.bdel20 ul li{
+    width: 290px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    display: inline-block;
+    position: relative;
+}
+.bdel20 ul li span.bdel20sp{
+    width: 70px;
+    height: 25px;
+    float: left;
+    text-align: right;
+    margin: 0 10px 0 0;
+}
+.bdel20 ul li p{
+    width: 210px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+}
+.bdel21{
+    height: 25px;
+}
+.bdel21 ul{}
+.bdel21 ul li{
+    width: 350px;
+    height: 25px;
+    float: left;
+}
+.bdel21 ul li span{
+    width: 110px;
+    height: 25px;
+    float: left;
+    display: inline-block;
+    text-align: right;
+}
+.bdel21 ul li p{
+    width: 220px;
+    height: 25px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+}
+.bdel22{
+    height: 25px;
+}
+.bdel22 span{
+    width: 110px;
+    height: 25px;
+    text-align: right;
+    float: left;
+}
+.bdel22 ul{
+    width: 580px;
+    height: 25px;
+    float: left;
+    margin: 0 0 0 10px;
+}
+.bdel22 ul li{
+    width: 280px;
+    height: 25px;
+    float: left;
+    overflow: hidden;
+}
+.bdel30{
+    height: 25px;
+}
+.bdel30 ul li{
+    width: 230px;
+    height: 25px;
+    float: left;
+}
+.bdel30 ul li span{
+    width: 110px;
+    height: 25px;
+    float: left;
+    display: inline-block;
+    text-align: right;
+}
+.bdel30 ul li p{
+    width: 110px;
+    height: 25px;
+    float: left;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    overflow: hidden;
+}
+/*blist.css*/
+.blists{
+    width: 1050px;
+    display: inline-block;
+    background-color:#4C93B9;
+}
+.blists ul{}
+.blists ul li.bplt{
+    width: 970px;
+    height: 95px;
+    background-color: #FFFFFF;
+    margin: 7px auto;
+    font-size: 15px;
+}
+/*blistall.css*/
+.bplt1{
+    width: 170px;
+    height: 90px;
+    float: left;
+}
+.bplt1 ul{}
+.bplt1 ul li{
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    overflow: hidden;
+}
+.bplt2{
+    width: 600px;
+    height: 90px;
+    float: left;
+}
+.bplt2 .bplta{
+    width: 600px;
+    height: 25px;
+}
+.bplta h5{
+    width: 100px;
+    height: 25px;
+    float: left;
+}
+.bplta ul{
+    width: 480px;
+    height: 25px;
+    float: left;
+}
+.bplta ul li{
+    width: 160px;
+    height: 25px;
+    float: left;
+    font-size: 13px;
+    overflow: hidden;
+}
+.bplta .bpltb{
+    text-align: right;
+}
+.bplta .bpltd{
+    text-align: center;
+}
+.bpltc{
+    width: 600px;
+    height: 30px;
+}
+.bpltc h5{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    overflow:hidden;
+}
+.bpltc span{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 5px;
+    border-top: 2px solid #B5D5DF;
+}
+.bpltc div{
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    float: left;
+    margin: -10px 0 0 0;
+    overflow: hidden;
+    font-size: 12px;
+}
+.bpltc p{
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    margin-right: 5px;
+    text-align: right;
+    border-top: 2px solid #B5D5DF;
+    font-size: 13px;
+}
+.bplte{
+    width: 600px;
+    height: 35px;
+}
+.bplte h5{
+    width: 60px;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+    border-top: 2px solid #B5D5DF;
+}
+.bplte ul{
+    width: 525px;
+    height: 33px;
+    border-top: 2px solid #B5D5DF;
+    float: left;
+}
+.bplte ul li{
+    width: 105px;
+    height: 33px;
+    line-height: 33px;
+    float: left;
+}
+.bplte ul li span{
+    width: 70px;
+    height: 33px;
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+    text-align: right;
+}
+.bplte ul li img{
+    display: inline-block;
+    float: left;
+    margin: 2px 0 0 2px;
+}
+.bplte .bpltediv{
+    width: 525px;
+    height: 33px;
+    border-top: 2px solid #B5D5DF;
+    float: left;
+    text-align: center;
+    line-height: 33px;
+}
+.bplte .bplte1{
+    width:262px;
+    height: 33px;
+    border-top: 2px solid #B5D5DF;
+    float: left;
+    text-align: right;
+    line-height: 33px;
+}
+.bplte1 span{
+    width: 230px;
+    height: 33px;
+    float: left;
+}
+.bplte1 img{
+    display: inline-block;
+    float: left;
+    margin: 2px 0 0 2px;
+}
+.bplte .bplte2{
+    width:263px;
+    height: 33px;
+    border-top: 2px solid #B5D5DF;
+    float: left;
+    line-height: 33px;
+}
+.bplte2 span{
+    width: 100px;
+    height: 33px;
+    float: left;
+    text-align: right;
+}
+.bplte2 img{
+    display: inline-block;
+    float: left;
+    margin: 2px 0 0 2px;
+}
+.bplt3{
+    width: 170px;
+    height: 90px;
+    float: left;
+}
+.bplt3 ul{}
+.bplt3 ul li{
+    width: 170px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    overflow: hidden;
+}
+.bplt4{
+    width: 30px;
+    height: 90px;
+    float: left;
+}
+.bplt4 a{
+    display: inline-block;
+    width: 15px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    margin:30px 0 0 0;
+    color: #4390BE;
+}
+/*bseach.css*/
+.bpllist{
+    margin: 20px 0 0 0;
+    width: 1050px;
+    background-color: #67C8FF;
+}
+.bplcondition1{
+    width: 1050px;
+    height: 35px;
+    border-bottom: 1px solid #000000;
+}
+.bpl1{  }
+.bpl1 li{
+    width: 250px;
+    height: 30px;
+    float: left;
+    font-size: 15px;
+    color: #000011;
+}
+.bplsp{
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: right;
+    margin: 0 5px 0 0;
+}
+.bpl2{
+    margin: 0 0 0 5px;
+}
+.bpl2 div{
+    border-radius: 1px;
+}
+.bplcondition2{
+    width: 1050px;
+    height: 35px;
+    border-bottom: 1px solid #000000;
+}
+.bpl3{
+    width: 505px;
+    height: 35px;
+    float: left;
+}
+.bpl3 ul{}
+.bpl3 ul li{
+    width: 250px;
+    height: 30px;
+    float: left;
+    font-size: 15px;
+    color: #000011;
+}
+.bpl4{
+    width: 510px;
+    height: 35px;
+    float: left;
+}
+.bpl4 ul{}
+.bpl4 ul li{
+    width: 250px;
+    height: 30px;
+    float: left;
+    font-size: 15px;
+    color: #000011;
+}
+.bplcondition3{
+    width: 1050px;
+    height: 35px;
+    box-shadow: 0 1px 1px #000000;
+}
+.bpl5{ }
+.bpl5 li{
+    width: 130px;
+    height: 35px;
+    color: #000011;
+    font-size: 15px;
+    float: left;
+    text-align: center;
+}
+.bpl5 li a{
+    background-color: #5895B2;
+    display: inline-block;
+    width: 60px;
+    height: 25px;
+    margin: 2px 0 0 0;
+    box-shadow: 0 1px 1px #000000;
+    color: #000;
+    text-align: center;
+}
+.bpl5 li a:active{
+    position: relative;
+    top:1px;
+}
