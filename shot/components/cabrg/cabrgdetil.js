@@ -167,17 +167,19 @@ export default class Cabpdetil extends Component {
                         </li>
                         <li>
                             <h5>最晚退关时间:</h5>
-                            {
+                            <span>最晚退关时间</span>
+                            {/* {
                                 this.props.cabrgnew.cabDispdetail.lastShutTime == null ? '' :
                                     <span>{moment(this.props.cabrgnew.cabDispdetail.lastShutTime).format('YYYY-MM-DD')}</span>
-                            }
+                            } */}
                         </li>
                         <li>
                             <h5>运价有效期:</h5>
-                            {
+                            <span>运价有效期</span>
+                            {/* {
                                 this.props.cabgnew.cabDispdetail.lastShutTime == null ? '' :
                                     <span>{moment(this.props.cabgnew.cabDispdetail.expiTime).format('YYYY-MM-DD')}</span>
-                            }
+                            } */}
                         </li>
                     </ul>
                 </div>

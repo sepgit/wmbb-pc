@@ -21,8 +21,8 @@ function get_gyye(date) {
     resiUsd:date.resiUsd
   }
 }
-
-export function getgyye(userName,token){
+//之上 的就是一个  Action   type  就是action 的名字 携带的信息 就是 下面的几个内容
+ export function getgyye(userName,token){
   return function(dispatch) {
     fetch(HTTPED+'api/cabDepos/?userName='+userName+'&token='+token+'&resi=true',{
       method: "get",

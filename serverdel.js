@@ -7,12 +7,12 @@ var webpackHotMiddleware = require('webpack-hot-middleware');
 var config = require('./del.webpack.config');
 
 var app = new (require('express'))();
-var port = 8080;
+var port = 8004;
 
 var compiler = webpack(config);
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
 app.use(webpackHotMiddleware(compiler));
-//ÅäºÏreact router µÄ browserHistory
+//ï¿½ï¿½ï¿½react router ï¿½ï¿½ browserHistory
 app.get('/*', function (req, res) {
     res.sendFile(__dirname + '/shot/src/htmls/index.html')
 });

@@ -2,7 +2,7 @@
  * Created by Zing on 2016/6/17.
  */
 import { compose,createStore,applyMiddleware } from 'redux';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
 import reducer from './reducer/rindex';
 import DevTools from './devtools';
 

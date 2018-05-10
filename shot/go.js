@@ -321,4 +321,5 @@ ReactDOM.render(
     <Router history={historys} routes={routes}/>
   </Provider>, document.getElementById('app')
 );
+
 module.hot.accept();

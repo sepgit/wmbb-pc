@@ -30,6 +30,7 @@ export default class Cabrglistall extends Component {
       isxq:true
     });
     //获取舱位保函详情
+    console.log(this.props.cabrgnew.cabDispdetail);
     let userName=this.state.userName;
     let token=this.state.token;
     let cabDisp=this.props.rows.cabDisp;

@@ -29,6 +29,7 @@ export default class Admid extends Component {
         this.props.actions.getportsyjys(userName,token);//获取所有港口
         this.props.actions.getkannoq(userName,token);//获取最近起运港口 不带服务
         this.props.actions.getkannom(userName,token);//获取最近目的港口 不带服务
+        console.log('admin');
     }
     render() {
         return (

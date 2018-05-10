@@ -377,7 +377,7 @@ export default class Cabdetil extends Component {
                 </div>
             </div>
           <div className="cab20">
-            <span>流程记录</span>
+            <span>流程记录1</span>
           </div>
           <div className="cab16">
             <div className="cab17">
@@ -398,7 +398,7 @@ export default class Cabdetil extends Component {
                       this.props.cabnew.cabEnquL.replChkFin==1?'已履约':
                           this.props.cabnew.cabEnquL.replChkFin==2?'未履约':'未确认'
                   }
-              </span>
+                  </span>
               </div>
               {
                   this.props.cabnew.cabEnquL.replChkFin==2?

@@ -197,6 +197,7 @@ import {
 class Cabg extends Component {
   render() {
     const { actions,text,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabgnew,cabmynew} = this.props;
+    console.log(actions);
     return (
       <div className="cabpage">
         <Gotop />
@@ -240,7 +241,7 @@ function mapDispatchToProps(dispatch){
     actions:bindActionCreators({
       getyg:getyg,
       getqx:getqx,
-      gethgerxx:gethgerxx,
+      gethgerxx:gethgerxx,//个人信息
       gethports:gethports,
       getindus:getindus,
       gethtcdl:gethtcdl,
