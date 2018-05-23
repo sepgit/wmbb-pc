@@ -7,7 +7,7 @@ import HTTPED from '../../date/address';
 import moment from 'moment';
 import Cabgdetil from './cabgdetil';
 import {VelocityComponent, VelocityTransitionGroup} from 'velocity-react';
-
+//供舱方发起的求舱列表 列表页
 export default class Cabglistall extends Component {
   constructor(props) {
     super(props);
@@ -74,21 +74,29 @@ export default class Cabglistall extends Component {
       </div>
     );
     let EnquStat,zt;
-    switch(this.props.rows.cabSt){
-      case 1:
+    switch(this.props.rows.stat){
+      case 10:
         EnquStat='正常';
         zt ='zt1';
         break;
-      case 2:
-        EnquStat='退关';
-        zt ='zt4';
+      case 20:
+        EnquStat='过期';
+        zt ='zt5';
         break;
-      case 3:
+      case 30:
         EnquStat='履约';
         zt ='zt3';
         break;
-      case 4:
+      case 40:
+        EnquStat='退关';
+        zt ='zt4';
+        break;
+      case 50:
         EnquStat='争议';
+        zt ='zt5';
+        break;
+      case 60:
+        EnquStat='撤销';
         zt ='zt5';
         break;
       default:
@@ -96,7 +104,9 @@ export default class Cabglistall extends Component {
         zt ='';
         break;
     }
+    console.log(this.props.rows)
     return (
+      
       <li className="cab9">{/* className='cab99'*/}
         {/*<div className="cab132">
           <div className="cab101" >
@@ -134,11 +144,11 @@ export default class Cabglistall extends Component {
               </div>
               <div className="cab12">
                   <h5>手机号:</h5>
-                  <span></span>
+                  <span>{this.props.rows.mobi}</span>
               </div>
               <div className="cab12">
                   <h5>货物状态:</h5>
-                  <span></span>
+                  <span>{this.props.rows.goodsStat}</span>
               </div>
               <div className="cab12">
                   <h5>供舱人:</h5>
@@ -150,7 +160,7 @@ export default class Cabglistall extends Component {
               </div>
               <div className="cab12">
                   <h5>承运商:</h5>
-                  <span></span>
+                  <span>{this.props.rows.carrName}</span>
               </div>
               <div className="cab12">
                   <h5>求舱编号:</h5>
@@ -158,19 +168,24 @@ export default class Cabglistall extends Component {
               </div>
               <div className="cab12">
                   <h5>舱位状态:</h5>
-                  <span></span>
+                  <span className={zt}>{EnquStat}</span>
+                  {/* <span>{this.props.rows.allDepo}</span> */}
               </div>
               <div className="cab12">
                   <h5>定金金额:</h5>
-                 <span></span>
+                 <span>{this.props.rows.allDepo}</span>
               </div>
               <div className="cab12">
                   <h5>内陆费用:</h5>
-                 <span></span>
+                 <span>{this.props.rows.cabFee}</span>
               </div>
               <div className="cab60">
                   <h5>中标时间:</h5>
-                 <span></span>
+                 {/* <span>{this.props.rows.creatTime}</span> */}
+                 {
+                    this.props.rows.creatTime!=null?
+                      <span>{moment(this.props.rows.creatTime).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
+                  }
               </div>
 
           </div>

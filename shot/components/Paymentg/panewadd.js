@@ -130,6 +130,7 @@ export default class Panewadd extends Component {
     }
   }
   handfs(){
+    
     let userName=this.state.userName;
     let token=this.state.token;
     let payUser=this.state.fkid;
@@ -271,6 +272,7 @@ export default class Panewadd extends Component {
         <p>手机:{this.state.fsj}</p>
       </div>
     );
+    console.log(this.props.pays);
     return (
       <div className="paydd">
         <div className="paydd1">

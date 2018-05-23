@@ -58,6 +58,7 @@ export default class cabplistall extends Component {
     });
   }
   render() {
+    console.log(this.props.rows.showname);
     return (
       <li className="cab99">
         <div className="cab10">
@@ -75,7 +76,8 @@ export default class cabplistall extends Component {
           </div>
           <div className="cab101" >
             <h5>供舱公司:</h5>
-            <span>{this.props.rows.resCompAlia}</span>
+            <span>{this.props.rows.showname==0?"（求购成功后显示）":this.props.rows.resCompAlia}</span>
+            {/* <span>{this.props.rows.resCompAlia}</span> */}
           </div>
         </div>
         <div className="cab104">

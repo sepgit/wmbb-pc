@@ -4,7 +4,7 @@
 import React,{Component} from 'react';
 import moment from 'moment';
 import Bgcdel from './bgcdel';
-
+import { Select, Checkbox, message } from 'antd';
 export default class Bdelfr extends Component {
     constructor(props) {
         super(props);
@@ -13,14 +13,34 @@ export default class Bdelfr extends Component {
         this.handhl=this.handhl.bind(this);
         this.handzf=this.handzf.bind(this);
         this.handhf=this.handhf.bind(this);
+        this.lvcl = this.lvcl.bind(this);
+        this.lvclc = this.lvclc.bind(this);
+        this.lvChange = this.lvChange.bind(this);
         this.state={
             userName:sessionStorage.getItem("SESSIONUSERACC"),
             token:sessionStorage.getItem("SESSIONTOKEN"),
             userid:sessionStorage.getItem("SESSIONUSER"),
             comp:sessionStorage.getItem("SESSIONCOMP"),
-            repl:sessionStorage.getItem("SESSIONSYSREPL")
+            repl:sessionStorage.getItem("SESSIONSYSREPL"),
+            checked:true,
+            islv: false
         }
     }
+    lvcl() {
+        this.setState({
+            islv: true
+        })
+    }
+    lvclc() {
+        this.setState({
+            islv: false
+        })
+    }
+    lvChange(e) {
+        this.setState({
+          checked: e.target.checked
+        })
+      }
     handzf(){
         this.props.actions.gethpcarrs(this.state.userName,this.state.token,this.props.bck.enqudx.serv);//获取该服务承运商
         this.props.actions.getportshf(this.state.userName,this.state.token,this.props.bck.enqudx.serv);//获取该服务的港口
@@ -217,6 +237,18 @@ export default class Bdelfr extends Component {
                                     <Bgcdel actions={this.props.actions}
                                             bck={this.props.bck}/>
                             }
+                            <div className="getxp7ss">
+                                <div className="getxp8">
+                                    <a href="javascript:void(0);" onClick={this.lvcl}>请先浏览《供舱方协议》</a>
+                                </div>
+                                <div className="getxp9">
+                                    <Checkbox checked={this.state.checked}
+                                        onChange={this.lvChange}
+                                    >
+                                        我已阅读，并接受。
+                            </Checkbox>
+                                </div>
+                            </div>
                         </div>
                         <div className="bdel5">
                             <div className="bdel11">
@@ -348,6 +380,34 @@ export default class Bdelfr extends Component {
                             }
                         </div>
                     </div>
+                    {
+                        this.state.islv ?
+                        <div className="getxp10bg">
+                            <div className="getxp10s">
+                                <div className="getxp11">
+                                    <h2>为解决货运舱位的不确定，完善行业内信用体制。 请遵守以下协议：</h2>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;1.贵方所有帐号在物贸帮帮网站上的所有动作均代表贵方企业意愿并承担相应法律责任。贵方公司管理员账号是与贵方签订的书面协议里的账号，如有变更公司管理员，以新的公司管理员为准。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;2.贵方需提供一定金额的押金给平台，用于与贵方求舱方的舱位保函的定金，每次的定金数额由求舱方来定。贵方可以接受也可以拒绝，接受就可以押上同等定金报价，如拒绝可以不回复价格。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;3.贵方收到到贵方求舱方的求舱保函时，可以回复价格，在有效期内如被贵方求舱方中标，则求供舱双方形成了有效的舱位保函协议，双方必须按照各自的要求履约。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;4.如贵方求舱方在选择内陆运输为“求舱方安排车队”后，则贵方求舱方需要录入准确的车牌号和司机手机号，否则日后如有纠纷，对求舱方不利。车队提不到空箱的认定条件为：如提不到空箱，贵方求舱方需立即与贵方发送手机短信、EMAIL、微信等书面信息，并打电话确认是否无空箱，如贵方确认无空箱，则贵方求舱方未违约。如求舱方有提箱需求的书面信息给贵方，贵方未回复的。由甲方进行调查，确定是否违约。贵方如有不服，可向平台所在地仲裁。（供舱方履约条件为“货物上运输工具”的除外）<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;5.如贵方求舱方在选择内陆运输为“供舱方安排车队”后，贵方需要录入准确的车牌号和司机手机号，否则日后如有纠纷，对贵方不利。车队提不到空箱的认定条件为：如提不到空箱，需立即与贵方求舱方发送手机短信、EMAIL、微信等书面信息，并打电话确认是否无空箱，如求舱方确认无空箱，则贵方未违约。如贵方有提箱需求的书面信息给求舱方，求舱方未回复的。由甲方进行调查，确定是否违约。贵方如有不服，可向平台所在地仲裁。（供舱方履约条件为“货物上运输工具”的除外）<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;6.贵方求舱方在保函成立之时，两个小时内，可无责点击“退关”，无违约费用。如超过两小时之后，在最晚退关时间之前点击“退关”，贵方求舱方将产生平台服务费。当超过最晚退关时间点击“退关”或者违约时，贵方求舱方视为违约，则贵方求舱方的定金罚没。平台将贵方求舱方的80%的定金补偿给贵方。。如贵方违约，贵方的定金将被罚没，20%交于平台作为平台费用。80%补偿给贵方求舱方。当双方都违约，或者遇到第三方等非人为所控的因素造成违约，平台也视为求供舱双方不违约。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;7.当求供舱双方顺利完成交易，确认对方都已履约后，则系统自动退回所押定金。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;8.8.当贵方多次出现违约情况，平台将予以警告，并酌情考虑其是否继续使用该产品。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;9.9.贵方求舱方选择“货物进仓”所做的舱位保函时，贵方或者贵方求舱方必须使用平台指定的仓库。费用由贵方或者贵方求舱方与平台结算。<br /><br />
+                                    <h2>特别说明：</h2>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;1.选择“货物进仓”的内陆方式：如遇货物查验或者运输工具临时取消时，以及仓库提不到空箱，则视为特殊情况，求供舱双方互不违约。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;2.选择“求舱方安排车队”的内陆方式：如遇货物查验或者运输工具临时取消时，以及车队提不到空箱，则视为特殊情况，求供舱双方互不违约。如求舱方选择贵方的履约条件为“货物上运输工具”，车队提不到空箱不能视为特殊情况，属于贵方违约。但贵方求舱方必须在提不到箱子时候第一时间联系贵方，如两个小时内贵方不能解决空箱提取，则视为贵方违约。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;3.选择“供舱方安排车队”的内陆方式：如遇货物查验或者运输工具临时取消时，以及车队提不到空箱，则视为特殊情况，求供舱双方互不违约。如贵方求舱方选择贵方的履约条件为“货物上运输工具”，车队提不到空箱不能视为特殊情况，属于贵方违约。<br /><br />
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;4.履约条件是“货物上运输工具”，即意味着供舱方必须保证箱子和舱位，任意一项违约即为供舱方违约。除非在免责条款里说明的事项。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;5.货物查验或者运输工具临时取消发生的违约，属于求供舱双方互不违约。<br /><br />
+                                    &nbsp;&nbsp;&nbsp;&nbsp;6.平台对违约以及各项条款有最终解释权。<br /><br />
+                                </div>
+                                <a className="getxp12" href='javascript:void(0);' onClick={this.lvclc}>关闭</a>
+                            </div>
+                            </div> : undefined
+                    }
                 </div>
             </div>
         );

@@ -148,6 +148,7 @@ export default class Lmid extends Component {
     const content3 = (<div><p>健全和完善的供应商管理体系，整合公司的供应商资源，为公司开展不同业务提供保障。</p></div>);
     const texts4=(<span>优势管理系统</span>);
     const content4 = (<div><p>免费添加运价优势和服务优势，展现给所有平台用户，可以有效地开发客户资源。</p></div>);
+    // console.log(this.props.user);
     return (
       <div className="lmid">
         <div className="toper6">

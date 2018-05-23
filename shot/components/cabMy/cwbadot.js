@@ -2,7 +2,7 @@
  * Created by Chen on 2017/12/13.
  */
 import React,{Component} from 'react';
-import {Input,DatePicker,Select,message} from 'antd';
+import {Input,DatePicker,Select,message,Checkbox} from 'antd';
 import moment from 'moment';
 const Option = Select.Option;
 const OptGroup = Select.OptGroup;
@@ -18,6 +18,7 @@ export default class Cwbadot extends Component {
     this.handcm=this.handcm.bind(this);
     this.handcms=this.handcms.bind(this);
     this.handfilts=this.handfilts.bind(this);
+    this.showName=this.showName.bind(this);
     this.state={
       userName:sessionStorage.getItem("SESSIONUSERACC"),
       token:sessionStorage.getItem("SESSIONTOKEN"),
@@ -40,9 +41,12 @@ export default class Cwbadot extends Component {
       lastShutTime:null,
       sailTime:null,
       closTime:null,
+      voyage:'',
+      trans:'',
       leng:'',
       widt:'',
-      high:''
+      high:'',
+      checked:false
     }
   }
   handfilts(inputValue,option){
@@ -134,12 +138,68 @@ export default class Cwbadot extends Component {
     let leng=this.state.leng;
     let widt=this.state.widt;
     let high=this.state.high;
-    this.props.actions.postcwbfbot(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,RF20,RF20Fee,RF20Cos,RF40,RF40Fee,RF40Cos,leng,widt,high,currCos);
-    this.props.fonClose(false,'');
+    let voyage=this.state.voyage;
+    let trans=this.state.trans;
+    let showname ;
+    if (this.state.checked) {
+      showname = 0;
+    }else {
+      showname = 1;
+    }
+    let RF20TF,RF40TF;
+    if (RF20 != "" || RF20Fee !="" || RF20Cos !="") {
+      RF20TF = false
+    }else {
+      RF20TF = true;
+    }
+    if (RF40 != "" || RF40Fee !="" || RF40Cos !="") {
+      RF40TF = false
+    }else {
+      RF40TF = true;
+    }
+    console.log(RF20TF,RF40TF);
+    if (carr == "") {
+      message.error('承运商不能为空');
+    }else if (depaPort == "") {
+      message.error('起运地不能为空');
+    }else if (destPort == "") {
+      message.error('目的地不能为空');
+    }else if (reqPref == "") {
+      message.error('求舱履约不能为空');
+    }else if (resPref == "") {
+      message.error('供舱履约不能为空');
+    }else if (expiTime == "") {
+      message.error('运价有效期：不能为空');
+    }else if (lastShutTime == "") {
+      message.error('最晚退关时间不能为空');
+    }else if (closTime == "") {
+      message.error('截关时间不能为空');
+    }else if (sailTime == "") {
+      message.error('开航时间不能为空');
+    }else if (high == "") {
+      message.error('限高不能为空');
+    }else if (widt == "") {
+      message.error('限宽不能为空');
+    }else if (leng == "") {
+      message.error('限长不能为空');
+    }else if(RF20TF && RF40TF) {
+      message.error('至少填写一个箱型');
+    }else{
+      this.props.actions.postcwbfbot(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,RF20,RF20Fee,RF20Cos,RF40,RF40Fee,RF40Cos,leng,widt,high,currCos,showname,voyage,trans);
+      this.props.fonClose(false,'');
+    }
+    // this.props.actions.postcwbfbot(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,RF20,RF20Fee,RF20Cos,RF40,RF40Fee,RF40Cos,leng,widt,high,currCos,showname,voyage,trans);
+    // this.props.fonClose(false,'');
+    
   }
   handgb(){
     //关闭
     this.props.fonClose(false,'');
+  }
+  showName(e) {
+    this.setState({
+      checked: e.target.checked
+    })
   }
   render() {
     let djzjye="充值余额"+this.props.cabmynew.residual;
@@ -161,7 +221,13 @@ export default class Cwbadot extends Component {
                   <p>{this.props.stat}</p>
                 </li>
                 <li className="cwbadd16">
-                  <h4>承运商：</h4>
+                  <h4>隐私：</h4>
+                  <p>
+                    <Checkbox checked={this.state.checked} onChange={this.showName}/> &nbsp;&nbsp;购买后才能查看我的信息
+                  </p>
+                </li>
+                <li className="cwbadd16">
+                  <h4><span className="thered">*</span>承运商：</h4>
                   <Select showSearch
                           value={this.state.cys}
                           className="cwbadd14"
@@ -176,7 +242,7 @@ export default class Cwbadot extends Component {
                   </Select>
                 </li>
                 <li className="cwbadd16">
-                  <h4>起运地：</h4>
+                  <h4><span className="thered">*</span>起运地：</h4>
                   <Select combobox
                           value={this.state.qydn}
                           className="cwbadd14"
@@ -194,7 +260,7 @@ export default class Cwbadot extends Component {
                   </Select>
                 </li>
                 <li className="cwbadd16">
-                  <h4>目的地：</h4>
+                  <h4><span className="thered">*</span>目的地：</h4>
                   <Select combobox
                           value={this.state.mddn}
                           className="cwbadd14"
@@ -211,10 +277,12 @@ export default class Cwbadot extends Component {
                     }
                   </Select>
                 </li>
+                <li className="cwbadd16">
+                </li>
               </ul>
             </div>
             <div className="cwbadd20">
-              <h4>箱型：</h4>
+            <h4><span className="thered">*</span>箱型（至少填写一个）：</h4>
               <div className="cwbadd21">
                 <div className="cwbadd10">
                   <div className="cwbadd11">
@@ -306,7 +374,7 @@ export default class Cwbadot extends Component {
             </div>
             <div className="cwbadd22">
               <div className="cwbadd23">
-                <h4>限长：</h4>
+                <h4><span className="thered">*</span>限长：</h4>
                 <Input
                   style={{ width: 100 }}
                   placeholder="长"
@@ -316,7 +384,7 @@ export default class Cwbadot extends Component {
                 <p>m</p>
               </div>
               <div className="cwbadd23">
-                <h4>限宽：</h4>
+                <h4><span className="thered">*</span>限宽：</h4>
                 <Input
                   style={{ width: 100 }}
                   placeholder="宽"
@@ -326,7 +394,7 @@ export default class Cwbadot extends Component {
                 <p>m</p>
               </div>
               <div className="cwbadd23">
-                <h4>限高：</h4>
+                <h4><span className="thered">*</span>限高：</h4>
                 <Input
                   style={{ width: 100 }}
                   placeholder="高"
@@ -337,9 +405,9 @@ export default class Cwbadot extends Component {
               </div>
             </div>
             <div className="cwbadd6">
-              <ul>
+              <ul>              
                 <li className="cwbadd17">
-                  <h5>求舱履约：</h5>
+                  <h5><span className="thered">*</span>求舱履约：</h5>
                   <Select showSearch
                           value={this.state.reqPref}
                           className="cwbadd15"
@@ -355,7 +423,7 @@ export default class Cwbadot extends Component {
                   </Select>
                 </li>
                 <li className="cwbadd17">
-                  <h5>供舱履约：</h5>
+                  <h5><span className="thered">*</span>供舱履约：</h5>
                   <Select showSearch
                           value={this.state.resPref}
                           className="cwbadd15"
@@ -370,7 +438,7 @@ export default class Cwbadot extends Component {
                   </Select>
                 </li>
                 <li className="cwbadd17">
-                  <h5>运价有效期：</h5>
+                  <h5><span className="thered">*</span>运价有效期：</h5>
                   <DatePicker
                     showTime
                     style={{ width: 200 , marginTop:10 }}
@@ -381,7 +449,7 @@ export default class Cwbadot extends Component {
                   />
                 </li>
                 <li className="cwbadd17">
-                  <h5>最晚退关时间：</h5>
+                  <h5><span className="thered">*</span>最晚退关时间：</h5>
                   <DatePicker
                     showTime
                     style={{ width: 200 , marginTop:10 }}
@@ -392,7 +460,7 @@ export default class Cwbadot extends Component {
                   />
                 </li>
                 <li className="cwbadd17">
-                  <h5>截关时间：</h5>
+                  <h5><span className="thered">*</span>截关时间：</h5>
                   <DatePicker
                     showTime
                     style={{ width: 200 , marginTop:10 }}
@@ -403,7 +471,7 @@ export default class Cwbadot extends Component {
                   />
                 </li>
                 <li className="cwbadd17">
-                  <h5>开航时间：</h5>
+                  <h5><span className="thered">*</span>开航时间：</h5>
                   <DatePicker
                     style={{ width: 200 , marginTop:10 }}
                     format="yyyy.MM.dd"
@@ -412,7 +480,24 @@ export default class Cwbadot extends Component {
                     onChange={(v)=>{return this.setState({sailTime:v})}}
                   />
                 </li>
-
+                <li className="cwbadd17">
+                    <h5>运输工具：</h5>
+                    <Input
+                      style={{ width: 200 }}
+                      placeholder="请输入运输方式"
+                      className="cwbadd12"
+                      onChange={(e)=>{return this.setState({trans:e.target.value})}}
+                    />
+                </li>
+                <li className="cwbadd17">
+                    <h5>航次：</h5>
+                    <Input
+                      style={{ width: 200 }}
+                      placeholder="请输入航次"
+                      className="cwbadd12"
+                      onChange={(e)=>{return this.setState({voyage:e.target.value})}}
+                    />
+                </li> 
               </ul>
             </div>
           </div>

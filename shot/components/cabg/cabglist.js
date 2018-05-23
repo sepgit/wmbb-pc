@@ -27,6 +27,7 @@ export default class Cabglist extends Component {
   renderList(){
     let re=[];
     this.state.page==1?re=this.props.cabgnew.cabDispsList:re=this.state.hhs;
+    // console.log(re);
     return re.map((item, index) => {
       return <Cabglistall
         key={index}

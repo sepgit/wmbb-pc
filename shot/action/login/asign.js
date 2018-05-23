@@ -657,3 +657,36 @@ export function getdlfw(){
     });
   }
 }
+
+//获取最近舱位展示
+export const GET_DLCW = 'GET_DLCW';
+
+function get_dlcw(date) {
+  return {
+    type: GET_DLCW,
+    err:date.err,
+    errMsg:date.errMsg,
+    dlcw:date.rows
+  }
+}
+
+export function getdlcw(){
+  return function(dispatch) {
+    fetch(HTTPED+'api/lgPages/conts/',{
+      method: "get",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      }
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date){
+          if(!date.err){
+            dispatch(get_dlcw(date));
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
+}

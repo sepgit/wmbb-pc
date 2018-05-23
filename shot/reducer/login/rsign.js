@@ -14,7 +14,8 @@ import {
   GET_DLXP,
   GET_DLZX,
   GET_DLYJ,
-  GET_DLFW
+  GET_DLFW,
+  GET_DLCW
 } from '../../action/login/asign';
 
 const initialState ={
@@ -30,10 +31,17 @@ const initialState ={
   dlzx:[],
   dlyj:[],
   dlfw:[],
+  dlcw:[],
   signjh:false
 };
 export default function login(state=initialState,action){
   switch (action.type){
+    case GET_DLCW:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        dlcw:action.dlcw
+      });
     case GET_DLFW:
       return Object.assign({}, state, {
         err:action.err,

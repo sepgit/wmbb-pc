@@ -4,13 +4,14 @@
 import React,{Component} from 'react';
 import Cxtop from '../../components/login/cxtop';
 import Lmid from '../../components/login/lmid';
-import {putlogin,postjhyj,putjh,putloginurl,getdlxp,getdlzx,getdlyj,getdlfw} from '../../action/login/asign';
+import {putlogin,postjhyj,putjh,putloginurl,getdlxp,getdlzx,getdlyj,getdlfw,getdlcw} from '../../action/login/asign';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
 class Login extends Component {
   render() {
     const { actions, user} = this.props;
+    console.log(user);
     return (
       <div className="loginpage">
         <Cxtop />
@@ -35,7 +36,8 @@ function mapDispatchToProps(dispatch){
       getdlxp:getdlxp,
       getdlzx:getdlzx,
       getdlyj:getdlyj,
-      getdlfw:getdlfw
+      getdlfw:getdlfw,
+      getdlcw:getdlcw
     },dispatch)
   }
 }

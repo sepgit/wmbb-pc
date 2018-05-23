@@ -8,6 +8,7 @@ import HTTPED from '../../date/address';
 import moment from 'moment';
 import {VelocityComponent, VelocityTransitionGroup} from 'velocity-react';
 
+//求舱方发起的求舱列表  列表页
 export default class Cablistall extends Component {
   constructor(props) {
     super(props);
@@ -36,6 +37,7 @@ export default class Cablistall extends Component {
     let cabRepl=this.props.rows.cabRepl;
     this.props.actions.gethqxq(userName,token,cabEnqu,cabRepl);
   }
+  
   handxqc(){
     this.setState({
       isxq:false
@@ -97,6 +99,9 @@ export default class Cablistall extends Component {
         zt ='';
         break;
     }
+
+    
+    //console.log(this.props.rows)
     return (
       <li className="cab9">
           <div className="cab10">

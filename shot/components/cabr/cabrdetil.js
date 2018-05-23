@@ -94,6 +94,7 @@ export default class Cabrdetil extends Component {
             }
         }
     }
+    
     render() {
         let qcf=this.props.cabrnew.cabReplr.enquFile;
         let gcf=this.props.cabrnew.cabReplr.replFile;
@@ -108,6 +109,39 @@ export default class Cabrdetil extends Component {
         }else{
             gcfl='';
         }
+
+        let EnquStat,zt;
+        switch(this.props.cabrnew.cabReplr.stat){
+        case 10:
+            EnquStat='正常';
+            zt ='zt1';
+            break;
+        case 20:
+            EnquStat='过期';
+            zt ='zt5';
+            break;
+        case 30:
+            EnquStat='履约';
+            zt ='zt3';
+            break;
+        case 40:
+            EnquStat='退关';
+            zt ='zt4';
+            break;
+        case 50:
+            EnquStat='争议';
+            zt ='zt5';
+            break;
+        case 60:
+            EnquStat='撤销';
+            zt ='zt5';
+            break;
+        default:
+            EnquStat='';
+            zt ='';
+            break;
+        }
+        //console.log(this.props.cabrnew.cabReplr);
         return (
             <div className="cabzzc">
                 <div className="cab70">
@@ -174,7 +208,7 @@ export default class Cabrdetil extends Component {
                             </li>*/}
                             <li>
                                 <h5>舱位状态:</h5>
-                                <span></span>
+                                <span className={zt}>{EnquStat}</span>
                             </li>
                             <li>
                                 <h5>货物状态:</h5>
@@ -196,7 +230,10 @@ export default class Cabrdetil extends Component {
                             </li>
                             <li>
                                 <h5>运价有效期:</h5>
-                                <span></span>
+                                {
+                                    this.props.cabrnew.cabReplr.expiDate == null ? '' :
+                                        <span>{moment(this.props.cabrnew.cabReplr.expiDate).format('YYYY-MM-DD HH:mm:ss')}</span>
+                                }
                             </li>
                         </ul>
                     </div>

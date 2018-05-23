@@ -59,7 +59,8 @@ export default class Cabpdetil extends Component {
                   </li>
                   <li>
                     <h5>供舱方:</h5>
-                    <span>{this.props.cabnewr.cabDispdetail.resName}</span>
+                    <span>{this.props.cabnewr.cabDispdetail.showname==0?"（求购成功后显示）":this.props.cabnewr.cabDispdetail.resName}</span>
+                    {/* <span>{this.props.cabnewr.cabDispdetail.resName}</span> */}
                   </li>
                   <li>
                     <h5>开航时间:</h5>
@@ -69,13 +70,13 @@ export default class Cabpdetil extends Component {
                     }
                   </li>
                   <li>
-                    <h5>内陆方式:</h5>
+                    <h5>内陆运输方式:</h5>
                     <span>{this.props.cabnewr.cabDispdetail.inldType}</span>
                   </li>
-                  <li>
+                  {/* <li>
                     <h5>舱位保函状态:</h5>
                     <span>{zt}</span>
-                  </li>
+                  </li> */}
                   <li>
                     <h5>最晚退关时间:</h5>
                     {

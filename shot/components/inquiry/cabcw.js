@@ -90,12 +90,12 @@ export default class Cabcw extends Component {
                   this.props.cabnew.gysfw.map(s => <Option key={s.serv}>{s.servName}</Option>)
                 }
               </Select>
-              <div className="xnew66">
+              {/* <div className="xnew66">
                 <h4>内陆费用</h4>
                 {
                   this.props.cabFee > 0 ?<h5>:{this.props.bz == '1' ? 'CNY' : 'USD'} {this.props.cabFee > 0 ? this.props.cabFee : 0}</h5>:<h5></h5>
                 }
-              </div>
+              </div> */}
               {/*<Select showSearch
                value={this.props.gys2}
                className="xnew35"

@@ -125,6 +125,31 @@ export default class Cabdetil extends Component {
         tgstr=undefined;
       }
     }
+    let EnquStat,zt;
+    switch(this.props.cabnew.cabEnquL.stat){
+      case 30:
+        EnquStat='其他';
+        zt ='zt1';
+        break;
+      case 40:
+        EnquStat='退关';
+        zt ='zt4';
+        break;
+      // case 3:
+      //   EnquStat='履约';
+      //   zt ='zt3';
+      //   break;
+      // case 4:
+      //   EnquStat='争议';
+      //   zt ='zt5';
+      //   break;
+      default:
+        EnquStat='';
+        zt ='';
+        break;
+    }
+    // console.log(this.props.cabnew.cabEnquL);
+    console.log(this.props.cabnew.cabEnquL);
     return (
       <div className="cabzzc">
         <div className="cab70">
@@ -192,7 +217,8 @@ export default class Cabdetil extends Component {
               </li>*/}
               <li>
                   <h5>舱位状态:</h5>
-                  <span></span>
+                  {/* <span></span> */}
+                  <span className={zt}>{EnquStat}</span>
               </li>
               <li>
                 <h5>货物状态:</h5>
@@ -214,7 +240,10 @@ export default class Cabdetil extends Component {
               </li>
                 <li>
                     <h5>运价有效期:</h5>
-                    <span></span>
+                    {
+                      this.props.cabnew.cabEnquL.expiTime!=null?
+                        <span>{moment(this.props.rows.expiTime).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
+                    }
                 </li>
             </ul>
           </div>

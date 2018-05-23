@@ -46,7 +46,7 @@ export default class Cabpdetil extends Component {
     let filelvzm=this.refs.qcup1.files[0];
     if(filelvzm==undefined){
       message.error("请上传文件！");
-    }else{
+    }else{ 
       if(filelvzm.type!='image/jpeg'&&filelvzm.type!='image/png'){
         message.error("请上传jpg或者png格式图片！");
       }else{
@@ -78,7 +78,38 @@ export default class Cabpdetil extends Component {
     }else{
       gcfl='';
     }
-
+    let EnquStat,zt;
+    switch(this.props.cabrgnew.cabDispdetail.stat){
+      case 10:
+        EnquStat='正常';
+        zt ='zt1';
+        break;
+      case 40:
+        EnquStat='退关';
+        zt ='zt4';
+        break;
+      case 30:
+        EnquStat='履约';
+        zt ='zt3';
+        break;
+      case 50:
+        EnquStat='争议';
+        zt ='zt5';
+        break;
+    case 20:
+        EnquStat='过期';
+        zt ='zt5';
+        break;
+    case 60:
+        EnquStat='撤销';
+        zt ='zt5';
+        break;
+      default:
+        EnquStat='';
+        zt ='';
+        break;
+    }
+    console.log(this.props.cabrgnew.cabDispdetail);
     return (
         <div className="cabzzc">
             <div className="cab70">
@@ -86,7 +117,7 @@ export default class Cabpdetil extends Component {
                     <span>舱位保函详情-{this.props.cabrgnew.cabDispdetail.cabDisp}</span>
                     <a className="cab72" href="javascript:void(0);" onClick={this.props.fonClose}>关闭</a>
                 </div>
-                <div className="cab120">
+                <div className="cab140">
                     <ul>
                         <li>
                             <h5>服务类型:</h5>
@@ -118,11 +149,11 @@ export default class Cabpdetil extends Component {
                         </li>
                         <li>
                             <h5>运输工具:</h5>
-                            <span></span>
+                            <span>{this.props.cabrgnew.cabDispdetail.trans}</span>
                         </li>
                         <li>
                             <h5>航次:</h5>
-                            <span></span>
+                            <span>{this.props.cabrgnew.cabDispdetail.voyage}</span>
                         </li>
                         {/*<li>
                             <h5>供舱公司:</h5>
@@ -155,27 +186,27 @@ export default class Cabpdetil extends Component {
                         </li>
                         <li>
                             <h5>内陆费用:</h5>
-                            <span></span>
+                            <span>{this.props.cabrgnew.cabDispdetail.cabFee}</span>
                         </li>
                         <li>
                             <h5>舱位状态:</h5>
-                            <span></span>
+                            <span className={zt}>{EnquStat}</span>
                         </li>
                         <li>
                             <h5>货物状态:</h5>
-                            <span></span>
+                            <span>{this.props.cabrgnew.cabDispdetail.goodsStat}</span>
                         </li>
                         <li>
                             <h5>最晚退关时间:</h5>
-                            <span>最晚退关时间</span>
+                            <span>{this.props.cabrgnew.cabDispdetail.lastShutTime}</span>
                             {/* {
                                 this.props.cabrgnew.cabDispdetail.lastShutTime == null ? '' :
                                     <span>{moment(this.props.cabrgnew.cabDispdetail.lastShutTime).format('YYYY-MM-DD')}</span>
                             } */}
                         </li>
                         <li>
-                            <h5>运价有效期:</h5>
-                            <span>运价有效期</span>
+                            {/* <h5>运价有效期:</h5>
+                            <span>运价有效期</span> */}
                             {/* {
                                 this.props.cabgnew.cabDispdetail.lastShutTime == null ? '' :
                                     <span>{moment(this.props.cabgnew.cabDispdetail.expiTime).format('YYYY-MM-DD')}</span>
@@ -183,9 +214,9 @@ export default class Cabpdetil extends Component {
                         </li>
                     </ul>
                 </div>
-                <div className="cab51">
-                    <h5>运价和箱型</h5>
-                    <div className="cab52">
+                <div className="cab133">
+                    <h5>运价和箱型:</h5>
+                    <div className="cab134">
                         {
                             this.props.cabrgnew.cabDispdetail.GP20?
                                 <div className="cab53">
@@ -334,17 +365,109 @@ export default class Cabpdetil extends Component {
                                         <p>{this.props.cabrgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabrgnew.cabDispdetail.RF40Fee}</p>
                                     </div>
                                     <div className="cab54">
-                                        <span>总运价:</span>
+                                        <span>总运价:</span>s
                                         <p>{this.props.cabrgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabrgnew.cabDispdetail.RF40Cos}</p>
                                     </div>
                                 </div>:undefined
                         }
                     </div>
                 </div>
-                <div className="cab129">
+                <div className="cab20">
                     <span>流程记录</span>
                 </div>
-                <div className="cab122">
+                <div className="cab16">
+                    <div className="cab17">
+                        <div className="cab91">
+                            <h5>供舱备注:</h5>
+                            <Input
+                                value={this.props.cabrgnew.cabDispdetail.resLabe}
+                                placeholder="仓库名或者车牌号，仓库联系人和联系方式或者司机联系人和联系方式"
+                                style={{width:180,float:'left'}}
+                                onChange={this.reqPrefonChange}
+                            />
+                            <a href='javascript:void(0);' onClick={this.saveLconClick} className="cab124">保存</a>
+                        </div>
+                        <div className="cab25">
+                            <h5>求舱方对您的评价:</h5>
+                            <span>
+                            {
+                                this.props.cabrgnew.cabDispdetail.reqFile==1?'已履约':
+                                    this.props.cabrgnew.cabDispdetail.reqFile==2?'未履约':'未确认'
+                            }
+                            </span>
+                        </div>
+                        <div className="cab21">
+                            {
+                                this.props.cabrgnew.cabDispdetail.resFile!=null?
+                                    <div className="cab21">
+                                        <h5>供舱履约证明:</h5>
+                                        <a href={qcfl} target="_blank" className="cab30">
+                                            <img src={qcfl}/>
+                                        </a>
+                                        <span ref="qcup" className="cab130"></span>
+                                        <a href='javascript:void(0);' className="cab26">
+                                            <input type="file" onChange={this.upLoadonClick}  ref="qcup1" />
+                                            上传</a>
+                                    </div>
+                                    :<div className="cab21">
+                                        <h5>求舱履约证明:</h5>
+                                        <span ref="qcup" className="cab30"></span>
+                                        <a href='javascript:void(0);' className="cab26">
+                                            <input type="file" onChange={this.upLoadonClick}  ref="qcup1" />
+                                            上传</a>
+                                    </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div className="cab16">
+                    <ul>
+                        <li>
+                            <div className="cab91">
+                                <h5>求舱备注:</h5>
+                                <span>{this.props.cabrgnew.cabDispdetail.reqLabe}</span>
+                            </div>
+                        </li>
+                        <li>
+                            {
+                                this.props.cabrgnew.cabDispdetail.resFile==1?
+                                    <div className="cab25">
+                                        <div className="cab22">
+                                            <h5>供舱方对您的评价:</h5>
+                                            <h4>已确认</h4>
+                                        </div>
+                                    </div>:
+                                    this.props.cabrgnew.cabDispdetail.resFile==2?
+                                        <div className="cab25">
+                                            <div className="cab22">
+                                                <h5>您对供舱方评价:</h5>
+                                                <a className="cab27" href="javascript:void(0);" onClick={this.handqrzj}>确认</a>
+                                            </div>
+                                        </div>:
+                                        <div className="cab25">
+                                            <div className="cab22">
+                                                <h5>您对供舱方评价:</h5>
+                                                <a className="cab27" href="javascript:void(0);" onClick={this.handqrzj}>确认</a>
+                                                <a className="cab27" href="javascript:void(0);" onClick={this.handno}>不确认</a>
+                                            </div>
+                                        </div>
+                            }
+                        </li>
+                        <li>
+                            <h5 className="cab93">求舱履约证明:</h5>
+                            <a className="cab92" href={this.props.cabrgnew.cabDispdetail.reqFile==null?require('../../src/image/kong.png'):gcfl}
+                                target="_blank">
+                                {
+                                    this.props.cabrgnew.cabDispdetail.reqFile== null ?
+                                        <img src={require('../../src/image/kong.png')}/> :
+                                        <img src={gcfl}/>
+                                }
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                {/*  */}
+                {/* <div className="cab122">
                     <div className="cab123">
                         <h5>求舱备注:</h5>
                         <Input
@@ -377,8 +500,8 @@ export default class Cabpdetil extends Component {
                                 </div>
                         }
                     </div>
-                </div>
-                <div className="cab122">
+                </div> */}
+                {/* <div className="cab122">
                     <div className="cab123">
                         <h5>供舱备注:</h5>
                         <p>{this.props.cabrgnew.cabDispdetail.resLabe}</p>
@@ -394,7 +517,8 @@ export default class Cabpdetil extends Component {
                             }
                         </a>
                     </div>
-                </div>
+                </div> */}
+                {/*  */}
             </div>
         </div>
     );

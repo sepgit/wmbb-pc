@@ -199,6 +199,7 @@ import {
 class Cab extends Component {
   render() {
     const { actions,text,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabmynew} = this.props;
+    console.log(this.props);
     return (
       <div className="cabpage">
           <Gotop />
@@ -394,8 +395,8 @@ function mapDispatchToProps(dispatch){
       postyspnew:postyspnew,
       getkansp:getkansp,
       getservsall:getservsall,
-        getsfzzrz:getsfzzrz,
-        postsqrz:postsqrz,
+      getsfzzrz:getsfzzrz,
+      postsqrz:postsqrz,
       getfwlxcwb:getfwlxcwb,
       postcwbfb:postcwbfb,
       getcarrscwb:getcarrscwb,

@@ -230,6 +230,7 @@ export default class Hgrxx extends Component {
         <p>打勾后，该手机号可作为账号登陆。</p>
       </div>
     );
+    console.log(this.props.text.user);
     return (
       <div className="hgrxx">
         <div className="grxx">
@@ -499,10 +500,10 @@ export default class Hgrxx extends Component {
                   <span className="grxxs">授信状态：</span>
                   <p>{this.props.text.user.depositEnab==1?'已授信':'未授信'}</p>
               </li>
-              <li className="grxxlib">
+              {/* <li className="grxxlib">
                   <span className="grxxs">授信有效期：</span>
                   <p></p>
-              </li>
+              </li> */}
               <li className="grxxlia">
                   <span className="grxxs">认证会员：</span>
                   {
@@ -536,6 +537,11 @@ export default class Hgrxx extends Component {
                     <span className="grxxs">认证会员编号：</span>
                     <p>{this.props.text.user.certNo}</p>
                 </li>
+                <li className="grxxlib">
+                    <span className="grxxs">预警：</span>
+                    <p>{this.props.text.user.warn==1?'预警':'正常'}</p>
+                </li>
+                
             </ul>
           </div>
           <div className="grxx3">
