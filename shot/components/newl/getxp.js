@@ -109,6 +109,7 @@ export default class Getxp extends Component {
                         <div className="getxp7">
                             <div className="getxp8">
                                 <a href="javascript:void(0);" onClick={this.lvcl}>请先浏览《求舱方协议》</a>
+                                {/* 求舱方发起的  求舱放协议 */}
                             </div>
                             <div className="getxp9">
                                 <Checkbox checked={this.state.checked}

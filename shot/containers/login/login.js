@@ -11,7 +11,6 @@ import {connect} from 'react-redux';
 class Login extends Component {
   render() {
     const { actions, user} = this.props;
-    console.log(user);
     return (
       <div className="loginpage">
         <Cxtop />

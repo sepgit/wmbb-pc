@@ -672,7 +672,7 @@ function get_dlcw(date) {
 
 export function getdlcw(){
   return function(dispatch) {
-    fetch(HTTPED+'api/lgPages/conts/',{
+    fetch(HTTPED+'api/lgPages/cabDisps/',{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

@@ -66,13 +66,13 @@ export default class Cabpdetil extends Component {
                     <h5>开航时间:</h5>
                     {
                       this.props.cabnewr.cabDispdetail.sailTime==null?<span></span>:
-                        <span>{moment(this.props.cabnewr.cabDispdetail.sailTime).format('YYYY-MM-DD')}</span>
+                        <span>{moment(this.props.cabnewr.cabDispdetail.sailTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                     }
                   </li>
-                  <li>
+                  {/* <li>
                     <h5>内陆运输方式:</h5>
                     <span>{this.props.cabnewr.cabDispdetail.inldType}</span>
-                  </li>
+                  </li> */}
                   {/* <li>
                     <h5>舱位保函状态:</h5>
                     <span>{zt}</span>
@@ -88,7 +88,7 @@ export default class Cabpdetil extends Component {
                     <h5>运价有效期:</h5>
                     {
                       this.props.cabnewr.cabDispdetail.expiTime == null ? '' :
-                        <span>{moment(this.props.cabnewr.cabDispdetail.expiTime).format('YYYY-MM-DD')}</span>
+                        <span>{moment(this.props.cabnewr.cabDispdetail.expiTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                     }
                   </li>
                 </ul>

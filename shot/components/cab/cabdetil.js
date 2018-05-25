@@ -125,24 +125,47 @@ export default class Cabdetil extends Component {
         tgstr=undefined;
       }
     }
+    // let EnquStat,zt;
+    // switch(this.props.cabnew.cabEnquL.stat){
+    //   case 30:
+    //     EnquStat='其他';
+    //     zt ='zt1';
+    //     break;
+    //   case 40:
+    //     EnquStat='退关';
+    //     zt ='zt4';
+    //     break;
+    //   // case 3:
+    //   //   EnquStat='履约';
+    //   //   zt ='zt3';
+    //   //   break;
+    //   // case 4:
+    //   //   EnquStat='争议';
+    //   //   zt ='zt5';
+    //   //   break;
+    //   default:
+    //     EnquStat='';
+    //     zt ='';
+    //     break;
+    // }
     let EnquStat,zt;
-    switch(this.props.cabnew.cabEnquL.stat){
-      case 30:
-        EnquStat='其他';
+    switch(this.props.cabnew.cabEnquL.cabSt){
+      case 1:
+        EnquStat='正常';
         zt ='zt1';
         break;
-      case 40:
+      case 2:
         EnquStat='退关';
         zt ='zt4';
         break;
-      // case 3:
-      //   EnquStat='履约';
-      //   zt ='zt3';
-      //   break;
-      // case 4:
-      //   EnquStat='争议';
-      //   zt ='zt5';
-      //   break;
+      case 3:
+        EnquStat='履约';
+        zt ='zt3';
+        break;
+      case 4:
+        EnquStat='争议';
+        zt ='zt5';
+        break;
       default:
         EnquStat='';
         zt ='';
@@ -225,11 +248,11 @@ export default class Cabdetil extends Component {
                 <span>{this.props.cabnew.cabEnquL.goodsStat}</span>
               </li>
               {
-                /*this.props.cabnew.cabEnquL.shutTime==null?<li></li>:
+                this.props.cabnew.cabEnquL.shutTime==null?<li></li>:
                   <li>
                     <h5>实际退关时间:</h5>
                     <span>{moment(this.props.cabnew.cabEnquL.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
-                  </li>*/
+                  </li>
               }
               <li>
                 <h5>最晚退关时间:</h5>
@@ -241,8 +264,8 @@ export default class Cabdetil extends Component {
                 <li>
                     <h5>运价有效期:</h5>
                     {
-                      this.props.cabnew.cabEnquL.expiTime!=null?
-                        <span>{moment(this.props.rows.expiTime).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
+                      this.props.cabnew.cabEnquL.expiDate!=null?
+                        <span>{moment(this.props.cabnew.cabEnquL.expiDate).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
                     }
                 </li>
             </ul>
@@ -406,7 +429,7 @@ export default class Cabdetil extends Component {
                 </div>
             </div>
           <div className="cab20">
-            <span>流程记录1</span>
+            <span>流程记录</span>
           </div>
           <div className="cab16">
             <div className="cab17">

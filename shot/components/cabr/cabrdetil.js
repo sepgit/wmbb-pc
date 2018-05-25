@@ -110,38 +110,61 @@ export default class Cabrdetil extends Component {
             gcfl='';
         }
 
+        // let EnquStat,zt;
+        // switch(this.props.cabrnew.cabReplr.stat){
+        // case 10:
+        //     EnquStat='正常';
+        //     zt ='zt1';
+        //     break;
+        // case 20:
+        //     EnquStat='过期';
+        //     zt ='zt5';
+        //     break;
+        // case 30:
+        //     EnquStat='履约';
+        //     zt ='zt3';
+        //     break;
+        // case 40:
+        //     EnquStat='退关';
+        //     zt ='zt4';
+        //     break;
+        // case 50:
+        //     EnquStat='争议';
+        //     zt ='zt5';
+        //     break;
+        // case 60:
+        //     EnquStat='撤销';
+        //     zt ='zt5';
+        //     break;
+        // default:
+        //     EnquStat='';
+        //     zt ='';
+        //     break;
+        // }
         let EnquStat,zt;
-        switch(this.props.cabrnew.cabReplr.stat){
-        case 10:
-            EnquStat='正常';
-            zt ='zt1';
-            break;
-        case 20:
-            EnquStat='过期';
-            zt ='zt5';
-            break;
-        case 30:
-            EnquStat='履约';
-            zt ='zt3';
-            break;
-        case 40:
-            EnquStat='退关';
-            zt ='zt4';
-            break;
-        case 50:
-            EnquStat='争议';
-            zt ='zt5';
-            break;
-        case 60:
-            EnquStat='撤销';
-            zt ='zt5';
-            break;
-        default:
-            EnquStat='';
-            zt ='';
-            break;
-        }
-        //console.log(this.props.cabrnew.cabReplr);
+    switch(this.props.cabrnew.cabReplr.cabSt){
+      case 1:
+        EnquStat='正常';
+        zt ='zt1';
+        break;
+      case 2:
+        EnquStat='退关';
+        zt ='zt4';
+        break;
+      case 3:
+        EnquStat='履约';
+        zt ='zt3';
+        break;
+      case 4:
+        EnquStat='争议';
+        zt ='zt5';
+        break;
+      default:
+        EnquStat='';
+        zt ='';
+        break;
+    }
+        console.log(this.props.cabrnew.cabReplr);
         return (
             <div className="cabzzc">
                 <div className="cab70">
@@ -215,11 +238,11 @@ export default class Cabrdetil extends Component {
                                 <span>{this.props.cabrnew.cabReplr.goodsStat}</span>
                             </li>
                             {
-                                /*this.props.cabrnew.cabReplr.shutTime==null?<li></li>:
+                                this.props.cabrnew.cabReplr.shutTime==null?<li></li>:
                                     <li>
                                         <h5>实际退关时间:</h5>
                                         <span>{moment(this.props.cabrnew.cabReplr.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
-                                    </li>*/
+                                    </li>
                             }
                             <li>
                                 <h5>最晚退关时间:</h5>
