@@ -258,6 +258,14 @@ export default class Cabrdetil extends Component {
                                         <span>{moment(this.props.cabrnew.cabReplr.expiDate).format('YYYY-MM-DD HH:mm:ss')}</span>
                                 }
                             </li>
+                            {/* <li>
+                                <h5>截关时间:</h5>
+                                {
+                                    this.props.cabrnew.cabReplr.expiDate == null ? '' :
+                                        <span>{moment(this.props.cabrnew.cabReplr.expiDate).format('YYYY-MM-DD HH:mm:ss')}</span>
+                                }
+                            </li> */}
+                            <li></li>
                         </ul>
                     </div>
                     <div className="cab133">

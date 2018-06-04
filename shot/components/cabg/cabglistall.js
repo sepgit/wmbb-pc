@@ -104,7 +104,7 @@ export default class Cabglistall extends Component {
         zt ='';
         break;
     }
-    // console.log(this.props.rows)
+    console.log(this.props.rows)
     return (
       
       <li className="cab9">{/* className='cab99'*/}
@@ -175,11 +175,16 @@ export default class Cabglistall extends Component {
               </div>
               <div className="cab12">
                   <h5>定金金额:</h5>
-                 <span>{this.props.rows.allDepo}</span>
+                  {
+                  this.props.rows.allDepo != null?
+                    <span>{this.props.rows.curr == '1' ? '¥' : '$'} {this.props.rows.allDepo}</span>:undefined
+                  }
+                 {/* <span>{this.props.rows.allDepo}</span> */}
               </div>
               <div className="cab12">
                   <h5>内陆费用:</h5>
                  <span>{this.props.rows.cabFee}</span>
+                 
               </div>
               <div className="cab60">
                   <h5>中标时间:</h5>

@@ -150,8 +150,8 @@ export default class Cabdetil extends Component {
         zt ='';
         break;
     }
-    console.log(this.state.userid);
-    console.log(this.state.userName);
+    // console.log(this.props.cabnew.cabEnquL);
+    // console.log(this.state.userName);
     return (
       <div className="cabzzc">
         <div className="cab70">
@@ -240,13 +240,21 @@ export default class Cabdetil extends Component {
                     <span>{moment(this.props.cabnew.cabEnquL.lastShutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                 }
               </li>
-                <li>
-                    <h5>运价有效期:</h5>
-                    {
-                      this.props.cabnew.cabEnquL.expiDate!=null?
-                        <span>{moment(this.props.cabnew.cabEnquL.expiDate).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
-                    }
-                </li>
+              <li>
+                  <h5>运价有效期:</h5>
+                  {
+                    this.props.cabnew.cabEnquL.expiDate!=null?
+                      <span>{moment(this.props.cabnew.cabEnquL.expiDate).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
+                  }
+              </li>
+              <li>
+                  <h5>截关时间:</h5>
+                  {
+                    this.props.cabnew.cabEnquL.expiDate!=null?
+                      <span>{moment(this.props.cabnew.cabEnquL.expiDate).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
+                  }
+              </li>
+              <li></li>
             </ul>
           </div>
           <div className="cab133">

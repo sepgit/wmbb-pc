@@ -175,7 +175,11 @@ export default class Cabrglistall extends Component {
               </div>
               <div className="cab12">
                   <h5>定金金额:</h5>
-                  <span>{this.props.rows.allDepo}</span>
+                  {
+                  this.props.rows.allDepo != null?
+                    <span>{this.props.rows.curr == '1' ? '¥' : '$'} {this.props.rows.allDepo}</span>:undefined
+                  }
+                  {/* <span>{this.props.rows.allDepo}</span> */}
               </div>
               <div className="cab12">
                   <h5>内陆费用:</h5>
