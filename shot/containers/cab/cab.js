@@ -199,7 +199,6 @@ import {
 class Cab extends Component {
   render() {
     const { actions,text,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabmynew} = this.props;
-    console.log(this.props);
     return (
       <div className="cabpage">
           <Gotop />

@@ -44,7 +44,8 @@ import {
   getcabDisps,
   getcabDisp,
   getcarrs,
-  putsclvzm
+  putsclvzm,
+  getgtgtq
 } from '../../action/cabg/acabg';
 import {
   getxpdetil,
@@ -391,6 +392,7 @@ function mapDispatchToProps(dispatch){
       getcabDisps:getcabDisps,
       getcabDisp:getcabDisp,
       putsclvzm:putsclvzm,
+      getgtgtq:getgtgtq,
       getservsall:getservsall,
         getsfzzrz:getsfzzrz,
         postsqrz:postsqrz,

@@ -723,3 +723,56 @@ export function putsclvzm(cabDisp,formdate){
   }
 }
 
+
+export const GET_GTGTQ = 'GET_GTGTQ';
+
+function get_gtgtq(date) {
+  return {
+    type: GET_GTGTQ,
+    err:date.err,
+    errMsg:date.errMsg,
+    cabEnquq:date.cabEnqu,
+  }
+}
+
+// 供舱方 发起的 求舱列表 退关
+export function getgtgtq(userName,token,cabDisp){
+  return function(dispatch) {
+    fetch(HTTPED+'api/cabDisps/chgStat/'+cabDisp+'/',{
+      method: "put",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body: "userName="+userName+"&token="+token+"&stat=40"
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date) {
+          if(!date.err){
+            dispatch(get_gtgtq(date));
+            //重新获取详情
+            fetch(HTTPED+'api/cabDisps/'+cabDisp+'/?userName='+userName+'&token='+token,{
+              method: "get",
+              headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+              }
+            }).then(function(res){
+              if(res.ok){
+                res.json().then(function(date){
+                  if(!date.err){
+                    dispatch(get_hqxq(date));
+                  }else{
+                    Backlogin(date.errMsg)
+                  }
+                });
+              }
+            });
+          }else{
+            Backlogin(date.errMsg)
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
+}

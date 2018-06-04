@@ -57,6 +57,7 @@ export default class Cablistall extends Component {
           <p className="infologop">授信是否通过：{this.props.cabnew.cainfo.depositEnab==1?'是':'否'}</p>
       </div>
     );
+    // console.log(this.props.cabnew);
     const content = (
       <div>
           <p>

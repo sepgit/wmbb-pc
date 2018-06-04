@@ -14,7 +14,7 @@ export default class Cabgdetil extends Component {
     this.saveLconClick=this.saveLconClick.bind(this);
     this.upLoadonClick=this.upLoadonClick.bind(this);
     this.reqPrefonChange=this.reqPrefonChange.bind(this);    
-    
+    this.handtg=this.handtg.bind(this);//退关
     this.state={
       userName:sessionStorage.getItem("SESSIONUSERACC"),
       token:sessionStorage.getItem("SESSIONTOKEN"),
@@ -64,7 +64,10 @@ export default class Cabgdetil extends Component {
       }
     }
   }
-
+  handtg(){
+    //退关
+    this.props.actions.getgtgtq(this.state.userName,this.state.token,this.props.cabgnew.cabDispdetail.cabDisp);
+  }
   render() {
     let qcf=this.props.cabgnew.cabDispdetail.reqFile;
     let gcf=this.props.cabgnew.cabDispdetail.resFile;
@@ -78,6 +81,19 @@ export default class Cabgdetil extends Component {
       gcfl=HTTPED+gcf.substring(1);
     }else{
       gcfl='';
+    }
+
+    let tg=<a className="cab90" href="javascript:void(0);" onClick={this.handtg}>退关</a>;
+    let tgstr;
+    if(this.props.cabgnew.cabDispdetail.shutTime!=null){
+      tgstr=undefined;
+    }else{
+    //   if(this.props.cabgnew.cabDispdetail.reqUser==this.state.userid || this.props.cabgnew.cabDispdetail.mngr==this.state.userid ){
+        if(this.props.cabgnew.cabDispdetail.reqUser==this.state.userid){
+        tgstr=tg;
+      }else {
+        tgstr=undefined;
+      }
     }
 
     let EnquStat,zt;
@@ -111,12 +127,14 @@ export default class Cabgdetil extends Component {
         zt ='';
         break;
     }
+    console.log(this.state.userid);
     console.log(this.props.cabgnew.cabDispdetail);
     return (
       <div className="cabzzc">
         <div className="cab70">
           <div className="cab71">
             <span>舱位保函详情-{this.props.cabgnew.cabDispdetail.cabDisp}</span>
+            {tgstr}
             <a className="cab72" href="javascript:void(0);" onClick={this.props.fonClose}>关闭</a>
           </div>
           <div className="cab140">

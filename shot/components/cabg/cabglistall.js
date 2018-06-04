@@ -22,7 +22,7 @@ export default class Cabglistall extends Component {
   }
   handover(){
     //获取个人信息
-    let uid=this.props.rows.provUser;
+    let uid=this.props.rows.resUser;
     this.props.actions.getcainfo(this.state.userName,this.state.token,uid);
   }
   detailonClick(){
@@ -104,7 +104,7 @@ export default class Cabglistall extends Component {
         zt ='';
         break;
     }
-    console.log(this.props.rows)
+    // console.log(this.props.rows)
     return (
       
       <li className="cab9">{/* className='cab99'*/}
@@ -150,9 +150,11 @@ export default class Cabglistall extends Component {
                   <h5>货物状态:</h5>
                   <span>{this.props.rows.goodsStat}</span>
               </div>
-              <div className="cab12">
+              <div className="cab12" onMouseEnter={this.handover}>
                   <h5>供舱人:</h5>
-                 <span title={this.props.rows.resName}>{this.props.rows.resName}</span>
+                  <Popover content={content} title={texts} trigger="hover">
+                    <span title={this.props.rows.resName}>{this.props.rows.resName}</span>
+                  </Popover>
               </div>
               <div className="cab12" title={this.props.rows.resCompAlia}>
                   <h5>供舱公司:</h5>

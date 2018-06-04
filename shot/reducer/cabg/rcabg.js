@@ -20,7 +20,8 @@ import {
   GET_CABDISPS,
   GET_CABDISP,
   GET_CARRS,
-  PUT_SCLVZM
+  PUT_SCLVZM,
+  GET_GTGTQ
 } from '../../action/cabg/acabg';
 
 const initialState ={
@@ -51,6 +52,12 @@ const initialState ={
 };
 export default function rcabg(state=initialState,action){
   switch (action.type){
+    case GET_GTGTQ:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        cabEnquq:action.cabDisp
+      });
     case GET_MDDKA:
       return Object.assign({}, state, {
         err:action.err,

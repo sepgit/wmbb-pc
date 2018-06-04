@@ -22,7 +22,7 @@ export default class Cabrglistall extends Component {
   }
   handover(){
     //获取个人信息
-    let uid=this.props.rows.provUser;
+    let uid=this.props.rows.reqUser;
     this.props.actions.getcainfo(this.state.userName,this.state.token,uid);
   }
   detailonClick(){
@@ -150,9 +150,12 @@ export default class Cabrglistall extends Component {
                   <h5>货物状态:</h5>
                   <span>{this.props.rows.goodsStat}</span>
               </div>
-              <div className="cab12">
+              <div className="cab12"  onMouseEnter={this.handover}>
                   <h5>求舱人:</h5>
-                  <span title={this.props.rows.reqName}>{this.props.rows.reqName}</span>
+                  {/* <span title={this.props.rows.reqName}>{this.props.rows.reqName}</span> */}
+                  <Popover content={content} title={texts} trigger="hover">
+                    <span title={this.props.rows.reqName}>{this.props.rows.reqName}</span>
+                  </Popover>
               </div>
               <div className="cab12" title={this.props.rows.reqCompAlia}>
                   <h5>求舱公司:</h5>

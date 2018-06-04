@@ -114,6 +114,7 @@ export default class Cabdetil extends Component {
     }else{
       gcfl='';
     }
+
     let tg=<a className="cab90" href="javascript:void(0);" onClick={this.handtg}>退关</a>;
     let tgstr;
     if(this.props.cabnew.cabEnquL.shutTime!=null){
@@ -125,29 +126,7 @@ export default class Cabdetil extends Component {
         tgstr=undefined;
       }
     }
-    // let EnquStat,zt;
-    // switch(this.props.cabnew.cabEnquL.stat){
-    //   case 30:
-    //     EnquStat='其他';
-    //     zt ='zt1';
-    //     break;
-    //   case 40:
-    //     EnquStat='退关';
-    //     zt ='zt4';
-    //     break;
-    //   // case 3:
-    //   //   EnquStat='履约';
-    //   //   zt ='zt3';
-    //   //   break;
-    //   // case 4:
-    //   //   EnquStat='争议';
-    //   //   zt ='zt5';
-    //   //   break;
-    //   default:
-    //     EnquStat='';
-    //     zt ='';
-    //     break;
-    // }
+    
     let EnquStat,zt;
     switch(this.props.cabnew.cabEnquL.cabSt){
       case 1:
@@ -171,8 +150,8 @@ export default class Cabdetil extends Component {
         zt ='';
         break;
     }
-    // console.log(this.props.cabnew.cabEnquL);
-    console.log(this.props.cabnew.cabEnquL);
+    console.log(this.state.userid);
+    console.log(this.state.userName);
     return (
       <div className="cabzzc">
         <div className="cab70">
