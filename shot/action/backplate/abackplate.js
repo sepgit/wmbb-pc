@@ -467,6 +467,7 @@ function get_gcxj(date) {
 }
 
 export function gethpxj(user,userName,token,repl,carr,tranPort,sailTime,closTime,sailDays,freiCurr,GP20,GP40,NOR40,HQ40,HQ45,RTMi,KGAi,RF20,RF40,FR20,FR40,replMemo,expiDate,ccto,replT,cabEnqu,trans,voyage,sailTimeT,lastShutTime,lastCabTime,cabAddr){
+  console.log(lastCabTime,cabAddr);
   return function(dispatch) {
     fetch(HTTPED+'api/repls/',{
       method: "post",

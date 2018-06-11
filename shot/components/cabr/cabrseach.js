@@ -7,7 +7,7 @@ import Cabrlist from './cabrlist';
 import Footinfo from './../login/footinfo';
 const Option = Select.Option;
 let timeout,timeoutm;
-
+const OptGroup = Select.OptGroup;
 export default class Cabrseach extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +17,9 @@ export default class Cabrseach extends Component {
     this.handcns=this.handcns.bind(this);
     this.handcm=this.handcm.bind(this);
     this.handcms=this.handcms.bind(this);
+
+    this.carronChange=this.carronChange.bind(this);       //承运商onChange时间
+    this.carronSelect=this.carronSelect.bind(this); 
     this.state={
       fwlx:'',
       qyd:undefined,
@@ -25,7 +28,9 @@ export default class Cabrseach extends Component {
       token:sessionStorage.getItem("SESSIONTOKEN"),
       cwzt:'',
       qydn:'',
-      mddn:''
+      mddn:'',
+      carr:'',
+      carrName:''
     }
   }
   handcn(v){
@@ -71,13 +76,19 @@ export default class Cabrseach extends Component {
     this.setState({ mdd:mdd });
   }
   handseach(){
+    
     let userName = this.state.userName;
     let token = this.state.token;
     let serv = this.state.fwlx;
     let depaPort = this.state.qyd==undefined?'':this.state.qyd;
     let destPort = this.state.mdd==undefined?'':this.state.mdd;
     let cabSt=this.state.cwzt;
-    this.props.actions.getssgc(userName,token,1,serv,depaPort,destPort,cabSt);//获取搜索数据
+    let carr=this.state.carr;
+    if(carr == undefined) {
+      carr = ''
+    }
+    console.log(carr);
+    this.props.actions.getssgc(userName,token,1,serv,depaPort,destPort,cabSt,carr);//获取搜索数据
     this.refs.cabrlist.setState({
       Hes:0,
       page:1,
@@ -89,7 +100,21 @@ export default class Cabrseach extends Component {
       fwlx:'',
       qyd:undefined,
       mdd:undefined,
-      cwzt:''
+      cwzt:'',
+      carr:'',
+      carrName:''
+    });
+  }
+  carronChange(v){
+    this.setState({
+      carrName:v,
+    });
+  }
+
+  carronSelect(v,o){
+    let value=o.props.date;
+    this.setState({
+      carr:value
     });
   }
   render() {
@@ -169,6 +194,30 @@ export default class Cabrseach extends Component {
                 <Option value="2">退关</Option>
                 <Option value="3">履约</Option>
                 <Option value="4">争议</Option>
+              </Select>
+            </li>
+            <li className="caba">
+              承运商
+              <Select showSearch
+                      value={this.state.carrName}
+                      style={{ width: 120 }}
+                      className="xseachop"
+                      optionFilterProp="children"
+                      notFoundContent=""
+                      placeholder="(下拉模糊)"
+                      onChange={this.carronChange}
+                      onSelect={this.carronSelect}
+              >
+                <OptGroup label="全部">
+                  {
+                    <Option key='-1'>全部</Option>
+                  }
+                </OptGroup>
+                <OptGroup label="所有">
+                  {
+                    this.props.cabrnew.carrs.map(s => <Option key={s.carr} date={s.carr} value={s.carrName}>{s.carrName}</Option>)
+                  }
+                </OptGroup>
               </Select>
             </li>
           </ul>

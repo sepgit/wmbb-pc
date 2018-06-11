@@ -105,7 +105,7 @@ export default class Cabrglistall extends Component {
         zt ='';
         break;
     }
-    console.log(this.props.rows);
+    // console.log(this.props.rows);
     return (
       <li className="cab9">{/* className='cab99'*/}
        {/* <div className="cab132">

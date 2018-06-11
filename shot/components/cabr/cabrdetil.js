@@ -223,7 +223,9 @@ export default class Cabrdetil extends Component {
                             </li>
                             <li>
                                 <h5>内陆费用:</h5>
-                                <span>{this.props.cabrnew.cabReplr.curr== '1' ? '¥' : '$'} {this.props.cabrnew.cabReplr.cabFee}</span>
+                                {/* <span>{this.props.cabrnew.cabReplr.curr== '1' ? '¥' : '$'} {this.props.cabrnew.cabReplr.cabFee}</span> */}
+                                <span> {this.props.cabrnew.cabReplr.cabFee}</span>
+                                
                             </li>
                             {/*<li>
                                 <h5>定金金额:</h5>
@@ -258,14 +260,17 @@ export default class Cabrdetil extends Component {
                                         <span>{moment(this.props.cabrnew.cabReplr.expiDate).format('YYYY-MM-DD HH:mm:ss')}</span>
                                 }
                             </li>
-                            {/* <li>
+                            <li>
                                 <h5>截关时间:</h5>
                                 {
-                                    this.props.cabrnew.cabReplr.expiDate == null ? '' :
-                                        <span>{moment(this.props.cabrnew.cabReplr.expiDate).format('YYYY-MM-DD HH:mm:ss')}</span>
+                                    this.props.cabrnew.cabReplr.lastCabTime == null ? '' :
+                                        <span>{moment(this.props.cabrnew.cabReplr.lastCabTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                                 }
+                            </li>
+                            {/* <li>
+                                <h5>备注:</h5>
+                                <span className="overflowH">{this.props.cabrnew.cabReplr.label}</span>
                             </li> */}
-                            <li></li>
                         </ul>
                     </div>
                     <div className="cab133">

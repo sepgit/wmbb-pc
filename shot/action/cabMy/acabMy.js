@@ -249,7 +249,7 @@ function post_cwbfb(date) {
   }
 }
 
-export function postcwbfb(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,NOR40,NOR40Fee,NOR40Cos,HQ40,HQ40Fee,HQ40Cos,HQ45,HQ45Fee,HQ45Cos,currCos,showname,voyage,trans){
+export function postcwbfb(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,NOR40,NOR40Fee,NOR40Cos,HQ40,HQ40Fee,HQ40Cos,HQ45,HQ45Fee,HQ45Cos,currCos,showname,voyage,trans,label){
   return function(dispatch) {
     fetch(HTTPED+'api/cabDisps/',{
       method: "post",
@@ -263,7 +263,7 @@ export function postcwbfb(userName,token,serv,carr,depaPort,destPort,curr,resPre
       +"&GP40="+GP40+"&GP40Fee="+GP40Fee+"&GP40Cos="+GP40Cos
       +"&NOR40="+NOR40+"&NOR40Fee="+NOR40Fee+"&NOR40Cos="+NOR40Cos
       +"&HQ40="+HQ40+"&HQ40Fee="+HQ40Fee+"&HQ40Cos="+HQ40Cos
-      +"&HQ45="+HQ45+"&HQ45Fee="+HQ45Fee+"&HQ45Cos="+HQ45Cos+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans
+      +"&HQ45="+HQ45+"&HQ45Fee="+HQ45Fee+"&HQ45Cos="+HQ45Cos+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans+'&label=' +label
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){
@@ -293,7 +293,7 @@ function post_cwbfbdg(date) {
   }
 }
 
-export function postcwbfbdg(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,HQ40,HQ40Fee,HQ40Cos,unno,clas,currCos,showname,voyage,trans){
+export function postcwbfbdg(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,HQ40,HQ40Fee,HQ40Cos,unno,clas,currCos,showname,voyage,trans,label){
   return function(dispatch) {
     fetch(HTTPED+'api/cabDisps/',{
       method: "post",
@@ -305,7 +305,7 @@ export function postcwbfbdg(userName,token,serv,carr,depaPort,destPort,curr,resP
       +"&closTime="+closTime+"&sailTime="+sailTime+"&expiTime="+expiTime+"&lastShutTime="+lastShutTime
       +"&GP20="+GP20+"&GP20Fee="+GP20Fee+"&GP20Cos="+GP20Cos
       +"&GP40="+GP40+"&GP40Fee="+GP40Fee+"&GP40Cos="+GP40Cos
-      +"&HQ40="+HQ40+"&HQ40Fee="+HQ40Fee+"&HQ40Cos="+HQ40Cos+"&clas="+clas+"&unno="+unno+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans
+      +"&HQ40="+HQ40+"&HQ40Fee="+HQ40Fee+"&HQ40Cos="+HQ40Cos+"&clas="+clas+"&unno="+unno+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans+"&label="+label
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){
@@ -335,7 +335,7 @@ function post_cwbfbhg(date) {
   }
 }
 
-export function postcwbfbhg(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,HQ40,HQ40Fee,HQ40Cos,HQ45,HQ45Fee,HQ45Cos,currCos,showname,voyage,trans){
+export function postcwbfbhg(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,HQ40,HQ40Fee,HQ40Cos,HQ45,HQ45Fee,HQ45Cos,currCos,showname,voyage,trans,label){
   return function(dispatch) {
     fetch(HTTPED+'api/cabDisps/',{
       method: "post",
@@ -348,7 +348,7 @@ export function postcwbfbhg(userName,token,serv,carr,depaPort,destPort,curr,resP
       +"&GP20="+GP20+"&GP20Fee="+GP20Fee+"&GP20Cos="+GP20Cos
       +"&GP40="+GP40+"&GP40Fee="+GP40Fee+"&GP40Cos="+GP40Cos
       +"&HQ40="+HQ40+"&HQ40Fee="+HQ40Fee+"&HQ40Cos="+HQ40Cos
-      +"&HQ45="+HQ45+"&HQ45Fee="+HQ45Fee+"&HQ45Cos="+HQ45Cos+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans
+      +"&HQ45="+HQ45+"&HQ45Fee="+HQ45Fee+"&HQ45Cos="+HQ45Cos+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans+"&label="+label
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){
@@ -378,7 +378,7 @@ function post_cwbfbfr(date) {
   }
 }
 
-export function postcwbfbfr(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,FR20,FR20Fee,FR20Cos,FR40,FR40Fee,FR40Cos,leng,widt,high,currCos,showname,voyage,trans){
+export function postcwbfbfr(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,FR20,FR20Fee,FR20Cos,FR40,FR40Fee,FR40Cos,leng,widt,high,currCos,showname,voyage,trans,label){
   return function(dispatch) {
     fetch(HTTPED+'api/cabDisps/',{
       method: "post",
@@ -390,7 +390,7 @@ export function postcwbfbfr(userName,token,serv,carr,depaPort,destPort,curr,resP
       +"&closTime="+closTime+"&sailTime="+sailTime+"&expiTime="+expiTime+"&lastShutTime="+lastShutTime
       +"&FR20="+FR20+"&FR20Fee="+FR20Fee+"&FR20Cos="+FR20Cos
       +"&FR40="+FR40+"&FR40Fee="+FR40Fee+"&FR40Cos="+FR40Cos
-      +"&leng="+leng+"&widt="+widt+"&high="+high+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans
+      +"&leng="+leng+"&widt="+widt+"&high="+high+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans+"&label="+label
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){
@@ -420,7 +420,7 @@ function post_cwbfbot(date) {
   }
 }
 
-export function postcwbfbot(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,RF20,RF20Fee,RF20Cos,RF40,RF40Fee,RF40Cos,leng,widt,high,currCos,showname,voyage,trans){
+export function postcwbfbot(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,RF20,RF20Fee,RF20Cos,RF40,RF40Fee,RF40Cos,leng,widt,high,currCos,showname,voyage,trans,label){
   return function(dispatch) {
     fetch(HTTPED+'api/cabDisps/',{
       method: "post",
@@ -432,7 +432,7 @@ export function postcwbfbot(userName,token,serv,carr,depaPort,destPort,curr,resP
       +"&closTime="+closTime+"&sailTime="+sailTime+"&expiTime="+expiTime+"&lastShutTime="+lastShutTime
       +"&RF20="+RF20+"&RF20Fee="+RF20Fee+"&RF20Cos="+RF20Cos
       +"&RF40="+RF40+"&RF40Fee="+RF40Fee+"&RF40Cos="+RF40Cos
-      +"&leng="+leng+"&widt="+widt+"&high="+high+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans
+      +"&leng="+leng+"&widt="+widt+"&high="+high+"&currCos="+currCos+"&showname="+showname+"&voyage="+voyage+"&trans="+trans+"&label="+label
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){

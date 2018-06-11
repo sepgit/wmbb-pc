@@ -45,7 +45,8 @@ import {
   getcainfo,
   getqcbz,
   getqydka,
-  getmddka
+  getmddka,
+  getcarrs
 } from '../../action/cab/acab';
 import {
   getxpdetil,
@@ -63,7 +64,7 @@ import {
   getports,
   getccto,
   getwtuo,
-  getcarrs,
+  // getcarrs,
   getportsf,
   getpeohpinfod,
   getxaddhang,
@@ -287,6 +288,7 @@ function mapDispatchToProps(dispatch){
       getccto:getccto,
       getwtuo:getwtuo,
       getcarrs:getcarrs,
+      // getcarrs:getcarrs,
       getportsf:getportsf,
       getpeohpinfod:getpeohpinfod,
       getxaddhang:getxaddhang,

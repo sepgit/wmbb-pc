@@ -40,7 +40,8 @@ import {
   getcarinfo,
   getgcbz,
   getqydkar,
-  getmddkar
+  getmddkar,
+  getcarrs
 } from '../../action/cabr/acabr';
 import {
   getxpdetil,
@@ -58,7 +59,7 @@ import {
   getports,
   getccto,
   getwtuo,
-  getcarrs,
+  // getcarrs,
   getportsf,
   getpeohpinfod,
   getxaddhang,
@@ -284,7 +285,7 @@ function mapDispatchToProps(dispatch){
       getports:getports,
       getccto:getccto,
       getwtuo:getwtuo,
-      getcarrs:getcarrs,
+      // getcarrs:getcarrs,
       getportsf:getportsf,
       getpeohpinfod:getpeohpinfod,
       getxaddhang:getxaddhang,
@@ -408,7 +409,8 @@ function mapDispatchToProps(dispatch){
       postcwbfbhg:postcwbfbhg,
       postcwbfbfr:postcwbfbfr,
       postcwbfbot:postcwbfbot,
-      getcabyue:getcabyue
+      getcabyue:getcabyue,
+      getcarrs:getcarrs
     },dispatch)
   }
 }

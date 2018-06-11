@@ -52,6 +52,7 @@ export default class Cwbadfcl extends Component {
       closTime: null,
       voyage: '',
       trans: '',
+      label:'',
       checked: false
     }
   }
@@ -152,6 +153,7 @@ export default class Cwbadfcl extends Component {
     let HQ45Cos = this.state.HQ45Cos;
     let voyage = this.state.voyage;
     let trans = this.state.trans;
+    let label = this.state.label;
     let showname;
     if (this.state.checked) {
       showname = 0;
@@ -210,7 +212,8 @@ export default class Cwbadfcl extends Component {
     } else if (GP20TF && GP40TF && HQ40TF && HQ45TF && NOR40TF) {
       message.error('至少填写一个箱型');
     } else {
-      this.props.actions.postcwbfb(userName, token, serv, carr, depaPort, destPort, curr, resPref, reqPref, closTime, sailTime, expiTime, lastShutTime, GP20, GP20Fee, GP20Cos, GP40, GP40Fee, GP40Cos, NOR40, NOR40Fee, NOR40Cos, HQ40, HQ40Fee, HQ40Cos, HQ45, HQ45Fee, HQ45Cos, currCos, showname, voyage, trans);
+      console.log(this.state.label);
+      this.props.actions.postcwbfb(userName, token, serv, carr, depaPort, destPort, curr, resPref, reqPref, closTime, sailTime, expiTime, lastShutTime, GP20, GP20Fee, GP20Cos, GP40, GP40Fee, GP40Cos, NOR40, NOR40Fee, NOR40Cos, HQ40, HQ40Fee, HQ40Cos, HQ45, HQ45Fee, HQ45Cos, currCos, showname, voyage, trans,label);
       this.props.fonClose(false, '');
     }
     // (GP20 == "" || GP20Fee == "" || GP20Cos == "") || 
@@ -229,8 +232,11 @@ export default class Cwbadfcl extends Component {
     })
   }
   render() {
-    let djzjye = "充值余额" + this.props.cabmynew.residual;
-    let djzjyeusd = "充值余额" + this.props.cabmynew.resiUsd;
+    // let djzjye = "充值余额" + this.props.cabmynew.residual;
+    // let djzjyeusd = "充值余额" + this.props.cabmynew.resiUsd;
+    let djzjye = this.props.cabmynew.residual;
+    let djzjyeusd =  this.props.cabmynew.resiUsd;
+    let sydj = '所压定金';
     let djye = this.state.curr == '1' ? djzjye : djzjyeusd;
     return (
       <div className="cwbadd">
@@ -305,6 +311,14 @@ export default class Cwbadfcl extends Component {
                   </Select>
                 </li>
                 <li className="cwbadd16">
+                  <h4>余额：</h4>
+                  {/* <Input
+                      style={{ width: 100 }}
+                      placeholder={djye}
+                      className="cwbadd12"
+                      disabled='true'
+                    /> */}
+                    <div className="cwbadd12">{djye}</div>
                 </li>
               </ul>
             </div>
@@ -332,7 +346,7 @@ export default class Cwbadfcl extends Component {
                     </Select>
                     <Input
                       style={{ width: 100 }}
-                      placeholder={djye}
+                      placeholder={sydj}
                       className="cwbadd12"
                       onChange={(e) => { return this.setState({ GP20Fee: e.target.value }) }}
                     />
@@ -375,7 +389,7 @@ export default class Cwbadfcl extends Component {
                     </Select>
                     <Input
                       style={{ width: 100 }}
-                      placeholder={djye}
+                      placeholder={sydj}
                       className="cwbadd12"
                       onChange={(e) => { return this.setState({ GP40Fee: e.target.value }) }}
                     />
@@ -418,7 +432,7 @@ export default class Cwbadfcl extends Component {
                     </Select>
                     <Input
                       style={{ width: 100 }}
-                      placeholder={djye}
+                      placeholder={sydj}
                       className="cwbadd12"
                       onChange={(e) => { return this.setState({ NOR40Fee: e.target.value }) }}
                     />
@@ -461,7 +475,7 @@ export default class Cwbadfcl extends Component {
                     </Select>
                     <Input
                       style={{ width: 100 }}
-                      placeholder={djye}
+                      placeholder={sydj}
                       className="cwbadd12"
                       onChange={(e) => { return this.setState({ HQ40Fee: e.target.value }) }}
                     />
@@ -504,7 +518,7 @@ export default class Cwbadfcl extends Component {
                     </Select>
                     <Input
                       style={{ width: 100 }}
-                      placeholder={djye}
+                      placeholder={sydj}
                       className="cwbadd12"
                       onChange={(e) => { return this.setState({ HQ45Fee: e.target.value }) }}
                     />
@@ -621,6 +635,15 @@ export default class Cwbadfcl extends Component {
                     placeholder="请输入航次"
                     className="cwbadd12"
                     onChange={(e) => { return this.setState({ voyage: e.target.value }) }}
+                  />
+                </li>
+                <li className="cwbadd171">
+                  <h5>备注：</h5>
+                  <Input
+                    style={{ width: 350 }}
+                    placeholder="请输入备注"
+                    className="cwbadd12"
+                    onChange={(e) => { return this.setState({ label: e.target.value }) }}
                   />
                 </li>
               </ul>

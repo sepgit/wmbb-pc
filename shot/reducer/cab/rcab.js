@@ -20,7 +20,8 @@ import {
   GET_CAINFO,
   GET_QCBZ,
   GET_QYDKA,
-  GET_MDDKA
+  GET_MDDKA,
+  GET_CARRS
 } from '../../action/cab/acab';
 
 const initialState ={
@@ -44,10 +45,17 @@ const initialState ={
   cainfo:[],
   cabEnquqcbz:0,
   qydka:[],
-  mddka:[]
+  mddka:[],
+  carrs:[],
 };
 export default function rcabs(state=initialState,action){
   switch (action.type){
+    case GET_CARRS:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        carrs:action.carrs
+      });
     case GET_MDDKA:
       return Object.assign({}, state, {
         err:action.err,

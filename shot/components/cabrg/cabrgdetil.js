@@ -166,13 +166,13 @@ export default class Cabpdetil extends Component {
                                     <span>{moment(this.props.cabrgnew.cabDispdetail.sailTime).format('YYYY-MM-DD')}</span>
                             }
                         </li>
-                       {/* <li>
+                       <li>
                             <h5>截关时间:</h5>
                             {
                                 this.props.cabrgnew.cabDispdetail.closTime == null ? '' :
                                     <span>{moment(this.props.cabrgnew.cabDispdetail.closTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                             }
-                        </li>*/}
+                        </li>
                         <li>
                             <h5>运价有效期:</h5>
                             {
@@ -205,12 +205,10 @@ export default class Cabpdetil extends Component {
                             } */}
                         </li>
                         <li>
-                            {/* <h5>运价有效期:</h5>
-                            <span>运价有效期</span> */}
-                            {/* {
-                                this.props.cabgnew.cabDispdetail.lastShutTime == null ? '' :
-                                    <span>{moment(this.props.cabgnew.cabDispdetail.expiTime).format('YYYY-MM-DD')}</span>
-                            } */}
+                        
+                                <h5>备注:</h5>
+                                <span className="overflowH">{this.props.cabrgnew.cabDispdetail.label}</span>
+                            
                         </li>
                     </ul>
                 </div>

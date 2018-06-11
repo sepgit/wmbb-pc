@@ -465,13 +465,13 @@ export default class Bchair extends Component {
                           </p>
                         </li>
                         <li>
-                          <h5>最晚进仓时间</h5>
+                          <h5>具体截关时间</h5>
                           <p>
                             <DatePicker
                               showTime="true"
                               format="yyyy.MM.dd HH:mm:ss"
                               value={this.state.jcsj}
-                              placeholder="最晚退关时间"
+                              placeholder="具体截关时间"
                               style={{width: 150}}
                               onChange={(v) => {
                                 return this.setState({jcsj: v})
@@ -480,7 +480,7 @@ export default class Bchair extends Component {
                           </p>
                         </li>
                         <li>
-                          <h5>进仓仓库地址</h5>
+                          {/* <h5>进仓仓库地址</h5>
                           <Input
                             value={this.state.ckdz}
                             style={{width: 150, height: 25}}
@@ -488,7 +488,7 @@ export default class Bchair extends Component {
                             onChange={(e) => {
                               return this.setState({ckdz: e.target.value})
                             }}
-                          />
+                          /> */}
                         </li>
                       </ul>
                       <div className="bdel42">

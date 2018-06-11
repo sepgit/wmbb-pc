@@ -48,6 +48,7 @@ export default class Cwbaddg extends Component {
       closTime: null,
       voyage: '',
       trans: '',
+      label:'',
       checked: false
     }
   }
@@ -144,6 +145,7 @@ export default class Cwbaddg extends Component {
     let clas = this.state.clas;
     let voyage = this.state.voyage;
     let trans = this.state.trans;
+    let label = this.state.label;
     let showname;
     if (this.state.checked) {
       showname = 0;
@@ -194,7 +196,7 @@ export default class Cwbaddg extends Component {
     } else if (GP20TF && GP40TF && HQ40TF) {
       message.error('至少填写一个箱型');
     } else {
-      this.props.actions.postcwbfbdg(userName, token, serv, carr, depaPort, destPort, curr, resPref, reqPref, closTime, sailTime, expiTime, lastShutTime, GP20, GP20Fee, GP20Cos, GP40, GP40Fee, GP40Cos, HQ40, HQ40Fee, HQ40Cos, unno, clas, currCos, showname, voyage, trans);
+      this.props.actions.postcwbfbdg(userName, token, serv, carr, depaPort, destPort, curr, resPref, reqPref, closTime, sailTime, expiTime, lastShutTime, GP20, GP20Fee, GP20Cos, GP40, GP40Fee, GP40Cos, HQ40, HQ40Fee, HQ40Cos, unno, clas, currCos, showname, voyage, trans,label);
       this.props.fonClose(false, '');
     }
     // this.props.actions.postcwbfbdg(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,HQ40,HQ40Fee,HQ40Cos,unno,clas,currCos,showname,voyage,trans);
@@ -210,9 +212,13 @@ export default class Cwbaddg extends Component {
     })
   }
   render() {
-    let djzjye = "充值余额" + this.props.cabmynew.residual;
-    let djzjyeusd = "充值余额" + this.props.cabmynew.resiUsd;
-    let djye = this.state.curr == '1' ? djzjye : djzjyeusd;
+    // let djzjye = "充值余额" + this.props.cabmynew.residual;
+    // let djzjyeusd = "充值余额" + this.props.cabmynew.resiUsd;
+    // let djye = this.state.curr == '1' ? djzjye : djzjyeusd;
+    let djzjye = this.props.cabmynew.residual;
+    let djzjyeusd =  this.props.cabmynew.resiUsd;
+    let djye = '所压定金';
+    let sydj = this.state.curr == '1' ? djzjye : djzjyeusd;
     return (
       <div className="cwbadd">
         <div className="cwbadd1">
@@ -286,6 +292,14 @@ export default class Cwbaddg extends Component {
                   </Select>
                 </li>
                 <li className="cwbadd16">
+                  <h4>余额：</h4>
+                  {/* <Input
+                      style={{ width: 100 }}
+                      placeholder={sydj}
+                      className="cwbadd12"
+                      disabled='true'
+                    /> */}
+                    <div className="cwbadd12">{sydj}</div>
                 </li>
               </ul>
             </div>
@@ -534,6 +548,15 @@ export default class Cwbaddg extends Component {
                     placeholder="请输入航次"
                     className="cwbadd12"
                     onChange={(e) => { return this.setState({ voyage: e.target.value }) }}
+                  />
+                </li>
+                <li className="cwbadd171">
+                  <h5>备注：</h5>
+                  <Input
+                    style={{ width: 350 }}
+                    placeholder="请输入备注"
+                    className="cwbadd12"
+                    onChange={(e) => { return this.setState({ label: e.target.value }) }}
                   />
                 </li>
               </ul>

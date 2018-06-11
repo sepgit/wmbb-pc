@@ -199,9 +199,9 @@ function get_ssqc(date) {
   }
 }
 
-export function getssqc(userName,token,pageIndex,serv,depaPort,destPort,cabSt){
+export function getssqc(userName,token,pageIndex,serv,depaPort,destPort,cabSt,carr){
   return function(dispatch) {
-    fetch(HTTPED+'api/cabEnqus/?userName='+userName+'&token='+token+"&rowCount=10&pageIndex="+pageIndex+"&serv="+serv+"&depaPort="+depaPort+"&destPort="+destPort+"&cabSt="+cabSt,{
+    fetch(HTTPED+'api/cabEnqus/?userName='+userName+'&token='+token+"&rowCount=10&pageIndex="+pageIndex+"&serv="+serv+"&depaPort="+depaPort+"&destPort="+destPort+"&cabSt="+cabSt+"&carr="+carr,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -695,6 +695,41 @@ export function getmddka(userName,token,serv,name){
         res.json().then(function(date){
           if(!date.err){
             dispatch(get_mddka(date));
+          }else{
+            Backlogin(date.errMsg)
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
+}
+
+//获取承运商
+export const GET_CARRS = 'GET_CARRS';
+
+function get_carrs(date) {
+  return {
+    type: GET_CARRS,
+    err:date.err,
+    errMsg:date.errMsg,
+    carrs:date.rows
+  }
+}
+
+export function getcarrs(userName,token,serv){
+  return function(dispatch) {
+    fetch(HTTPED+'api/carrs/?userName='+userName+'&token='+token+'&rowCount=0&serv='+serv,{
+      method: "get",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      }
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date){
+          if(!date.err){
+            dispatch(get_carrs(date));
           }else{
             Backlogin(date.errMsg)
           }

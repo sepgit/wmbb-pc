@@ -183,16 +183,16 @@ export default class Cabgdetil extends Component {
                   <h5>开航时间:</h5>
                   {
                       this.props.cabgnew.cabDispdetail.sailTime == null ? '' :
-                          <span>{moment(this.props.cabgnew.cabDispdetail.sailTime).format('YYYY-MM-DD')}</span>
+                          <span>{moment(this.props.cabgnew.cabDispdetail.sailTime).format('YYYY-MM-DD  HH:mm')}</span>
                   }
               </li>
-              {/*<li>
+              <li>
                   <h5>截关时间:</h5>
                   {
                       this.props.cabgnew.cabDispdetail.closTime == null ? '' :
-                          <span>{moment(this.props.cabgnew.cabDispdetail.closTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                          <span>{moment(this.props.cabgnew.cabDispdetail.closTime).format('YYYY-MM-DD HH:mm')}</span>
                   }
-              </li>*/}
+              </li>
                 <li>
                     <h5>内陆方式:</h5>
                     <span>{this.props.cabgnew.cabDispdetail.inldType}</span>
@@ -222,6 +222,12 @@ export default class Cabgdetil extends Component {
                         this.props.cabgnew.cabDispdetail.lastShutTime == null ? '' :
                             <span>{moment(this.props.cabgnew.cabDispdetail.expiTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                     }
+                </li>
+                <li>
+                        
+                        <h5>备注:</h5>
+                        <span className="overflowH">{this.props.cabgnew.cabDispdetail.label}</span>
+                    
                 </li>
             </ul>
           </div>

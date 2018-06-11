@@ -21,6 +21,7 @@ export default class Camid extends Component {
         this.props.actions.getfwlx(userName,token);
         //获取起运地目的地
         this.props.actions.getkouan(userName,token);
+        this.props.actions.getcarrs(userName,token,0);
     }
     render() {
         return (

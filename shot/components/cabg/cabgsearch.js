@@ -41,9 +41,10 @@ export default class Cabqgsearch extends Component {
     let depaPort = this.state.qyd==undefined?'':this.state.qyd;
     let destPort = this.state.mdd==undefined?'':this.state.mdd;
     let carr=this.state.carr;
+    let cabSt=this.state.cwzt;
     console.log("serv="+serv);
-    //this.props.actions.getssqc(userName,token,1,serv,depaPort,destPort,cabSt);//获取搜索数据
-    this.props.actions.getcabDisps(userName,token,1,serv,depaPort,destPort,carr,'');//初始化列表  (userName,token,pageIndex,serv,depaPort,destPort,carr,resAcco)
+          //this.props.actions.getssqc(userName,token,1,serv,depaPort,destPort,cabSt);//获取搜索数据
+    this.props.actions.getcabDisps(userName,token,1,serv,depaPort,destPort,carr,'',cabSt);//初始化列表  (userName,token,pageIndex,serv,depaPort,destPort,carr,resAcco,cabSt)
     this.refs.cabglist.setState({
       Hes:0,
       page:1,
@@ -122,6 +123,7 @@ export default class Cabqgsearch extends Component {
       this.state.mdd,
       this.state.cwzt
     );
+    // console.log(this.props.cabgnew);
     return (
       <div className="cab3">
         <div className="cab4">
@@ -198,6 +200,26 @@ export default class Cabqgsearch extends Component {
                     this.props.cabgnew.carrs.map(s => <Option key={s.carr} date={s.carr} value={s.carrName}>{s.carrName}</Option>)
                   }
                 </OptGroup>
+              </Select>
+            </li>
+            <li className="caba">
+              舱位状态
+              <Select showSearch
+                      value={this.state.cwzt}
+                      style={{ width: 120 }}
+                      className="xseachop"
+                      optionFilterProp="children"
+                      notFoundContent="无法找到"
+                      placeholder="舱位状态"
+                      onChange={(v)=>{return this.setState({cwzt:v})}}
+              >
+                <Option value="0">全部</Option>
+                <Option value="10">正常</Option>
+                <Option value="20">过期</Option>
+                <Option value="30">履约</Option>
+                <Option value="40">退关</Option>
+                <Option value="50">争议</Option>
+                <Option value="60">撤销</Option>
               </Select>
             </li>
           </ul>

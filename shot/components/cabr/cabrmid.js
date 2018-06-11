@@ -21,6 +21,7 @@ export default class Cabrmid extends Component {
         this.props.actions.getfwlxr(userName,token);
         //获取起运地目的地
         this.props.actions.getkouanr(userName,token);
+        this.props.actions.getcarrs(userName,token,0);
     }
     render() {
         return (

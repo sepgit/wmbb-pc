@@ -629,9 +629,9 @@ function get_cabDisps(date) {
   }
 }
 
-export function getcabDisps(userName,token,pageIndex,serv,depaPort,destPort,carr,resAcco){
+export function getcabDisps(userName,token,pageIndex,serv,depaPort,destPort,carr,resAcco,cabSt){
   return function(dispatch) {
-    let path= HTTPED+'api/cabDisps/?userName='+userName+'&token='+token+'&rowCount=10&listType=3';  //1看别人的；2看自己发布未成交；3看自己发布已成交；4看购买。
+    let path= HTTPED+'api/cabDisps/?userName='+userName+'&token='+token+'&rowCount=10&listType=3&cabSt='+cabSt;  //1看别人的；2看自己发布未成交；3看自己发布已成交；4看购买。
     if (pageIndex>0){
       path = path + '&pageIndex='+pageIndex;
     }

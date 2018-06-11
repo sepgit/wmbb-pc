@@ -48,6 +48,7 @@ export default class Bchhang extends Component {
       hc:'',
       khsj:null,
       tgsj:null,
+      jtjg:null,//具体截关时间 等同于 最晚进舱时间
       zzdn:''
     }
   }
@@ -129,6 +130,7 @@ export default class Bchhang extends Component {
     let xyyer=this.props.cabrnew.residual;
     let djjer=this.props.cabrnew.cabEnqu.depo;
     let lastShutTime=this.state.tgsj==null?'':moment(this.state.tgsj).format('YYYY.MM.DD HH:mm:ss');//最晚退关时间
+    let lastCabTime=this.state.jtjg==null?'':moment(this.state.jtjg).format('YYYY.MM.DD HH:mm:ss');//最晚进舱时间 就是 截关时间
     //发送
     if(this.state.comp>0){
       fg=this.state.cs==''?'':this.props.text.priv.admi!=0?'':',';
@@ -145,7 +147,7 @@ export default class Bchhang extends Component {
           if(this.props.bck.residual<this.props.cabrnew.cabEnqu.depo){
             message.error('充值卡的余额不足，无法押入，请及时充值后，再回盘');
           }else{
-            this.props.actions.gethpxj(userid, userName, token, repl, carr, tranPort, sailTime, closTime, sailDays, freiCurr, GP20, GP40, NOR40, HQ40, HQ45, RTMi, KGAi, RF20, RF40, FR20, FR40, replMemo, expiDate, ccto, replT, cabEnqu, trans, voyage, sailTimeT,lastShutTime);
+            this.props.actions.gethpxj(userid, userName, token, repl, carr, tranPort, sailTime, closTime, sailDays, freiCurr, GP20, GP40, NOR40, HQ40, HQ45, RTMi, KGAi, RF20, RF40, FR20, FR40, replMemo, expiDate, ccto, replT, cabEnqu, trans, voyage, sailTimeT,lastShutTime,lastCabTime);
             if (!this.props.bck.isshow) {
               this.props.handchclose();
             }
@@ -154,7 +156,7 @@ export default class Bchhang extends Component {
           if(this.props.bck.resiUsd<this.props.cabrnew.cabEnqu.depo){
             message.error('充值卡的余额不足，无法押入，请及时充值后，再回盘');
           }else{
-            this.props.actions.gethpxj(userid, userName, token, repl, carr, tranPort, sailTime, closTime, sailDays, freiCurr, GP20, GP40, NOR40, HQ40, HQ45, RTMi, KGAi, RF20, RF40, FR20, FR40, replMemo, expiDate, ccto, replT, cabEnqu, trans, voyage, sailTimeT,lastShutTime);
+            this.props.actions.gethpxj(userid, userName, token, repl, carr, tranPort, sailTime, closTime, sailDays, freiCurr, GP20, GP40, NOR40, HQ40, HQ45, RTMi, KGAi, RF20, RF40, FR20, FR40, replMemo, expiDate, ccto, replT, cabEnqu, trans, voyage, sailTimeT,lastShutTime,lastCabTime);
             if (!this.props.bck.isshow) {
               this.props.handchclose();
             }
@@ -185,6 +187,7 @@ export default class Bchhang extends Component {
       hc:'',
       khsj:null,
       tgsj:null,
+      jtjg:null,//具体截关时间 等同于 最晚进舱时间
       zzdn:''
     })
   }
@@ -527,6 +530,21 @@ export default class Bchhang extends Component {
                               style={{width: 150}}
                               onChange={(v) => {
                                 return this.setState({tgsj: v})
+                              }}
+                            />
+                          </p>
+                        </li>
+                        <li>
+                          <h5>具体截关时间</h5>
+                          <p>
+                            <DatePicker
+                              showTime="true"
+                              format="yyyy.MM.dd HH:mm:ss"
+                              value={this.state.jtjg}
+                              placeholder="具体截关时间"
+                              style={{width: 150}}
+                              onChange={(v) => {
+                                return this.setState({jtjg: v})
                               }}
                             />
                           </p>

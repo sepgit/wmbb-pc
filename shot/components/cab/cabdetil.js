@@ -150,7 +150,7 @@ export default class Cabdetil extends Component {
         zt ='';
         break;
     }
-    // console.log(this.props.cabnew.cabEnquL);
+    //  console.log(this.props.cabnew.cabEnquL);
     // console.log(this.state.userName);
     return (
       <div className="cabzzc">
@@ -211,7 +211,8 @@ export default class Cabdetil extends Component {
                 </li>
                 <li>
                     <h5>内陆费用:</h5>
-                    <span>{this.props.cabnew.cabEnquL.curr== '1' ? '¥' : '$'} {this.props.cabnew.cabEnquL.cabFee}</span>
+                    {/* <span>{this.props.cabnew.cabEnquL.curr== '1' ? '¥' : '$'} {this.props.cabnew.cabEnquL.cabFee}</span> */}
+                    <span> {this.props.cabnew.cabEnquL.cabFee}</span>
                 </li>
               {/*<li>
                 <h5>定金金额:</h5>
@@ -250,11 +251,11 @@ export default class Cabdetil extends Component {
               <li>
                   <h5>截关时间:</h5>
                   {
-                    this.props.cabnew.cabEnquL.expiDate!=null?
-                      <span>{moment(this.props.cabnew.cabEnquL.expiDate).format('YYYY.MM.DD HH:mm:ss')}</span>:undefined
+                    this.props.cabnew.cabEnquL.lastCabTime!=null?
+                      <span>{moment(this.props.cabnew.cabEnquL.lastCabTime).format('YYYY.MM.DD HH:mm')}</span>:undefined
                   }
               </li>
-              <li></li>
+              
             </ul>
           </div>
           <div className="cab133">

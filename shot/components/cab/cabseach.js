@@ -6,8 +6,8 @@ import { message,Select } from 'antd';
 import Cablist from './cablist';
 import Footinfo from './../login/footinfo';
 const Option = Select.Option;
+const OptGroup = Select.OptGroup;
 let timeout,timeoutm;
-
 export default class Cabseach extends Component {
   constructor(props) {
     super(props);
@@ -17,6 +17,9 @@ export default class Cabseach extends Component {
     this.handcns=this.handcns.bind(this);
     this.handcm=this.handcm.bind(this);
     this.handcms=this.handcms.bind(this);
+
+    this.carronChange=this.carronChange.bind(this);       //承运商onChange时间
+    this.carronSelect=this.carronSelect.bind(this);       //承运商onSelect时间   
     this.state={
       fwlx:'',
       qyd:undefined,
@@ -25,7 +28,9 @@ export default class Cabseach extends Component {
       token:sessionStorage.getItem("SESSIONTOKEN"),
       cwzt:'',
       qydn:'',
-      mddn:''
+      mddn:'',
+      carr:'',
+      carrName:'' 
     }
   }
   handseach(){
@@ -35,7 +40,12 @@ export default class Cabseach extends Component {
     let depaPort = this.state.qyd==undefined?'':this.state.qyd;
     let destPort = this.state.mdd==undefined?'':this.state.mdd;
     let cabSt=this.state.cwzt;
-    this.props.actions.getssqc(userName,token,1,serv,depaPort,destPort,cabSt);//获取搜索数据
+    let carr=this.state.carr;
+    if(carr == undefined) {
+      carr = ''
+    }
+    console.log(carr);
+    this.props.actions.getssqc(userName,token,1,serv,depaPort,destPort,cabSt,carr);//获取搜索数据
     this.refs.cablist.setState({
       Hes:0,
       page:1,
@@ -47,7 +57,9 @@ export default class Cabseach extends Component {
       fwlx:'',
       qyd:undefined,
       mdd:undefined,
-      cwzt:''
+      cwzt:'',
+      carr:'',
+      carrName:''
     });
   }
   handcn(v){
@@ -92,6 +104,18 @@ export default class Cabseach extends Component {
     let mdd=o.props.date;
     this.setState({ mdd:mdd });
   }
+  carronChange(v){
+    this.setState({
+      carrName:v,
+    });
+  }
+
+  carronSelect(v,o){
+    let value=o.props.date;
+    this.setState({
+      carr:value
+    });
+  }
   render() {
     let Fstate=Array.of(
       this.state.fwlx,
@@ -99,6 +123,7 @@ export default class Cabseach extends Component {
       this.state.mdd,
       this.state.cwzt
     );
+    // console.log( this.props.cabnew);
     return (
       <div className="cab3">
         <div className="cab4">
@@ -169,6 +194,30 @@ export default class Cabseach extends Component {
                 <Option value="2">退关</Option>
                 <Option value="3">履约</Option>
                 <Option value="4">争议</Option>
+              </Select>
+            </li>
+            <li className="caba">
+              承运商
+              <Select showSearch
+                      value={this.state.carrName}
+                      style={{ width: 120 }}
+                      className="xseachop"
+                      optionFilterProp="children"
+                      notFoundContent=""
+                      placeholder="(下拉模糊)"
+                      onChange={this.carronChange}
+                      onSelect={this.carronSelect}
+              >
+                <OptGroup label="全部">
+                  {
+                    <Option key='-1'>全部</Option>
+                  }
+                </OptGroup>
+                <OptGroup label="所有">
+                  {
+                    this.props.cabnew.carrs.map(s => <Option key={s.carr} date={s.carr} value={s.carrName}>{s.carrName}</Option>)
+                  }
+                </OptGroup>
               </Select>
             </li>
           </ul>

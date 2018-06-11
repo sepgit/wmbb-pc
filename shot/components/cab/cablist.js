@@ -28,6 +28,7 @@ export default class Cablist extends Component {
         let re=[];
         this.state.page==1?re=this.props.cabnew.qcliL:re=this.state.hhs;
         return re.map((item, index) => {
+            // console.log(item);
             return <Cablistall
                 key={index}
                 keys={index}

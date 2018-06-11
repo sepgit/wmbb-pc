@@ -17,7 +17,8 @@ import {
   GET_CARINFO,
   GET_GCBZ,
   GET_QYDKAR,
-  GET_MDDKAR
+  GET_MDDKAR,
+  GET_CARRS
 } from '../../action/cabr/acabr';
 
 const initialState ={
@@ -35,10 +36,17 @@ const initialState ={
   carinfo:[],
   cabReplgcbz:0,
   qydkar:[],
-  mddkar:[]
+  mddkar:[],
+  carrs:[],
 };
 export default function rcabrs(state=initialState,action){
   switch (action.type){
+    case GET_CARRS:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        carrs:action.carrs
+      });
     case GET_QYDKAR:
       return Object.assign({}, state, {
         err:action.err,
