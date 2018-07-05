@@ -1,17 +1,20 @@
-/**
- * Created by Zing on 2016/8/22.
+/*
+ * @Author: sepgit 
+ * @Date: 2018-07-02 10:30:50 
+ * @Last Modified by: sepgit
+ * @Last Modified time: 2018-07-03 13:43:37
  */
 import React,{Component} from 'react';
 import Top from './../../components/home/top';
-import Emid from './../../components/employee/emid';
+import Camid from './../../components/cab/camid';
 import NewL from './../../components/newl/NewL';
 import Gotop from './../../components/Galy/Gotop';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import Myserver from './../../components/Myservice/myservice'
 import {
   getyg,
   getqx,
-  emshow,
   gethgerxx,
   gethports,
   getindus,
@@ -27,7 +30,28 @@ import {
     getsfzzrz,
     postsqrz
 } from '../../action/home/ahome';
-import {getemxj,getemcs,getemgd,getemdel,getemqx,putemlz,putemuse,putemsetqx} from '../../action/employee/aemployee';
+import {
+  getgyye,
+  getgysfw,
+  getgysl,
+  getckfy,
+  getnewqc,
+  getqclb,
+  getssqc,
+  getqcgd,
+  gethqxq,
+  getfwlx,
+  getkouan,
+  getqrzjlv,
+  getqrdflv,
+  getsclvzm,
+  getxgztq,
+  getcainfo,
+  getqcbz,
+  getqydka,
+  getmddka,
+  getcarrs
+} from '../../action/cab/acab';
 import {
   getxpdetil,
   getxphplist,
@@ -44,7 +68,7 @@ import {
   getports,
   getccto,
   getwtuo,
-  getcarrs,
+  // getcarrs,
   getportsf,
   getpeohpinfod,
   getxaddhang,
@@ -165,13 +189,6 @@ import {
   getkansp
 } from '../../action/Spfreight/aspfreight';
 import {
-  getgyye,
-  getgysfw,
-  getgysl,
-  getckfy,
-  getnewqc
-} from '../../action/cab/acab';
-import {
   getfwlxcwb,
   postcwbfb,
   getcarrscwb,
@@ -184,18 +201,11 @@ import {
   getcabyue
 } from '../../action/cabMy/acabMy';
 
-class Employee extends Component {
-  constructor(props) {
-    super(props);
-    this.state={
-      enab:sessionStorage.getItem("SESSIONADMIENAB"),
-      comp:sessionStorage.getItem("SESSIONCOMP")
-    }
-  }
+class Server extends Component {
   render() {
-    const { actions,text,shows,ema,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabmynew} = this.props;
+    const { actions,text,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabmynew} = this.props;
     return (
-      <div className="employeepage">
+      <div className="cabpage">
           <Gotop />
           <Top actions={actions} text={text} />
           <NewL actions={actions}
@@ -211,16 +221,8 @@ class Employee extends Component {
                 cabnew={cabnew}
                 cabmynew={cabmynew}
           />
-        {/* {
-          this.state.comp>0?
-            this.state.enab == 1 ?
-              <Emid shows={shows} actions={actions} ema={ema} text={text}/> : undefined
-            :<Emid shows={shows} actions={actions} ema={ema} text={text}/>
-        } */}
-        {
-          this.state.comp>0?
-              <Emid shows={shows} actions={actions} ema={ema} text={text}/> : undefined
-        }
+          {/* <Camid actions={actions} text={text} cabnew={cabnew}/> */}
+          <Myserver actions={actions} text={text} ></Myserver>
       </div>
     );
   }
@@ -228,8 +230,6 @@ class Employee extends Component {
 function mapStateToProps(state){
   return {
     text:state.homeinfo,
-    shows:state.homeshow,
-    ema:state.Remployee,
     getdetil:state.getdetil,
     getnewlist:state.getnewlist,
     zxinfo:state.zxreduer,
@@ -258,15 +258,25 @@ function mapDispatchToProps(dispatch){
       getprivxp:getprivxp,
       getxyye:getxyye,
       getxxtxxg:getxxtxxg,
-      emshow:emshow,
-      getemxj:getemxj,
-      getemcs:getemcs,
-      getemgd:getemgd,
-      getemdel:getemdel,
-      getemqx:getemqx,
-      putemlz:putemlz,
-      putemuse:putemuse,
-      putemsetqx:putemsetqx,
+      getgyye:getgyye,
+      getgysfw:getgysfw,
+      getgysl:getgysl,
+      getckfy:getckfy,
+      getnewqc:getnewqc,
+      getqclb:getqclb,
+      getssqc:getssqc,
+      getqcgd:getqcgd,
+      gethqxq:gethqxq,
+      getfwlx:getfwlx,
+      getkouan:getkouan,
+      getqrzjlv:getqrzjlv,
+      getqrdflv:getqrdflv,
+      getsclvzm:getsclvzm,
+      getxgztq:getxgztq,
+      getqcbz:getqcbz,
+      getqydka:getqydka,
+      getmddka:getmddka,
+      getcainfo:getcainfo,
       getxpdetil:getxpdetil,
       getxphplist:getxphplist,
       putxpxqzb:putxpxqzb,
@@ -283,6 +293,7 @@ function mapDispatchToProps(dispatch){
       getccto:getccto,
       getwtuo:getwtuo,
       getcarrs:getcarrs,
+      // getcarrs:getcarrs,
       getportsf:getportsf,
       getpeohpinfod:getpeohpinfod,
       getxaddhang:getxaddhang,
@@ -389,14 +400,9 @@ function mapDispatchToProps(dispatch){
       gethotposp:gethotposp,
       postyspnew:postyspnew,
       getkansp:getkansp,
-      getgyye:getgyye,
-      getgysfw:getgysfw,
-      getgysl:getgysl,
-      getckfy:getckfy,
-      getnewqc:getnewqc,
       getservsall:getservsall,
-        getsfzzrz:getsfzzrz,
-        postsqrz:postsqrz,
+      getsfzzrz:getsfzzrz,
+      postsqrz:postsqrz,
       getfwlxcwb:getfwlxcwb,
       postcwbfb:postcwbfb,
       getcarrscwb:getcarrscwb,
@@ -410,5 +416,5 @@ function mapDispatchToProps(dispatch){
     },dispatch)
   }
 }
-Employee=connect(mapStateToProps,mapDispatchToProps)(Employee);
-module.exports = Employee;
+Server=connect(mapStateToProps,mapDispatchToProps)(Server);
+module.exports = Server;

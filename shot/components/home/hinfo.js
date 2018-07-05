@@ -20,6 +20,7 @@ export default class Hinfo extends Component {
                     <li><a href="javascript:void(0);" onClick={this.props.handgs}>公司信息</a></li>:
                     <li><a href="javascript:void(0);" onClick={this.props.handgs}>升级为公司</a></li>
                 }
+                {/* <li><a href="javascript:void(0);" onClick={this.props.handgs}>公司信息</a></li> */}
                 <li><a href="javascript:void(0);" onClick={this.props.handxx}>消息设置</a></li>
                 <li><a href="javascript:void(0);" onClick={this.props.handmm}>修改密码</a></li>
                 {

@@ -90,6 +90,7 @@ export default class Name extends Component {
             indx:s
         });
     }
+    
     showwin(){
         return this.state.isshow?
             this.state.indx==1?<Hgrxx

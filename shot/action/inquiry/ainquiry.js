@@ -198,7 +198,7 @@ export function getxpeo(userName,token,user,comp){
     str='&user='+user;
   }
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0'+str,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0'+str,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -419,7 +419,7 @@ function get_ccto(date,adminlinfo) {
 
 export function getccto(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -455,7 +455,7 @@ function get_wtuo(date) {
 
 export function getwtuo(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0&freiMngr=1&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0&freiMngr=1&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -1140,7 +1140,7 @@ function get_peohpinfo(date,deposit) {
 
 export function getpeohpinfod(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -1568,7 +1568,7 @@ function get_usedel(date) {
 
 export function getusedel(userName,token,user){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+user+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+user+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

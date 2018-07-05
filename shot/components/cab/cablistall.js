@@ -158,9 +158,11 @@ export default class Cablistall extends Component {
               <div className="cab12">
                   <h5>内陆费用:</h5>
                 {
-                  this.props.rows.cabFee != null?
+                  this.props.rows.cabFee != null ?
                     // <span>{this.props.rows.curr == '1' ? '¥' : '$'} {this.props.rows.cabFee}</span>
-                    <span> {this.props.rows.cabFee}</span>:undefined
+                    // <span> {this.props.rows.cabFee}</span>:undefined
+                    this.props.rows.cabFee == 0 ?undefined: <span> {this.props.rows.cabFee}</span>
+                  :undefined
                 }
               </div>
               <div className="cab60" title={moment(this.props.rows.winTime).format('YYYY.MM.DD HH:mm:ss')}>

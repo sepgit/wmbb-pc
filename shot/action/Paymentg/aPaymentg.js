@@ -74,7 +74,7 @@ function get_privs(date) {
 
 export function getpayr(userName,token,userAcco){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+"&rowCount=0&userAcco="+userAcco,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+"&rowCount=0&userAcco="+userAcco,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -100,7 +100,7 @@ export function getpayr(userName,token,userAcco){
                 }
               });
               //获取付款人权限
-              fetch(HTTPED+'api/users/'+date.rows[0].user+'/?userName='+userName+'&token='+token+'&priv=true',{
+              fetch(HTTPED+'api/wmbbusers/'+date.rows[0].user+'/?userName='+userName+'&token='+token+'&priv=true',{
                 method: "get",
                 headers: {
                   "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -183,7 +183,7 @@ export function getbhr(userName,token,user,comp){
     str='&user='+user;
   }
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0'+str,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0'+str,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -513,7 +513,7 @@ function get_reinfo(date) {
 
 export function getreinfo(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -655,7 +655,7 @@ function get_userlbp(date) {
 
 export function getuserlbp(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

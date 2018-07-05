@@ -23,7 +23,7 @@ function get_lianxir(date) {
 
 export function getlianxir(userName,token,userAcco){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+"&rowCount=0&userAcco="+userAcco,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+"&rowCount=0&userAcco="+userAcco,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -491,7 +491,7 @@ function get_userlb(date) {
 
 export function getuserlb(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

@@ -134,7 +134,7 @@ export function getyspfbr(userName,token,user,comp){
     str='&user='+user;
   }
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0'+str,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0'+str,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -170,7 +170,7 @@ function get_yspusers(date) {
 
 export function getyspusers(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

@@ -127,8 +127,8 @@ export default class Cabgdetil extends Component {
         zt ='';
         break;
     }
-    console.log(this.state.userid);
-    console.log(this.props.cabgnew.cabDispdetail);
+    // console.log(this.state.userid);
+    // console.log(this.props.cabgnew.cabDispdetail);
     return (
       <div className="cabzzc">
         <div className="cab70">
@@ -139,34 +139,35 @@ export default class Cabgdetil extends Component {
           </div>
           <div className="cab140">
             <ul>
-              <li>
-                <h5>服务类型:</h5>
-                <span>{this.props.cabgnew.cabDispdetail.servName}</span>
-              </li>
-              <li>
-                <h5>承运商:</h5>
-                <span>{this.props.cabgnew.cabDispdetail.carrName}</span>
-              </li>
-              <li>
-                  <h5>起运地:</h5>
-                  <span>{this.props.cabgnew.cabDispdetail.depaPortName}/{this.props.cabgnew.cabDispdetail.depaChsName}</span>
-              </li>
-              <li>
-                  <h5>目的地:</h5>
-                  <span>{this.props.cabgnew.cabDispdetail.destPortName}/{this.props.cabgnew.cabDispdetail.destChsName}</span>
-              </li>
-              <li>
-                  <h5>求舱指标:</h5>
-                  <span>{this.props.cabgnew.cabDispdetail.reqPref}</span>
-              </li>
-              <li>
-                  <h5>供舱指标:</h5>
-                  <span>{this.props.cabgnew.cabDispdetail.resPref}</span>
-              </li>
-              <li>
-                  <h5>供舱方:</h5>
-                  <span>{this.props.cabgnew.cabDispdetail.resName}</span>
-              </li>
+                <li>
+                    <h5>服务类型:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.servName}</span>
+                </li>
+                <li>
+                    <h5>承运商:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.carrName}</span>
+                </li>
+                <li>
+                    <h5>起运地:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.depaPortName}/{this.props.cabgnew.cabDispdetail.depaChsName}</span>
+                </li>
+                <li>
+                    <h5>目的地:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.destPortName}/{this.props.cabgnew.cabDispdetail.destChsName}</span>
+                </li>
+                <li>
+                    <h5>求舱指标:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.reqPref}</span>
+                </li>
+                <li>
+                    <h5>供舱指标:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.resPref}</span>
+                </li>
+                <li>
+                    <h5>供舱方:</h5>
+                    <span>{this.props.cabgnew.cabDispdetail.resName}</span>
+                </li>
+                <li></li>
                 <li>
                     <h5>运输工具:</h5>
                     <span>{this.props.cabgnew.cabDispdetail.trans}</span>
@@ -180,19 +181,20 @@ export default class Cabgdetil extends Component {
                   <span>{this.props.cabgnew.cabDispdetail.resCompAlia}</span>
               </li>*/}
               <li>
-                  <h5>开航时间:</h5>
-                  {
-                      this.props.cabgnew.cabDispdetail.sailTime == null ? '' :
-                          <span>{moment(this.props.cabgnew.cabDispdetail.sailTime).format('YYYY-MM-DD  HH:mm')}</span>
-                  }
-              </li>
-              <li>
                   <h5>截关时间:</h5>
                   {
                       this.props.cabgnew.cabDispdetail.closTime == null ? '' :
                           <span>{moment(this.props.cabgnew.cabDispdetail.closTime).format('YYYY-MM-DD HH:mm')}</span>
                   }
               </li>
+              <li>
+                  <h5>开航时间:</h5>
+                  {
+                      this.props.cabgnew.cabDispdetail.sailTime == null ? '' :
+                          <span>{moment(this.props.cabgnew.cabDispdetail.sailTime).format('YYYY-MM-DD  HH:mm')}</span>
+                  }
+              </li>
+              
                 <li>
                     <h5>内陆方式:</h5>
                     <span>{this.props.cabgnew.cabDispdetail.inldType}</span>
@@ -209,13 +211,13 @@ export default class Cabgdetil extends Component {
                     <h5>货物状态:</h5>
                     <span>{this.props.cabgnew.cabDispdetail.goodsStat}</span>
                 </li>
-              <li>
-                  <h5>最晚退关时间:</h5>
-                  {
-                      this.props.cabgnew.cabDispdetail.lastShutTime == null ? '' :
-                          <span>{moment(this.props.cabgnew.cabDispdetail.lastShutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
-                  }
-              </li>
+                <li>
+                    <h5>最晚退关时间:</h5>
+                    {
+                        this.props.cabgnew.cabDispdetail.lastShutTime == null ? '' :
+                            <span>{moment(this.props.cabgnew.cabDispdetail.lastShutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                    }
+                </li>
                 <li>
                     <h5>运价有效期:</h5>
                     {
@@ -223,11 +225,25 @@ export default class Cabgdetil extends Component {
                             <span>{moment(this.props.cabgnew.cabDispdetail.expiTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                     }
                 </li>
+
+                {/* <li>
+                  <h5>实际退关时间:</h5>
+                  {
+                      this.props.cabgnew.cabDispdetail.shutTime == null ? '' :
+                          <span>{moment(this.props.cabgnew.cabDispdetail.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                  }
+                </li> */}
+                {
+                     this.props.cabgnew.cabDispdetail.shutTime == null ?<li></li>:
+                     <li>
+                         <h5>实际退关时间:</h5>
+                         <span>{moment(this.props.cabgnew.cabDispdetail.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                     </li>
+                }   
+                <li></li>                         
                 <li>
-                        
-                        <h5>备注:</h5>
-                        <span className="overflowH">{this.props.cabgnew.cabDispdetail.label}</span>
-                    
+                    <h5>备注:</h5>
+                    <span className="overflowH">{this.props.cabgnew.cabDispdetail.label}</span>
                 </li>
             </ul>
           </div>
@@ -242,13 +258,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.GP20}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.GP20Cos)*parseFloat(this.props.cabgnew.cabDispdetail.GP20)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.GP20Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.GP20Cos}</p>
-                                </div>
+                               
                             </div>:undefined
                     }
                     {
@@ -259,13 +276,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.GP40}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.GP40Cos)*parseFloat(this.props.cabgnew.cabDispdetail.GP40)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.GP40Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.GP40Cos}</p>
-                                </div>
+                                
                             </div>:undefined
                     }
                     {
@@ -276,13 +294,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.NOR40}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.NOR40Cos)*parseFloat(this.props.cabgnew.cabDispdetail.NOR40)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.NOR40Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.NOR40Cos}</p>
-                                </div>
+                               
                             </div>:undefined
                     }
                     {
@@ -293,13 +312,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.HQ40}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.HQ40Cos)*parseFloat(this.props.cabgnew.cabDispdetail.HQ40)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.HQ40Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.HQ40Cos}</p>
-                                </div>
+                                
                             </div>:undefined
                     }
                     {
@@ -310,13 +330,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.HQ45}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.HQ45Cos)*parseFloat(this.props.cabgnew.cabDispdetail.HQ45)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.HQ45Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.HQ45Cos}</p>
-                                </div>
+                                
                             </div>:undefined
                     }
                     {
@@ -327,13 +348,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.FR20}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.FR20Cos)*parseFloat(this.props.cabgnew.cabDispdetail.FR20)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.FR20Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.FR20Cos}</p>
-                                </div>
+                                
                             </div>:undefined
                     }
                     {
@@ -344,13 +366,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.FR40}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'}{parseFloat(this.props.cabgnew.cabDispdetail.FR40Cos)*parseFloat(this.props.cabgnew.cabDispdetail.FR40)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.FR40Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.FR40Cos}</p>
-                                </div>
+                                
                             </div>:undefined
                     }
                     {
@@ -361,13 +384,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.RF20}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.RF20Cos)*parseFloat(this.props.cabgnew.cabDispdetail.RF20)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.RF20Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.RF20Cos}</p>
-                                </div>
+                               
                             </div>:undefined
                     }
                     {
@@ -378,13 +402,14 @@ export default class Cabgdetil extends Component {
                                     <p>{this.props.cabgnew.cabDispdetail.RF40}</p>
                                 </div>
                                 <div className="cab54">
+                                    <span>总运价:</span>
+                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {parseFloat(this.props.cabgnew.cabDispdetail.RF40Cos)*parseFloat(this.props.cabgnew.cabDispdetail.RF40)}</p>
+                                </div>
+                                <div className="cab54">
                                     <span>总定金:</span>
                                     <p>{this.props.cabgnew.cabDispdetail.curr==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.RF40Fee}</p>
                                 </div>
-                                <div className="cab54">
-                                    <span>总运价:</span>
-                                    <p>{this.props.cabgnew.cabDispdetail.currCos==1?'¥':'$'} {this.props.cabgnew.cabDispdetail.RF40Cos}</p>
-                                </div>
+                                
                             </div>:undefined
                     }
                 </div>

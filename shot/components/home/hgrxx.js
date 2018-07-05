@@ -1,5 +1,8 @@
-/**
- * Created by Zing on 2016/8/30.
+/*
+ * @Author: sepgit 
+ * @Date: 2018-06-11 10:35:12 
+ * @Last Modified by: sepgit
+ * @Last Modified time: 2018-07-05 10:22:08
  */
 
 import React,{Component} from 'react';
@@ -13,6 +16,7 @@ let timeout;
 export default class Hgrxx extends Component {
   constructor(props) {
     super(props);
+
     this.handqr=this.handqr.bind(this);
     this.handqx=this.handqx.bind(this);
     this.chexm=this.chexm.bind(this);
@@ -231,6 +235,7 @@ export default class Hgrxx extends Component {
       </div>
     );
     console.log(this.props.text.user);
+    // console.log(this.props.text);
     return (
       <div className="hgrxx">
         <div className="grxx">
@@ -500,38 +505,52 @@ export default class Hgrxx extends Component {
                   <span className="grxxs">授信状态：</span>
                   <p>{this.props.text.user.depositEnab==1?'已授信':'未授信'}</p>
               </li>
-              {/* <li className="grxxlib">
+              <li className="grxxlib">
                   <span className="grxxs">授信有效期：</span>
-                  <p></p>
-              </li> */}
+                  <p>{moment(this.props.text.user.guarPrivTo).format('YYYY.MM.DD')}</p>
+              </li>
               <li className="grxxlia">
-                  <span className="grxxs">认证会员：</span>
+                  {/* <span className="grxxs">认证会员：</span>
                   {
                     this.props.text.isAudi?
                         <div className="grxxrz1">
                             认证中
                         </div>:this.props.text.user.certNo?
-                        <div className="grxxrz3">
-                            <span>已认证</span>
-                            {
-                                this.state.comp>0?this.props.text.priv.admi>0?
-                                    <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>:undefined:
-                                    <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>
-                            }
-                        </div>:
-                        this.state.comp>0?this.props.text.priv.admi>0?
-                            <div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>:
-                            <div className="grxxrz2">
-                                未认证
-                            </div>:
-                            <div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>
+                          <div className="grxxrz3">
+                              <span>已认证</span>
+                              {
+                                  this.state.comp>0?this.props.text.priv.admi>0?
+                                      <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>:undefined:
+                                      <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>
+                              }
+                          </div>:
+                          this.state.comp>0?this.props.text.priv.admi>0?
+                              <div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>:
+                              <div className="grxxrz2">
+                                  未认证
+                              </div>:
+                              <div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>
 
+                  }
+                  <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a> */}
+                  <span className="grxxs">认证会员：</span>
+                  {
+                    this.props.text.isAudi?
+                    <div className="grxxrz1">认证中</div>:this.props.text.user.certNo?
+                      <div className="grxxrz3">
+                        <span>已认证</span>
+                          {
+                            this.state.comp>0?this.props.text.priv.admi>0?
+                              <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>:undefined:
+                              <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>
+                          }
+                      </div>:<div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>
                   }
                   <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a>
               </li>
                 <li className="grxxlib">
                     <span className="grxxs">认证有效期：</span>
-                    <p></p>
+                    <p>{moment(this.props.text.user.userVipTime).format('YYYY.MM.DD')}</p>
                 </li>
                 <li className="grxxlib">
                     <span className="grxxs">认证会员编号：</span>
@@ -541,7 +560,10 @@ export default class Hgrxx extends Component {
                     <span className="grxxs">预警：</span>
                     <p>{this.props.text.user.warn==1?'预警':'正常'}</p>
                 </li>
-                
+                <li className="grxxlia">
+                    <span className="grxxs">平台供应商：</span>
+                    {/* <p>{this.props.text.user.warn==1?'预警':'正常'}</p> */}
+                </li>
             </ul>
           </div>
           <div className="grxx3">

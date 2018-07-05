@@ -40,6 +40,7 @@ export default class Nav extends Component {
                     <li className="navli2"><Link activeClassName="active" to="/Paymentg">我的收付款</Link></li>
                     <li className="navli2"><Link activeClassName="active" to="/cabMy">我的舱位</Link></li>
                     <li className="navli2"><Link activeClassName="active" to="/meeting">我的会议</Link></li>
+                    <li className="navli2"><Link activeClassName="active" to="/service">我的服务</Link></li>
                     {/*<li className="navli2"><Link activeClassName="active" to="/Showhome">物流BAIDU</Link></li>*/}
                 </ul>
             </div>

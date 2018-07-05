@@ -512,7 +512,7 @@ function get_hfccto(date,adminlinfo) {
 
 export function gethfccto(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -548,7 +548,7 @@ function get_hfwtuo(date) {
 
 export function gethfwtuo(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=0&freiMngr=1&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=0&freiMngr=1&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -692,7 +692,7 @@ function get_peoinfohf(date,deposit) {
 
 export function getpeoinfohf(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

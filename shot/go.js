@@ -31,7 +31,7 @@ import './src/css/cabsck/cabsck.styl';
 import './src/css/Galy/Galy.styl';
 import './src/css/comment/comment.styl';
 import './src/css/cabMy/cabMy.styl';
-
+import './src/css/Myservice/myservice.styl'
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory,Redirect,history } from 'react-router';
 import { Provider } from 'react-redux';
@@ -202,6 +202,15 @@ const routes = {
       getComponent(nextState, cb) {
         require.ensure([], (require) => {
           cb(null, require('./containers/meetqt/meetqt'))
+        })
+      }
+    },
+    {
+      path: '/service',
+      onEnter:handonEnter,
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Myservice/Myservice'))
         })
       }
     },

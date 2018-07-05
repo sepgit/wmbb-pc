@@ -28,7 +28,7 @@ export default class Cabrlist extends Component {
         let re=[];
         this.state.page==1?re=this.props.cabrnew.gcliL:re=this.state.hhs;
         return re.map((item, index) => {
-            console.log(item);
+            // console.log(item);
             return <Cabrlistall
                 key={index}
                 keys={index}

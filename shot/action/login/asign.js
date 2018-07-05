@@ -26,7 +26,7 @@ function put_login(date) {
 
 export function putlogin(userName,pad){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -58,7 +58,7 @@ export function putlogin(userName,pad){
               btn,
               icon:<Icon type="info" />
             };
-            fetch(HTTPED+'api/users/'+date.user+'/?userName='+userName+'&token='+date.token,{
+            fetch(HTTPED+'api/wmbbusers/'+date.user+'/?userName='+userName+'&token='+date.token,{
               method: "get",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -92,7 +92,7 @@ export function putlogin(userName,pad){
               }
             });
             //获取用户权限
-            fetch(HTTPED+'api/users/'+date.user+'/?userName='+userName+'&token='+date.token+'&priv=true',{
+            fetch(HTTPED+'api/wmbbusers/'+date.user+'/?userName='+userName+'&token='+date.token+'&priv=true',{
               method: "get",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -112,7 +112,7 @@ export function putlogin(userName,pad){
               }
             });
             //获取系统权限
-            fetch(HTTPED+'api/users/'+date.user+'/?userName='+userName+'&token='+date.token+'&systPriv=true',{
+            fetch(HTTPED+'api/wmbbusers/'+date.user+'/?userName='+userName+'&token='+date.token+'&systPriv=true',{
               method: "get",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -196,7 +196,7 @@ function post_zc(date,userName) {
 
 export function postzc(userName,password,capi,capt){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/',{
+    fetch(HTTPED+'api/wmbbusers/',{
       method: "post",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -209,7 +209,7 @@ export function postzc(userName,password,capi,capt){
             dispatch(post_zc(date,userName));
             message.success('注册成功');
             //邮件
-            fetch(HTTPED+'api/users/'+userName+'/',{
+            fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
               method: "put",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -254,7 +254,7 @@ function post_jhyj(date,signjh) {
 
 export function postjhyj(userName){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -293,7 +293,7 @@ function put_jh(date) {
 
 export function putjh(userName,actiCode){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -332,7 +332,7 @@ function put_wjmm(date) {
 
 export function putwjmm(userName){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -369,7 +369,7 @@ function put_czmm(date) {
 
 export function putczmm(userName,vkey,newPass){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -410,7 +410,7 @@ function put_loginurl(date) {
 
 export function putloginurl(userName,pad){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -442,7 +442,7 @@ export function putloginurl(userName,pad){
               btn,
               icon:<Icon type="info" />
             };
-            fetch(HTTPED+'api/users/'+date.user+'/?userName='+userName+'&token='+date.token,{
+            fetch(HTTPED+'api/wmbbusers/'+date.user+'/?userName='+userName+'&token='+date.token,{
               method: "get",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -473,7 +473,7 @@ export function putloginurl(userName,pad){
               }
             });
             //获取用户权限
-            fetch(HTTPED+'api/users/'+date.user+'/?userName='+userName+'&token='+date.token+'&priv=true',{
+            fetch(HTTPED+'api/wmbbusers/'+date.user+'/?userName='+userName+'&token='+date.token+'&priv=true',{
               method: "get",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -493,7 +493,7 @@ export function putloginurl(userName,pad){
               }
             });
             //获取系统权限
-            fetch(HTTPED+'api/users/'+date.user+'/?userName='+userName+'&token='+date.token+'&systPriv=true',{
+            fetch(HTTPED+'api/wmbbusers/'+date.user+'/?userName='+userName+'&token='+date.token+'&systPriv=true',{
               method: "get",
               headers: {
                 "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

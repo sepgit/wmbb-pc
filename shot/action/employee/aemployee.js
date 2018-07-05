@@ -24,7 +24,7 @@ function get_emxj(date,isfs) {
 
 export function getemxj(userName,token,userAcco,comp,name,posi,mobi,phon,fax,mail,addr){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/',{
+    fetch(HTTPED+'api/wmbbusers/',{
       method: "post",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -62,7 +62,7 @@ function get_emcs(date) {
 
 export function getemcs(userName,token,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=10&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=10&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -99,7 +99,7 @@ function get_emgd(date) {
 
 export function getemgd(userName,token,pageIndex,comp){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/?userName='+userName+'&token='+token+'&rowCount=10&pageIndex='+pageIndex+'&comp='+comp,{
+    fetch(HTTPED+'api/wmbbusers/?userName='+userName+'&token='+token+'&rowCount=10&pageIndex='+pageIndex+'&comp='+comp,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -134,7 +134,7 @@ function get_emdel(date) {
 
 export function getemdel(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -169,7 +169,7 @@ function get_emqx(date) {
 
 export function getemqx(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token+'&priv=true',{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token+'&priv=true',{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -205,7 +205,7 @@ function put_emlz(date,upis) {
 
 export function putemlz(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -243,7 +243,7 @@ function put_emuse(date,upis) {
 
 export function putemuse(userName,token,userid,name,posi,phon,fax,mail,adva,cont,prov,paym,cash,freiMngr){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

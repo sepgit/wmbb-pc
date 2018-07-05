@@ -25,7 +25,7 @@ function get_employess(date) {
 
 export function getyg(user,userName,token){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+user+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+user+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -62,7 +62,7 @@ function get_priv(date) {
 
 export function getqx(user,userName,token){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+user+'/?userName='+userName+'&token='+token+'&priv=true',{
+    fetch(HTTPED+'api/wmbbusers/'+user+'/?userName='+userName+'&token='+token+'&priv=true',{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -485,7 +485,7 @@ function get_hgerxx(date,isshow) {
 
 export function gethgerxx(userName,token,userid,name,comp,compName,compAlia,indu,port,addr,posi,phon,fax,mobi,mobiBind,mail,qq){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -591,7 +591,7 @@ function get_htcdl(date) {
 
 export function gethtcdl(userName,token){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -635,7 +635,7 @@ function get_hxgmm(date) {
 
 export function gethxgmm(userName,token,oldPass,newPass){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userName+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userName+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -783,7 +783,7 @@ function get_privxp(date) {
 
 export function getprivxp(user,userName,token){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+user+'/?userName='+userName+'&token='+token+'&systPriv=true',{
+    fetch(HTTPED+'api/wmbbusers/'+user+'/?userName='+userName+'&token='+token+'&systPriv=true',{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -855,7 +855,7 @@ function get_xxtxxg(date) {
 
 export function getxxtxxg(userName,token,userid,nenq,nenf,nenc,nrpl,nrpf,nrpc,ncon,ncof,ncoc,nrsp,nrsf,nrsc,nawa){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/',{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/',{
       method: "put",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -1468,7 +1468,7 @@ function get_yjuinfo(date,deposit) {
 
 export function getyjuinfo(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -1605,7 +1605,7 @@ function get_wumaoge(date) {
 
 export function getwumaoge(userName,token,userid){
   return function(dispatch) {
-    fetch(HTTPED+'api/users/'+userid+'/?userName='+userName+'&token='+token,{
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/?userName='+userName+'&token='+token,{
       method: "get",
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"

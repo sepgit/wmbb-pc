@@ -9,6 +9,7 @@ import NewysL from './newysl';
 import NewskbL from './newskbl';
 import NewCab from './newcab';
 import Problemwin from './../home/problemwin';
+import Newserver from './newserver';
 
 export default class NewL extends Component {
   constructor(props) {
@@ -89,6 +90,7 @@ export default class NewL extends Component {
                    text={this.props.text}
                    cabmynew={this.props.cabmynew}
           />
+          <Newserver />
         </ul>
         <div className='newla' onClick={this.handcjyw}>
           <span>

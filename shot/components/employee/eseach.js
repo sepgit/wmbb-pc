@@ -13,7 +13,7 @@ export default class Eseach extends Component {
         this.state={
             userName:sessionStorage.getItem("SESSIONUSERACC"),
             token:sessionStorage.getItem("SESSIONTOKEN"),
-            comp:sessionStorage.getItem("SESSIONCOMP"),
+            comp:sessionStorage.getItem("SESSIONCOMP"),  
             Hes:0,
             page:1,
             hhs:[]
