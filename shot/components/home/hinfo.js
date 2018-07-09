@@ -12,21 +12,27 @@ export default class Hinfo extends Component {
     }
 
     render() {
+        // console.log(this.props.text.user.user)
         return (
+            
             <ul className="uinfo">
                 <li><a href="javascript:void(0);" onClick={this.props.handgr}>个人信息</a></li>
-                {
+                {/* {
                   this.props.text.user.comp>0?
                     <li><a href="javascript:void(0);" onClick={this.props.handgs}>公司信息</a></li>:
                     <li><a href="javascript:void(0);" onClick={this.props.handgs}>升级为公司</a></li>
-                }
+                } */}
                 {/* <li><a href="javascript:void(0);" onClick={this.props.handgs}>公司信息</a></li> */}
                 <li><a href="javascript:void(0);" onClick={this.props.handxx}>消息设置</a></li>
                 <li><a href="javascript:void(0);" onClick={this.props.handmm}>修改密码</a></li>
-                {
+                {/* {
                     this.props.text.user.comp==0||this.props.text.user.comp==undefined?undefined:
                      this.props.text.priv.admi!=0?<Navtwo actions={this.props.actions} usercomps={this.props.text.user.comp} />:
                      undefined
+                } */}
+                {
+                    this.props.text.user.user != this.props.text.user.admi?
+                    undefined:<Navtwo actions={this.props.actions} usercomps={this.props.text.user.comp} />
                 }
                 <li><Link to="/dep">定金列表</Link></li>
                 {

@@ -1,6 +1,10 @@
-/**
- * Created by Zing on 2016/6/20.
+/*
+ * @Author: sepgit 
+ * @Date: 2018-07-09 10:39:13 
+ * @Last Modified by: sepgit
+ * @Last Modified time: 2018-07-09 14:54:21
  */
+
 import 'fetch-detector';
 import 'fetch-ie8';
 require('es6-promise').polyfill();
@@ -1803,4 +1807,80 @@ export function postsqrz(userName,token){
             message.error("连接服务器失败，请联系管理员！");
         });
     }
+}
+
+//个人信息修改--修改公司
+export const PUT_HGERXXGS = 'PUT_HGERXXGS';
+
+function put_hgerxxgs(date,isshowgs) {
+  return {
+    type: PUT_HGERXXGS,
+    err:date.err,
+    errMsg:date.errMsg,
+    putcompid:date.comp,
+    isshowgs:isshowgs
+  }
+}
+
+export function puthgerxxgs(comp,userName,token,compName,compAlia,indu,port,addr){
+  return function(dispatch) {
+    fetch(HTTPED+'api/wmbbusers/comp/'+comp+'/',{
+      method: "put",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body:"userName="+userName+"&token="+token+"&compName="+compName+"&compAlia="+compAlia+"&indu="+indu+"&port="+port+"&addr="+addr
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date){
+          if(!date.err){
+            dispatch(put_hgerxxgs(date,false));
+            //message.success('修改成功');
+          }else{
+            Backlogin(date.errMsg)
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
+}
+
+//个人信息修改--修改员工
+export const PUT_HGERXXYG = 'PUT_HGERXXYG';
+
+function put_hgerxxyg(date,isshowyg) {
+  return {
+    type: PUT_HGERXXYG,
+    err:date.err,
+    errMsg:date.errMsg,
+    usergrid:date.user,
+    isshowyg:isshowyg
+  }
+}
+
+export function puthgerxxyg(userid,userName,token,name,qq,posi,phon,fax,mobi,mobiBind,mail){
+  return function(dispatch) {
+    fetch(HTTPED+'api/wmbbusers/'+userid+'/',{
+      method: "put",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      },
+      body:"userName="+userName+"&token="+token+"&name="+name+"&qq="+qq+"&posi="+posi+"&phon="+phon+"&fax="+fax+"&mobi="+mobi+"&mobiBind="+mobiBind+"&mail="+mail
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date){
+          if(!date.err){
+            dispatch(put_hgerxxyg(date,false));
+            //message.success('修改成功');
+          }else{
+            Backlogin(date.errMsg)
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
 }

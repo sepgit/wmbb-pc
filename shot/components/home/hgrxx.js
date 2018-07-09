@@ -2,11 +2,11 @@
  * @Author: sepgit 
  * @Date: 2018-06-11 10:35:12 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-05 10:22:08
+ * @Last Modified time: 2018-07-09 14:58:18
  */
 
 import React,{Component} from 'react';
-import {Input,Select,Checkbox,Popover} from 'antd';
+import {Input,Select,Checkbox,Popover,message} from 'antd';
 import moment from 'moment';
 import {VelocityComponent, VelocityTransitionGroup} from 'velocity-react';
 import Hcheck from './hcheck';
@@ -16,7 +16,6 @@ let timeout;
 export default class Hgrxx extends Component {
   constructor(props) {
     super(props);
-
     this.handqr=this.handqr.bind(this);
     this.handqx=this.handqx.bind(this);
     this.chexm=this.chexm.bind(this);
@@ -32,6 +31,7 @@ export default class Hgrxx extends Component {
     this.handsqrz=this.handsqrz.bind(this);
     this.handckqy=this.handckqy.bind(this);
     this.handckqyc=this.handckqyc.bind(this);
+    this.changeHy = this.changeHy.bind(this);
     this.state={
       xm:'',
       hy:'',
@@ -51,8 +51,18 @@ export default class Hgrxx extends Component {
       bd:false,
       qydn:'',
       qq:'',
-      isqy:false
+      isqy:false,
+      defaulthy:this.props.text.user.induName,
+      dhy:this.props.text.user.induName,
+      hyid:this.props.text.user.indu
     }
+  }
+  changeHy(e) {
+    this.props.text.user.induName=e
+    console.log(e)
+    this.setState({
+      hyid:e
+    })
   }
   handckqy(){
       this.setState({
@@ -70,11 +80,13 @@ export default class Hgrxx extends Component {
     this.props.actions.postsqrz(userName,token);
     this.props.hnandclose(false,0);
   }
+
   componentDidMount(){
+    console.log('portName  '+ this.props.text.user.portName );
     if(this.state.comp>0){
-      if(this.props.text.comps.portName){
+      if(this.props.text.user.portName){
         this.setState({
-          qydn:this.props.text.comps.portName==null?'':this.props.text.comps.portName
+          qydn:this.props.text.user.portName==null?'':this.props.text.user.portName
         })
       }else {
         this.setState({
@@ -88,6 +100,7 @@ export default class Hgrxx extends Component {
     }
   }
   handcn(v){
+    // console.log(v)
     this.setState({
       qydn:v
     });
@@ -104,6 +117,9 @@ export default class Hgrxx extends Component {
     }, 300);
   }
   handcns(v,o){
+    console.log(v)
+    console.log(o)
+    this.props.text.user.portName=v;
     let kan=o.props.date;
     this.setState({ kan:kan });
   }
@@ -114,6 +130,7 @@ export default class Hgrxx extends Component {
     })
   }
   chehy(v){
+    console.log(v)
     this.props.text.user.induName=v;
     this.setState({
       hy:v
@@ -157,36 +174,78 @@ export default class Hgrxx extends Component {
       }
     )
   }
-  handqr(){
+  handqr(e){
+    // let userName=this.state.userName;
+    // let token=this.state.token;
+    // let user=this.state.user;
+    // let name=this.state.xm==''?this.props.text.user.name:this.state.xm;
+    // let comp=this.state.comp;
+    // let compName,compAlia,indu,addr,port;
+    // if(comp>0){
+    //   compName=this.props.text.comps.compName==null||this.props.text.comps.compName==''?this.state.gsqc==''?this.props.text.user.compName:this.state.gsqc:this.props.text.comps.compName;
+    //   compAlia=this.props.text.comps.compAlia==null||this.props.text.comps.compAlia==''?this.state.gsjc==''?this.props.text.user.compAlia:this.state.gsjc:this.props.text.comps.compAlia;
+    //   indu=this.props.text.comps.indu==null||this.props.text.comps.indu==''?this.state.hy==''?this.props.text.user.indu:this.state.hy:this.props.text.comps.indu;
+    //   addr=this.props.text.comps.addr==null||this.props.text.comps.addr==''?this.state.dz==''?this.props.text.user.addr:this.state.dz:this.props.text.comps.addr;
+    //   port=this.props.text.comps.portName==null||this.props.text.comps.portName==''?this.state.kan==''?this.props.text.user.port:this.state.kan:this.props.text.comps.port;
+    // }else{
+    //   compName=this.state.gsqc==''?this.props.text.user.compName:this.state.gsqc;
+    //   compAlia=this.state.gsjc==''?this.props.text.user.compAlia:this.state.gsjc;
+    //   indu=this.state.hy==''?this.props.text.user.indu:this.state.hy;
+    //   addr=this.state.dz==''?this.props.text.user.addr:this.state.dz;
+    //   port=this.state.kan==''?this.props.text.user.port:this.state.kan;
+    // }
+    // let posi=this.state.zw==''?this.props.text.user.posi:this.state.zw;
+    // let phon=this.state.dh==''?this.props.text.user.phon:this.state.dh;
+    // let fax=this.state.cz==''?this.props.text.user.fax:this.state.cz;
+    // let mobi=this.state.sj==''?this.props.text.user.mobi:this.state.sj;
+    // let mobiBind=this.props.text.user.mobiBind?1:0;
+    // let mail=this.state.yx==''?this.props.text.user.mail:this.state.yx;
+    // let qq=this.state.qq==''?this.props.text.user.qq:this.state.qq;
+    // //修改个人信息
+    // this.props.actions.gethgerxx(userName,token,user,name,comp,compName,compAlia,indu,port,addr,posi,phon,fax,mobi,mobiBind,mail,qq);
+    // this.props.hnandclose(false,0);
     let userName=this.state.userName;
     let token=this.state.token;
     let user=this.state.user;
-    let name=this.state.xm==''?this.props.text.user.name:this.state.xm;
     let comp=this.state.comp;
+    let admi = this.props.text.user.admi;
     let compName,compAlia,indu,addr,port;
-    if(comp>0){
-      compName=this.props.text.comps.compName==null||this.props.text.comps.compName==''?this.state.gsqc==''?this.props.text.user.compName:this.state.gsqc:this.props.text.comps.compName;
-      compAlia=this.props.text.comps.compAlia==null||this.props.text.comps.compAlia==''?this.state.gsjc==''?this.props.text.user.compAlia:this.state.gsjc:this.props.text.comps.compAlia;
-      indu=this.props.text.comps.indu==null||this.props.text.comps.indu==''?this.state.hy==''?this.props.text.user.indu:this.state.hy:this.props.text.comps.indu;
-      addr=this.props.text.comps.addr==null||this.props.text.comps.addr==''?this.state.dz==''?this.props.text.user.addr:this.state.dz:this.props.text.comps.addr;
-      port=this.props.text.comps.portName==null||this.props.text.comps.portName==''?this.state.kan==''?this.props.text.user.port:this.state.kan:this.props.text.comps.port;
-    }else{
-      compName=this.state.gsqc==''?this.props.text.user.compName:this.state.gsqc;
-      compAlia=this.state.gsjc==''?this.props.text.user.compAlia:this.state.gsjc;
-      indu=this.state.hy==''?this.props.text.user.indu:this.state.hy;
-      addr=this.state.dz==''?this.props.text.user.addr:this.state.dz;
-      port=this.state.kan==''?this.props.text.user.port:this.state.kan;
+    if (this.state.user == this.props.text.user.admi) {
+      compName=this.props.text.user.compName==null||this.props.text.user.compName==''?this.state.gsqc==''?this.props.text.user.compName:this.state.gsqc:this.props.text.user.compName;
+      compAlia=this.props.text.user.compAlia==null||this.props.text.user.compAlia==''?this.state.gsjc==''?this.props.text.user.compAlia:this.state.gsjc:this.props.text.user.compAlia;
+      // indu=this.props.text.user.indu==null||this.props.text.user.indu==''?this.state.hy==''?this.props.text.user.indu:this.state.hy:this.props.text.user.indu;
+      indu = this.state.hy == '' ? this.props.text.user.indu:this.state.hy
+      addr=this.props.text.user.addr==null||this.props.text.user.addr==''?this.state.dz==''?this.props.text.user.addr:this.state.dz:this.props.text.user.addr;
+      // port=this.props.text.user.portName==null||this.props.text.user.portName==''?this.state.kan==''?this.props.text.user.port:this.state.kan:this.props.text.user.port;
+      port =  this.state.kan == '' ? this.props.text.user.port:this.state.kan
+      console.log(this.props.actions)
+      this.props.actions.puthgerxxgs(comp,userName,token,compName,compAlia,indu,port,addr)
+      let userid = user;
+      let name=this.state.xm==''?this.props.text.user.name:this.state.xm;
+      let qq=this.state.qq==''?this.props.text.user.qq:this.state.qq;
+      let posi=this.state.zw==''?this.props.text.user.posi:this.state.zw;
+      let phon=this.state.dh==''?this.props.text.user.phon:this.state.dh;
+      let fax=this.state.cz==''?this.props.text.user.fax:this.state.cz;
+      let mobi=this.state.sj==''?this.props.text.user.mobi:this.state.sj;
+      let mobiBind=this.props.text.user.mobiBind?1:0;
+      let mail=this.state.yx==''?this.props.text.user.mail:this.state.yx;
+      this.props.actions.puthgerxxyg(userid,userName,token,name,qq,posi,phon,fax,mobi,mobiBind,mail)
+      this.props.hnandclose(false,0);
+      message.success('修改成功');
+    }else {
+      let userid = user;
+      let name=this.state.xm==''?this.props.text.user.name:this.state.xm;
+      let qq=this.state.qq==''?this.props.text.user.qq:this.state.qq;
+      let posi=this.state.zw==''?this.props.text.user.posi:this.state.zw;
+      let phon=this.state.dh==''?this.props.text.user.phon:this.state.dh;
+      let fax=this.state.cz==''?this.props.text.user.fax:this.state.cz;
+      let mobi=this.state.sj==''?this.props.text.user.mobi:this.state.sj;
+      let mobiBind=this.props.text.user.mobiBind?1:0;
+      let mail=this.state.yx==''?this.props.text.user.mail:this.state.yx;
+      this.props.actions.puthgerxxyg(userid,userName,token,name,qq,posi,phon,fax,mobi,mobiBind,mail);
+      this.props.hnandclose(false,0);
+      message.success('修改成功');
     }
-    let posi=this.state.zw==''?this.props.text.user.posi:this.state.zw;
-    let phon=this.state.dh==''?this.props.text.user.phon:this.state.dh;
-    let fax=this.state.cz==''?this.props.text.user.fax:this.state.cz;
-    let mobi=this.state.sj==''?this.props.text.user.mobi:this.state.sj;
-    let mobiBind=this.props.text.user.mobiBind?1:0;
-    let mail=this.state.yx==''?this.props.text.user.mail:this.state.yx;
-    let qq=this.state.qq==''?this.props.text.user.qq:this.state.qq;
-    //修改个人信息
-    this.props.actions.gethgerxx(userName,token,user,name,comp,compName,compAlia,indu,port,addr,posi,phon,fax,mobi,mobiBind,mail,qq);
-    this.props.hnandclose(false,0);
   }
   handqx(){
     this.props.hnandclose(false,0);
@@ -203,6 +262,7 @@ export default class Hgrxx extends Component {
     gsjc=this.props.text.user.compAlia=='null'?'':this.props.text.user.compAlia;
     dz=this.props.text.user.addr=='null'?'':this.props.text.user.addr;
     qq=this.props.text.user.qq=='null'?'':this.props.text.user.qq;
+    
     if(this.props.text.user.mobiBind){
       bd=true;
     }else{
@@ -234,7 +294,17 @@ export default class Hgrxx extends Component {
         <p>打勾后，该手机号可作为账号登陆。</p>
       </div>
     );
+    let logo=this.props.text.user.logo;
+    let logos;
+    if(logo!=null&&logo!=''&&logo!='null'){
+      logos=HTTPED+logo.substring(1);
+    }else{
+      logos=require('../../src/image/kong.png');
+    }
     console.log(this.props.text.user);
+    // console.log(this.props.text.user.induName);
+    // console.log(this.props.text.user.portName);
+    //  console.log(this.props.text.user.phon);
     // console.log(this.props.text);
     return (
       <div className="hgrxx">
@@ -257,7 +327,7 @@ export default class Hgrxx extends Component {
                 <span className="grxxs">姓名：</span>
                 <p>
                   {
-                    this.state.comp>0?
+                    this.state.user!=this.props.text.user.admi?
                       this.props.text.priv.admi!=0?<Input value={xm} placeholder="姓名" onChange={this.chexm}/>
                         :this.props.text.user.name
                       :<Input value={xm} placeholder="姓名" onChange={this.chexm}/>
@@ -269,7 +339,7 @@ export default class Hgrxx extends Component {
                 <span className="grxxs">职位：</span>
                 <p>
                   {
-                    this.state.comp>0?
+                    this.state.user!=this.props.text.user.admi?
                       this.props.text.priv.admi!=0?<Input value={zw} placeholder="职位" onChange={this.chezw}/>
                         :this.props.text.user.posi
                       :<Input value={zw} placeholder="职位" onChange={this.chezw}/>
@@ -278,8 +348,8 @@ export default class Hgrxx extends Component {
               </li>
               <li className="grxxlib">
                 <span className="grxxs">行业：</span>
-                {
-                  this.state.comp>0?
+                {/* {
+                  this.state.user!=this.props.text.user.admi?
                     this.props.text.comps.induName==null||this.props.text.comps.induName==''?
                       this.props.text.user.induName==null||this.props.text.user.induName==''?
                         <Select showSearch
@@ -310,14 +380,69 @@ export default class Hgrxx extends Component {
                         this.props.text.indus.map(s => <Option key={s.indu}>{s.induName}</Option>)
                       }
                     </Select>
+                } */}
+                {/* {
+                  this.state.user!=this.props.text.user.admi?
+                  <p>{this.props.text.user.induName}</p>:
+                    <Select showSearch
+                        // defaultValue = { this.props.text.user.indu }
+                      value={this.state.hy}
+                      optionFilterProp="children"
+                      style={{ width: 140 }}
+                      notFoundContent="无法找到"
+                      placeholder="行业"
+                      className="grxxkan"
+                      onChange={(v)=>{return this.setState({hy:v})}} 
+                    >
+                  {
+                    this.props.text.indus.map(s => <Option key={s.indu}>{s.induName}</Option>)
+                  }
+                </Select> 
+                } */}
+                {/* {
+                  this.state.user!=this.props.text.user.admi?
+                  <p>{this.props.text.user.induName}</p>:
+                    <Select showSearch
+                      value={this.props.text.user.induName}
+                      optionFilterProp="children"
+                      style={{ width: 140 }}
+                      range={false}
+                      notFoundContent="无法找到"
+                      placeholder="行业"
+                      className="grxxkan"
+                      onChange={(v)=>{return this.setState({hy:v})}} 
+                    >
+                  {
+                    this.props.text.indus.map(s => <Option key={s.indu}>{s.induName}</Option>)
+                  }
+                </Select> 
+                } */}
+                {
+                  this.state.user!=this.props.text.user.admi?
+                  <p>{this.props.text.user.induName}</p>:
+                    <Select showSearch
+                      value={this.props.text.user.induName}
+                      optionFilterProp="children"
+                      style={{ width: 140 }}
+                      range={false}
+                      notFoundContent="无法找到"
+                      placeholder="行业"
+                      className="grxxkan"
+                      // onChange={this.changeHy}
+                      onChange={this.chehy}
+                    >
+                  {
+                    this.props.text.indus.map(s => <Option key={s.indu}>{s.induName}</Option>)
+                  }
+                </Select> 
                 }
                 <i className="gexxbt">*</i>
               </li>
               <li className="grxxlib">
                 <span className="grxxs">口岸：</span>
-                {
-                  this.state.comp>0?
-                    this.props.text.comps.portName==null||this.props.text.comps.portName==''?
+                {/* {
+                  this.state.user!=this.props.text.user.admi?
+                    this.props.text.user.portName==null||this.props.text.user.portName==''?
                       this.props.text.user.portName==null||this.props.text.user.portName==''?
                         <Select
                           combobox
@@ -337,7 +462,7 @@ export default class Hgrxx extends Component {
                         }
                         </Select>
                         :<p>{this.props.text.user.portName}</p>
-                      :<p>{this.props.text.comps.portName}</p>
+                      :<p>{this.props.text.user.portName}</p>
                     :
                     <Select
                       combobox
@@ -355,7 +480,29 @@ export default class Hgrxx extends Component {
                       {
                         this.props.text.xports.map(s => <Option key={s.port} date={s.port} value={s.portName+'/'+s.chsName}>{s.portName+'/'+s.chsName}</Option>)
                       }
-                    </Select>
+                    </Select>          
+                } */}
+
+                {
+                  this.state.user!=this.props.text.user.admi?
+                  <p>{this.props.text.user.portName}</p>:
+                  <Select
+                    combobox
+                    value={this.state.qydn}
+                    style={{ width: 140 }}
+                    className="grxxkan"
+                    notFoundContent=""
+                    defaultActiveFirstOption={false}
+                    showArrow={false}
+                    filterOption={false}
+                    placeholder={this.props.text.user.portName}
+                    onChange={this.handcn}
+                    onSelect={this.handcns}
+                  >
+                  {
+                    this.props.text.xports.map(s => <Option key={s.port} date={s.port} value={s.portName+'/'+s.chsName}>{s.portName+'/'+s.chsName}</Option>)
+                  }
+                </Select> 
                 }
                 <i className="gexxbt">*</i>
               </li>
@@ -387,7 +534,7 @@ export default class Hgrxx extends Component {
               </li>
               <li className="grxxlia">
                 <span className="grxxs">公司全称：</span>
-                <p className="grxadds">
+                {/* <p className="grxadds">
                   {
                     this.state.comp>0?
                       this.props.text.comps.compName==null||this.props.text.comps.compName==''?
@@ -404,11 +551,23 @@ export default class Hgrxx extends Component {
                         onChange={this.chegsqc}
                       />
                   }
+                </p> */}
+                <p className="grxadds">
+                  {
+                    this.state.user!=this.props.text.user.admi?
+                    this.props.text.user.compName:
+                    <Input
+                      style={{ width:140}}
+                      value={gsqc}
+                      placeholder="公司全称"
+                      onChange={this.chegsqc}
+                    />
+                  }
                 </p>
               </li>
               <li className="grxxlib">
                 <span className="grxxs">公司简称：</span>
-                <p>
+                {/* <p>
                   {
                     this.state.comp>0?
                       this.props.text.comps.compAlia==null||this.props.text.comps.compAlia==''?
@@ -424,6 +583,18 @@ export default class Hgrxx extends Component {
                         placeholder="公司简称"
                         onChange={this.chegsjc}
                       />
+                  }
+                </p> */}
+                <p>
+                  {
+                    this.state.user!=this.props.text.user.admi?
+                    this.props.text.user.compAlia:
+                    <Input
+                      // style={{ width: 120}}
+                      value={gsjc}
+                      placeholder="公司全称"
+                      onChange={this.chegsjc}
+                    />
                   }
                 </p>
                 <i className="gexxbt">*</i>
@@ -483,7 +654,7 @@ export default class Hgrxx extends Component {
                 <span className="grxxs">地址：</span>
                 <p title={adddz} className="grxadds">
                   {
-                    this.state.comp>0?
+                    this.state.user!=this.props.text.user.admi?
                       this.props.text.comps.addr==null||this.props.text.comps.addr==''?
                         this.props.text.user.addr==null||this.props.text.user.addr==''?<Input
                           value={this.state.dz}
@@ -507,7 +678,11 @@ export default class Hgrxx extends Component {
               </li>
               <li className="grxxlib">
                   <span className="grxxs">授信有效期：</span>
-                  <p>{moment(this.props.text.user.guarPrivTo).format('YYYY.MM.DD')}</p>
+                  {
+                      this.props.text.user.guarPrivTo != null || this.props.text.user.guarPrivTo != undefined ?
+                        <p>{moment(this.props.text.user.guarPrivTo).format('YYYY.MM.DD')}</p>: <p></p>
+                    }
+                  {/* <p>{moment(this.props.text.user.guarPrivTo).format('YYYY.MM.DD')}</p> */}
               </li>
               <li className="grxxlia">
                   {/* <span className="grxxs">认证会员：</span>
@@ -534,7 +709,7 @@ export default class Hgrxx extends Component {
                   }
                   <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a> */}
                   <span className="grxxs">认证会员：</span>
-                  {
+                  {/* {
                     this.props.text.isAudi?
                     <div className="grxxrz1">认证中</div>:this.props.text.user.certNo?
                       <div className="grxxrz3">
@@ -545,12 +720,26 @@ export default class Hgrxx extends Component {
                               <a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>
                           }
                       </div>:<div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>
+                  } */}
+                  {
+                    this.props.text.user.userVip == 1?
+                    <div className="grxxrz3">
+                      <span>已认证</span>
+                      {
+                        this.state.user!=this.props.text.user.admi?
+                        undefined :<a href="javascript:void(0);" className="grxxrz4" onClick={this.handsqrz}>申请续约</a>
+                      }                      
+                    </div>: <div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>
                   }
                   <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a>
               </li>
                 <li className="grxxlib">
                     <span className="grxxs">认证有效期：</span>
-                    <p>{moment(this.props.text.user.userVipTime).format('YYYY.MM.DD')}</p>
+                    {
+                      this.props.text.user.userVipTime != null || this.props.text.user.userVipTime != undefined ?
+                        <p>{moment(this.props.text.user.userVipTime).format('YYYY.MM.DD')}</p>: <p></p>
+                    }
+                    
                 </li>
                 <li className="grxxlib">
                     <span className="grxxs">认证会员编号：</span>
@@ -560,12 +749,19 @@ export default class Hgrxx extends Component {
                     <span className="grxxs">预警：</span>
                     <p>{this.props.text.user.warn==1?'预警':'正常'}</p>
                 </li>
-                <li className="grxxlia">
+                <li className="grxxlib">
                     <span className="grxxs">平台供应商：</span>
-                    {/* <p>{this.props.text.user.warn==1?'预警':'正常'}</p> */}
+                    <p>{this.props.text.user.plat==1?'是':'否'}</p>
+                </li>
+                <li  className="grxxlib">
+                  <span className="grxxs">LOGO：</span>
+                  <p><img  src={logos} alt="LOGO"/></p>
                 </li>
             </ul>
           </div>
+          {
+            <div></div>
+          }
           <div className="grxx3">
             <a href="javascript:void(0);" onClick={this.handqr} className="grxxqr">确认</a>
             <a href="javascript:void(0);" onClick={this.handqx} className="grxxqx">关闭</a>

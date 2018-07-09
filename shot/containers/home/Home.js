@@ -47,7 +47,9 @@ import {
   getptyjxq,
   getfwyjxq,
   getsfzzrz,
-  postsqrz
+  postsqrz,
+  puthgerxxgs,
+  puthgerxxyg,
 } from '../../action/home/ahome';
 import {
   getcarrscy,
@@ -480,7 +482,9 @@ function mapDispatchToProps(dispatch){
       postcwbfbhg:postcwbfbhg,
       postcwbfbfr:postcwbfbfr,
       postcwbfbot:postcwbfbot,
-      getcabyue:getcabyue
+      getcabyue:getcabyue,
+      puthgerxxgs:puthgerxxgs,
+      puthgerxxyg:puthgerxxyg,
     },dispatch)
   }
 }

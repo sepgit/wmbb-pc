@@ -13,7 +13,7 @@ export const msgEnter=(nextState,replace)=>{
     }else{
         if(comp>0){
             if(enab==undefined||enab==0){
-                message.error('管理员权限正在审核中!');
+                //message.error('管理员权限正在审核中!');
             }
         }
     }

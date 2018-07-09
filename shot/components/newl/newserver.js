@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-07-02 10:01:16 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-05 13:45:15
+ * @Last Modified time: 2018-07-05 13:48:02
  */
 import React,{Component} from 'react';
 import {VelocityComponent, VelocityTransitionGroup} from 'velocity-react';
@@ -56,11 +56,6 @@ export default class Newserver extends Component{
                                        linkskbc={this.linkskbc}/>:undefined
             }
           </VelocityTransitionGroup> */}
-          <VelocityTransitionGroup enter={{animation: "fadeIn",duration:600}} leave={{animation: "fadeOut"}}>
-            {
-              this.state.lkskb?<div>123123</div>:undefined
-            }
-          </VelocityTransitionGroup>
          {/*  <VelocityTransitionGroup enter={{animation: "fadeIn"}} leave={{animation: "fadeOut"}}>
             {
               this.state.isshow?

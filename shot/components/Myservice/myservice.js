@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-07-03 13:21:47 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-05 12:50:23
+ * @Last Modified time: 2018-07-05 13:59:21
  */
 import React,{Component} from 'react';
 import { Link } from 'react-router';
@@ -45,6 +45,9 @@ export default class Myserver extends Component {
                             <Link activeClassName="activad" to="/Myserrel">我的服务发布</Link>
                         </li>
                     </ul>
+                    <div>
+                        
+                    </div>
                 </div>
             </div>
         );

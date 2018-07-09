@@ -44,7 +44,9 @@ import {GET_EMPLOYEES,
   GET_PTYJXQ,
   GET_FWYJXQ,
   GET_SFZZRZ,
-  POST_SQRZ
+  POST_SQRZ,
+  PUT_HGERXXGS,
+  PUT_HGERXXYG
 } from '../../action/home/ahome';
 
 const initialState ={
@@ -90,7 +92,10 @@ const initialState ={
   fwyjxq:{},
   scors:[],
   fwscors:[],
-  isAudi:false
+  isAudi:false,
+  isshowgs:false,
+  isshowyg:false,
+  putcompid:0
 };
 export default function homeinfo(state=initialState,action){
   switch (action.type){
@@ -302,6 +307,20 @@ export default function homeinfo(state=initialState,action){
         errMsg:action.errMsg,
         usergrid:action.user,
         isshow:action.isshow
+      });
+    case PUT_HGERXXGS:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        putcompid:action.comp,
+        isshowgs:action.isshowgs
+      });
+    case PUT_HGERXXYG:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        usergrid:action.user,
+        isshowyg:action.isshowyg
       });
     case GET_PORTS:
       return Object.assign({}, state, {
