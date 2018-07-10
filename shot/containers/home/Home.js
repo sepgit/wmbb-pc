@@ -268,6 +268,8 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      puthgerxxgs:puthgerxxgs,
+      puthgerxxyg:puthgerxxyg,
       getyg:getyg,
       getqx:getqx,
       gethgerxx:gethgerxx,
@@ -483,8 +485,7 @@ function mapDispatchToProps(dispatch){
       postcwbfbfr:postcwbfbfr,
       postcwbfbot:postcwbfbot,
       getcabyue:getcabyue,
-      puthgerxxgs:puthgerxxgs,
-      puthgerxxyg:puthgerxxyg,
+      
     },dispatch)
   }
 }

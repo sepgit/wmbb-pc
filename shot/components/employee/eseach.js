@@ -28,6 +28,7 @@ export default class Eseach extends Component {
     renderList(){
         let re=[];
         this.state.page==1?re=this.props.ema.uerlist:re=this.state.hhs;
+        console.log(re)
         if(re.length==0){
             return <li className="emls2one">您可以添加公司所有员工。</li>;
         }else {
