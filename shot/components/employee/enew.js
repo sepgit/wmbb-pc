@@ -19,7 +19,7 @@ export default class Enew extends Component {
     }
   }
   handnew(){
-    if(this.props.ema.staffNum > this.props.text.comps.membNum){
+    if(this.props.ema.staffNum >= this.props.text.comps.membNum){
       message.error('员工数量上限！');
     }else {
       this.setState({

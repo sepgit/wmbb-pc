@@ -62,24 +62,24 @@ export default class NewskbL extends Component {
     });
   }
   render() {
-    let xnew=<a href="javascript:void(0);" onClick={this.linkskb}>立即发起收付款保函</a>;
-    let xnew1=<span className="newlsp">您没有权限！</span>;
+    let xnewFK=<a href="javascript:void(0);" onClick={this.linkskb}>立即发起收付款保函</a>;
+    let xnewWu=<span className="newlsp">您没有权限！</span>;
     let xnewL;
     if(this.state.comp>0){
       if(this.state.gpv==1){
         if(this.state.sk==1){
-          xnewL = xnew;
+          xnewL = xnewFK;
         }else{
-          xnewL = xnew1;
+          xnewL = xnewWu;
         }
       }else{
-        xnewL = xnew1;
+        xnewL = xnewWu;
       }
     }else{
       if(this.state.gpv==1){
-        xnewL = xnew;
+        xnewL = xnewFK;
       }else{
-        xnewL = xnew1;
+        xnewL = xnewWu;
       }
     }
     return (

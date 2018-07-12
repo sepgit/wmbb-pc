@@ -109,7 +109,7 @@ export default class Cabpdetil extends Component {
         zt ='';
         break;
     }
-    // console.log(this.props.cabrgnew.cabDispdetail);
+    console.log(this.props.cabrgnew.cabDispdetail);
     return (
         <div className="cabzzc">
             <div className="cab70">
@@ -216,7 +216,7 @@ export default class Cabpdetil extends Component {
                             </li>
                         }
                         <li></li>
-                        <li>
+                        <li  className="cab140-label">
                             <h5>备注:</h5>
                             <span className="overflowH">{this.props.cabrgnew.cabDispdetail.label}</span>
                         </li>

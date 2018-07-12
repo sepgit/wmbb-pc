@@ -15,13 +15,17 @@ export default class Cabgdetil extends Component {
     this.upLoadonClick=this.upLoadonClick.bind(this);
     this.reqPrefonChange=this.reqPrefonChange.bind(this);    
     this.handtg=this.handtg.bind(this);//退关
+    this.judgeTGon = this.judgeTGon.bind(this);
+    this.judgeTGoff = this.judgeTGoff.bind(this);
     this.state={
       userName:sessionStorage.getItem("SESSIONUSERACC"),
       token:sessionStorage.getItem("SESSIONTOKEN"),
       userid:sessionStorage.getItem("SESSIONUSER"),
       isbqr:false,
       isno:false,
-      bz:''
+      bz:'',
+      judgeTg:false,
+      judgeTgPage:false
     }
   }
 
@@ -66,7 +70,22 @@ export default class Cabgdetil extends Component {
   }
   handtg(){
     //退关
+    // this.props.actions.getgtgtq(this.state.userName,this.state.token,this.props.cabgnew.cabDispdetail.cabDisp);
+    this.setState({
+        judgeTgPage:true,
+      })
+  }
+   //判断是否退关
+   judgeTGon() {
+    this.setState({
+      judgeTgPage:false
+    })
     this.props.actions.getgtgtq(this.state.userName,this.state.token,this.props.cabgnew.cabDispdetail.cabDisp);
+  }
+  judgeTGoff(){
+    this.setState({
+      judgeTgPage:false
+    })
   }
   render() {
     let qcf=this.props.cabgnew.cabDispdetail.reqFile;
@@ -127,8 +146,7 @@ export default class Cabgdetil extends Component {
         zt ='';
         break;
     }
-    // console.log(this.state.userid);
-    // console.log(this.props.cabgnew.cabDispdetail);
+    // console.log(this.props.cabgnew.cabDispdetail.cabDisp + '+' + this.props.cabgnew.cabDispdetail.label)
     return (
       <div className="cabzzc">
         <div className="cab70">
@@ -241,9 +259,9 @@ export default class Cabgdetil extends Component {
                      </li>
                 }   
                 <li></li>                         
-                <li>
+                <li className="cab140-label">
                     <h5>备注:</h5>
-                    <span className="overflowH">{this.props.cabgnew.cabDispdetail.label}</span>
+                    <span>{this.props.cabgnew.cabDispdetail.label}</span>
                 </li>
             </ul>
           </div>
@@ -525,6 +543,17 @@ export default class Cabgdetil extends Component {
                         </li>
                     </ul>
                 </div>
+                <VelocityTransitionGroup enter={{animation: "fadeIn",duration:600}} leave={{animation: "fadeOut"}}>
+                    {
+                        this.state.judgeTgPage?<div className="fixed-tg">
+                            <div className="fixed-tg-tit">是否确认退关</div>
+                            <div className="fixed-tg-btn" >
+                            <span className="fixed-tg-btns" onClick={this.judgeTGon} >确认</span>
+                            <span className="fixed-tg-btns"  onClick={this.judgeTGoff}>关闭</span>
+                            </div>
+                        </div>:undefined
+                    }
+                </VelocityTransitionGroup>
             </div>
         </div>
       </div>

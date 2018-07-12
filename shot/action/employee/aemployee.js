@@ -29,7 +29,7 @@ export function getemxj(userName,token,userAcco,comp,name,posi,mobi,phon,fax,mai
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
       },
-      body:"userName="+userName+"&token="+token+"&userAcco="+userAcco+"&comp="+comp+"&name="+name+"&posi="+posi+"&mobi="+mobi+"&phon="+phon+"&fax="+fax+"&mail="+mail+"&addr="+addr
+      body:"userName="+userName+"&token="+token+"&userAcco="+userAcco+"&comp="+comp+"&name="+name+"&posi="+posi+"&mobi="+mobi+"&phon="+phon+"&fax="+fax+"&mail="+mail+"&addr="+addr+"password=111111"
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){

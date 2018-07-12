@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-07-02 10:30:50 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-03 13:43:37
+ * @Last Modified time: 2018-07-11 10:09:13
  */
 import React,{Component} from 'react';
 import Top from './../../components/home/top';
@@ -27,8 +27,8 @@ import {
   getxyye,
   getxxtxxg,
   getservsall,
-    getsfzzrz,
-    postsqrz
+  getsfzzrz,
+  postsqrz
 } from '../../action/home/ahome';
 import {
   getgyye,
@@ -245,6 +245,8 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      getsfzzrz:getsfzzrz,
+      postsqrz:postsqrz,
       getyg:getyg,
       getqx:getqx,
       gethgerxx:gethgerxx,
@@ -401,8 +403,7 @@ function mapDispatchToProps(dispatch){
       postyspnew:postyspnew,
       getkansp:getkansp,
       getservsall:getservsall,
-      getsfzzrz:getsfzzrz,
-      postsqrz:postsqrz,
+     
       getfwlxcwb:getfwlxcwb,
       postcwbfb:postcwbfb,
       getcarrscwb:getcarrscwb,

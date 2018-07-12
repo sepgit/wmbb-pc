@@ -2,11 +2,11 @@
  * @Author: sepgit 
  * @Date: 2018-07-03 13:21:47 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-05 13:59:21
+ * @Last Modified time: 2018-07-12 13:42:12
  */
 import React,{Component} from 'react';
 import { Link } from 'react-router';
-
+import SeekserList from './seekserList'
 
 export default class Myserver extends Component {
     constructor(props) {
@@ -31,23 +31,22 @@ export default class Myserver extends Component {
         return (
             <div className="yjysmid">
                 <div className="serLists">
-                    <ul>
-                        <li>
-                            <Link activeClassName="activad" to="/SeekserList">求服务列表</Link>
+                    <ul className="serLists-ul">
+                        <li className="serLists-li">
+                            <Link activeClassName="activad" to="/service">求服务列表</Link>
+                            {/* SeekserList */}
                         </li>
-                        <li>
+                        <li className="serLists-li">
                             <Link activeClassName="activad" to="/SerList">服务列表</Link>
                         </li>
-                        <li>
+                        <li className="serLists-li">
                             <Link activeClassName="activad" to="/Platformser">平台服务展示</Link>
                         </li>
-                        <li>
+                        <li className="serLists-li">
                             <Link activeClassName="activad" to="/Myserrel">我的服务发布</Link>
                         </li>
                     </ul>
-                    <div>
-                        
-                    </div>
+                    <SeekserList />
                 </div>
             </div>
         );

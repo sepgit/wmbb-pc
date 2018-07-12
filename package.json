@@ -6,7 +6,7 @@
     "buildd": "webpack --config prod.webpack.config.js -p --define process.env.NODE_ENV='\"production\"' --progress --colors",
     "build": "webpack --progress --colors",
     "start": "node server.js",
-    "startd": "node serverdel.js"
+    "startd": "node serverdel.js  --open"
   },
   "author": "Zing",
   "dependencies": {

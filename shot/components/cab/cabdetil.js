@@ -21,13 +21,17 @@ export default class Cabdetil extends Component {
     this.handtg=this.handtg.bind(this);
     this.handbzbc=this.handbzbc.bind(this);
     this.handbzc=this.handbzc.bind(this);
+    this.judgeTGon = this.judgeTGon.bind(this);
+    this.judgeTGoff = this.judgeTGoff.bind(this);
     this.state={
       userName:sessionStorage.getItem("SESSIONUSERACC"),
       token:sessionStorage.getItem("SESSIONTOKEN"),
       userid:sessionStorage.getItem("SESSIONUSER"),
       isbqr:false,
       isno:false,
-      bz:''
+      bz:'',
+      judgeTg:false,
+      judgeTgPage:false
     }
   }
   handbzbc(){
@@ -39,7 +43,23 @@ export default class Cabdetil extends Component {
   }
   handtg(){
     //退关
+    // this.props.actions.getxgztq(this.state.userName,this.state.token,this.props.cabnew.cabEnquL.cabEnqu,this.props.cabRepl);
+    this.setState({
+      judgeTgPage:true,
+    })
+  }
+
+  //判断是否退关
+  judgeTGon() {
+    this.setState({
+      judgeTgPage:false
+    })
     this.props.actions.getxgztq(this.state.userName,this.state.token,this.props.cabnew.cabEnquL.cabEnqu,this.props.cabRepl);
+  }
+  judgeTGoff(){
+    this.setState({
+      judgeTgPage:false
+    })
   }
   handqrzj(){
     let This=this;
@@ -551,6 +571,17 @@ export default class Cabdetil extends Component {
                      handnoc={this.handnoc}/>:undefined
           }
         </div>
+        <VelocityTransitionGroup enter={{animation: "fadeIn",duration:600}} leave={{animation: "fadeOut"}}>
+          {
+            this.state.judgeTgPage?<div className="fixed-tg">
+                <div className="fixed-tg-tit">是否确认退关</div>
+                <div className="fixed-tg-btn" >
+                  <span className="fixed-tg-btns" onClick={this.judgeTGon} >确认</span>
+                  <span className="fixed-tg-btns"  onClick={this.judgeTGoff}>关闭</span>
+                </div>
+            </div>:undefined
+          }
+        </VelocityTransitionGroup>
       </div>
     );
   }

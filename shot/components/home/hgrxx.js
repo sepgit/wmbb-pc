@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-06-11 10:35:12 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-09 14:58:18
+ * @Last Modified time: 2018-07-12 13:50:46
  */
 
 import React,{Component} from 'react';
@@ -12,6 +12,7 @@ import {VelocityComponent, VelocityTransitionGroup} from 'velocity-react';
 import Hcheck from './hcheck';
 const Option = Select.Option;
 let timeout;
+import HTTPED from '../../date/address'
 
 export default class Hgrxx extends Component {
   constructor(props) {
@@ -59,7 +60,7 @@ export default class Hgrxx extends Component {
   }
   changeHy(e) {
     this.props.text.user.induName=e
-    console.log(e)
+    // console.log(e)
     this.setState({
       hyid:e
     })
@@ -82,7 +83,7 @@ export default class Hgrxx extends Component {
   }
 
   componentDidMount(){
-    console.log('portName  '+ this.props.text.user.portName );
+    // console.log('portName  '+ this.props.text.user.portName );
     if(this.state.comp>0){
       if(this.props.text.user.portName){
         this.setState({
@@ -117,8 +118,8 @@ export default class Hgrxx extends Component {
     }, 300);
   }
   handcns(v,o){
-    console.log(v)
-    console.log(o)
+    // console.log(v)
+    // console.log(o)
     this.props.text.user.portName=v;
     let kan=o.props.date;
     this.setState({ kan:kan });
@@ -130,7 +131,7 @@ export default class Hgrxx extends Component {
     })
   }
   chehy(v){
-    console.log(v)
+    // console.log(v)
     this.props.text.user.induName=v;
     this.setState({
       hy:v
@@ -218,7 +219,7 @@ export default class Hgrxx extends Component {
       addr=this.props.text.user.addr==null||this.props.text.user.addr==''?this.state.dz==''?this.props.text.user.addr:this.state.dz:this.props.text.user.addr;
       // port=this.props.text.user.portName==null||this.props.text.user.portName==''?this.state.kan==''?this.props.text.user.port:this.state.kan:this.props.text.user.port;
       port =  this.state.kan == '' ? this.props.text.user.port:this.state.kan
-      console.log(this.props.actions)
+      // console.log(this.props.actions)
       this.props.actions.puthgerxxgs(comp,userName,token,compName,compAlia,indu,port,addr)
       let userid = user;
       let name=this.state.xm==''?this.props.text.user.name:this.state.xm;
@@ -296,12 +297,42 @@ export default class Hgrxx extends Component {
     );
     let logo=this.props.text.user.logo;
     let logos;
-    if(logo!=null&&logo!=''&&logo!='null'){
+    let showLogo;
+    if(logo!=null && logo!=''&& logo!='null'){
+      showLogo =true;
       logos=HTTPED+logo.substring(1);
     }else{
-      logos=require('../../src/image/kong.png');
+      showLogo =false;
     }
-    console.log(this.props.text.user);
+    //授信有效期
+    let sxs,sxtime,sxtimes;
+    if (this.props.text.user.guarPrivTo != null ) {
+      sxtime = this.props.text.user.guarPrivTo;
+      sxtimes = sxtime.substring(0, 4);
+      if (sxtimes == "0000") {
+        sxs = true;
+      }else{
+        sxs = false;
+      }
+    }else {
+      sxs = true;
+    }
+
+    //认证有效期
+    let vipti,viptime,viptimes;
+    if (this.props.text.user.userVipTime != null ) {
+      viptime = this.props.text.user.userVipTime;
+      viptimes = viptime.substring(0, 4);
+      if (viptimes == "0000") {
+        vipti = true;
+      }else{
+        vipti = false;
+      }
+    }else {
+      vipti = true;
+    }
+    // console.log(this.props.text.user);
+
     // console.log(this.props.text.user.induName);
     // console.log(this.props.text.user.portName);
     //  console.log(this.props.text.user.phon);
@@ -314,11 +345,13 @@ export default class Hgrxx extends Component {
           </div>
           <div className="grxx2">
             <ul>
-              <li className="grxxliaa">
+              <li className="grxxlia">
+                
+                <span className={grxxss}>账号：
                 {
-                  this.props.text.user.userVip==1?<img src={require('../../src/image/vip.png')}/>:undefined
+                  this.props.text.user.userVip==1?<img className="userAcco-img" src={require('../../src/image/vip.png')}/>:undefined
                 }
-                <span className={grxxss}>账号：</span>
+                </span>
                 <p className="grxadds">
                   {this.props.text.user.userAcco}
                 </p>
@@ -672,19 +705,31 @@ export default class Hgrxx extends Component {
                 </p>
                 <i className="gexxbt">*</i>
               </li>
+              <li className="grxxlia-line">
+
+              </li>
               <li className="grxxlib">
                   <span className="grxxs">授信状态：</span>
                   <p>{this.props.text.user.depositEnab==1?'已授信':'未授信'}</p>
               </li>
               <li className="grxxlib">
                   <span className="grxxs">授信有效期：</span>
-                  {
-                      this.props.text.user.guarPrivTo != null || this.props.text.user.guarPrivTo != undefined ?
-                        <p>{moment(this.props.text.user.guarPrivTo).format('YYYY.MM.DD')}</p>: <p></p>
-                    }
+                  {/* {
+                      this.props.text.user.guarPrivTo != null ?
+                        sxs ? 
+                          <p></p>: <p>{moment(sxtime).format('YYYY.MM.DD')}</p>
+                        <p>{moment(sxtime).format('YYYY.MM.DD')}</p>:<p></p>
+                    } */}
+                    {/* {
+                      sxs ?
+                      <p></p> : <p>{moment(sxtime).format('YYYY.MM.DD')}</p>
+                    } */}
                   {/* <p>{moment(this.props.text.user.guarPrivTo).format('YYYY.MM.DD')}</p> */}
               </li>
-              <li className="grxxlia">
+              <li className="grxxlia-line">
+
+              </li>
+              <li className="grxxlib">
                   {/* <span className="grxxs">认证会员：</span>
                   {
                     this.props.text.isAudi?
@@ -731,31 +776,53 @@ export default class Hgrxx extends Component {
                       }                      
                     </div>: <div className="grxxrz" onClick={this.handsqrz}>申请账号认证</div>
                   }
-                  <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a>
+                  {/* <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a> */}
               </li>
                 <li className="grxxlib">
                     <span className="grxxs">认证有效期：</span>
-                    {
+                    {/* {
                       this.props.text.user.userVipTime != null || this.props.text.user.userVipTime != undefined ?
                         <p>{moment(this.props.text.user.userVipTime).format('YYYY.MM.DD')}</p>: <p></p>
+                    } */}
+                    {
+                      vipti ?
+                      <p></p>:<p>{moment(viptime).format('YYYY.MM.DD')}</p>
                     }
-                    
+                </li>
+                <li  className="grxxlib">
+                  <a href="javascript:void(0);" className="grxxrzs" onClick={this.handckqy}>查看认证会员权益</a>
                 </li>
                 <li className="grxxlib">
                     <span className="grxxs">认证会员编号：</span>
                     <p>{this.props.text.user.certNo}</p>
                 </li>
-                <li className="grxxlib">
-                    <span className="grxxs">预警：</span>
-                    <p>{this.props.text.user.warn==1?'预警':'正常'}</p>
+                <li className="grxxlia-line">
+
                 </li>
                 <li className="grxxlib">
                     <span className="grxxs">平台供应商：</span>
                     <p>{this.props.text.user.plat==1?'是':'否'}</p>
                 </li>
+                <li className="grxxlib">
+                    <span className="grxxs">供应商有效期：</span>
+                    {
+                      sxs ?
+                      <p></p> : <p>{moment(sxtime).format('YYYY.MM.DD')}</p>
+                    }
+                </li>
+                <li className="grxxlia-line">
+
+              </li>
+                <li className="grxxlib">
+                    <span className="grxxs">预警：</span>
+                    <p>{this.props.text.user.warn==1?'有预警':'无预警'}</p>
+                </li>
                 <li  className="grxxlib">
                   <span className="grxxs">LOGO：</span>
-                  <p><img  src={logos} alt="LOGO"/></p>
+                    {
+                      showLogo ?
+                      <p><img src={logos} alt="LOGO"/></p>:<p>提供LOGO后显示</p>
+                    }
                 </li>
             </ul>
           </div>

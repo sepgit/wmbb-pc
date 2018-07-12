@@ -10,7 +10,7 @@
 
     var compiler = webpack(config);
     app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }));
-//配合react router 的 browserHistory
+    //配合react router 的 browserHistory
     app.get('/*', function (req, res) {
         res.sendFile(__dirname + '/index.html')
     });

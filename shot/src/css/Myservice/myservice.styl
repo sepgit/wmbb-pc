@@ -1,14 +1,23 @@
+.clearfix:after
+  content: ''
+  line-height: 0
+  font-size: 0
+  display block
+  clear both
+  visibility hidden
+  height 0
+.clearfix
+  zoom:1
 .serLists
 // 我的服务页面列表----可以共用的一部分
   font-size 15px
   margin 10px auto
-  height 45px
-  ul
+  .serLists-ul
     width 980px
     height 45px
     display inline-block
     text-align center
-    li
+    .serLists-li
       width 220px
       height 45px
       float left
@@ -21,3 +30,25 @@
         font-size 17px
         background-color #ADD3E0
         color #000011
+
+.ser-main-cntr
+  //主要的容器
+  width 1200px
+  .ser-main-cntr-search
+    height 50px
+    background #67c8ff
+    li
+      float left
+      width: 250px
+      height 50px
+      line-height: 50px
+      .ser-main-cntr-search-tit
+        float left
+        width: 100px
+        height 50px
+        line-height: 50px
+        text-align: right
+
+
+
+  

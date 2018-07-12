@@ -258,7 +258,7 @@ export function getqrzjlv(userName,token,cabEnqu,enquChkFin,enquChkFinDet,cabRep
               if(res.ok){
                 res.json().then(function(date1){
                   if(!date1.err){
-                    dispatch(get_hqxq(date1));
+                    dispatch(get_cabDisp(date1));
                   }else{
                     Backlogin(date1.errMsg)
                   }
@@ -315,7 +315,7 @@ export function getqrdflv(userName,token,cabEnqu,enquChecked,enquCheckDet,cabRep
               if(res.ok){
                 res.json().then(function(date1){
                   if(!date1.err){
-                    dispatch(get_hqxq(date1));
+                    dispatch(get_cabDisp(date1));
                   }else{
                     Backlogin(date1.errMsg)
                   }
@@ -404,7 +404,7 @@ export function getxgztq(userName,token,cabEnqu,cabRepl){
               if(res.ok){
                 res.json().then(function(date){
                   if(!date.err){
-                    dispatch(get_hqxq(date));
+                    dispatch(get_cabDisp(date));
                   }else{
                     Backlogin(date.errMsg)
                   }
@@ -757,10 +757,9 @@ export function getgtgtq(userName,token,cabDisp){
               }
             }).then(function(res){
               if(res.ok){
-               
                 res.json().then(function(date){
                   if(!date.err){
-                    dispatch(get_hqxq(date));
+                    dispatch(get_cabDisp(date));
                   }else{
                     Backlogin(date.errMsg)
                   }

@@ -214,6 +214,15 @@ const routes = {
         })
       }
     },
+    // {
+    //   path: '/service',
+    //   onEnter:handonEnter,
+    //   getComponent(nextState, cb) {
+    //     require.ensure([], (require) => {
+    //       cb(null, require('./containers/Myservice/Myservice'))
+    //     })
+    //   }
+    // },
     {
       path: '/meetxqlist',
       onEnter:handonEnter,
