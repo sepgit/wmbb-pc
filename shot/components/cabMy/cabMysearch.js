@@ -18,7 +18,8 @@ export default class CabMysearch extends Component {
     this.handcm=this.handcm.bind(this);
     this.handcms=this.handcms.bind(this);
     this.carronChange=this.carronChange.bind(this);       //承运商onChange时间
-    this.dataseach=this.dataseach.bind(this);             //搜索数据
+    this.dataseach=this.dataseach.bind(this);  
+    this.statChange = this.statChange.bind(this);           //搜索数据
     this.state={
       userName:sessionStorage.getItem("SESSIONUSERACC"),
       token:sessionStorage.getItem("SESSIONTOKEN"),
@@ -29,7 +30,14 @@ export default class CabMysearch extends Component {
       cwzt:'',
       qydn:'',
       mddn:'',
+      listType:'',
+      stat:''
     }
+  }
+  statChange(v) {
+    this.setState({
+      listType:v
+    });
   }
   dataseach(){
     let userName = this.state.userName;
@@ -38,13 +46,24 @@ export default class CabMysearch extends Component {
     let depaPort = this.state.qyd==undefined?'':this.state.qyd;
     let destPort = this.state.mdd==undefined?'':this.state.mdd;
     let carr=this.state.carr;
-    this.props.actions.getcabDisps(userName,token,1,serv,depaPort,destPort,carr);//获取搜索数据
+    let listType= this.state.listType;
+    let stat= this.state.stat;
+    if (listType.length ==1) {
+      listType = listType;
+      stat ='';
+    }else {
+      stat = listType;
+      listType ='';
+    }
+    this.props.actions.getsearchlists(userName,token,1,serv,depaPort,destPort,carr,listType,stat)
+    // this.props.actions.getcabDisps(userName,token,1,serv,depaPort,destPort,carr);//获取搜索数据
     this.refs.cabMylist.setState({
       Hes:0,
       page:1,
       hhs:[]
     });
     this.forceUpdate();//刷新数据
+    console.log('123')
   }
   handrest(){
     this.setState({
@@ -105,12 +124,24 @@ export default class CabMysearch extends Component {
   }
 
   render() {
+    let listType= this.state.listType;
+    let stat= this.state.stat;
+    if (listType.length ==1) {
+      listType = listType;
+      stat ='';
+    }else {
+      stat = listType;
+      listType ='';
+    }
     let Fstate=Array.of(
       this.state.fwlx,
       this.state.qyd,
       this.state.mdd,
-      this.state.carr
+      this.state.carr,
+      listType,
+      stat
     );
+    
     return (
       <div className="cab3">
         <div className="cab4">
@@ -185,6 +216,26 @@ export default class CabMysearch extends Component {
                   {
                     this.props.cabmynew.carrscwba.map(s => <Option key={s.carr} date={s.carr} value={s.carrName}>{s.carrName}</Option>)
                   }
+                </OptGroup>
+              </Select>
+            </li>
+            <li className="caba">
+              状态
+              <Select 
+                     
+                      style={{ width: 120 }}
+                      onChange={this.statChange}
+              >
+                <OptGroup label="全部">
+                  {
+                    <Option key='5'>全部</Option>
+                  }
+                </OptGroup>
+                <OptGroup label="所有">
+                  <Option key='10'>正常</Option>
+                  <Option key='20'>过期</Option>
+                  <Option key='60'>撤销</Option>
+                  <Option key='3'>已被购买</Option>
                 </OptGroup>
               </Select>
             </li>

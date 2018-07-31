@@ -63,6 +63,17 @@ export default class Cabpdetil extends Component {
                     {/* <span>{this.props.cabnewr.cabDispdetail.resName}</span> */}
                   </li>
                   <li>
+                    <h5>舱位保函状态:</h5>
+                    <span>{zt}</span>
+                  </li>
+                  <li>
+                    <h5>截关时间:</h5>
+                    {
+                      this.props.cabnewr.cabDispdetail.closTime==null?<span></span>:
+                        <span>{moment(this.props.cabnewr.cabDispdetail.closTime).format('YYYY-MM-DD HH:mm:ss')}</span>
+                    }
+                  </li>
+                  <li>
                     <h5>开航时间:</h5>
                     {
                       this.props.cabnewr.cabDispdetail.sailTime==null?<span></span>:
@@ -73,24 +84,34 @@ export default class Cabpdetil extends Component {
                     <h5>内陆运输方式:</h5>
                     <span>{this.props.cabnewr.cabDispdetail.inldType}</span>
                   </li> */}
-                  {/* <li>
-                    <h5>舱位保函状态:</h5>
-                    <span>{zt}</span>
-                  </li> */}
+                  
                   <li>
                     <h5>最晚退关时间:</h5>
                     {
-                      this.props.cabnewr.cabDispdetail.lastShutTime == null ? '' :
+                      this.props.cabnewr.cabDispdetail.lastShutTime == null ? <span></span> :
                         <span>{moment(this.props.cabnewr.cabDispdetail.lastShutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                     }
                   </li>
                   <li>
                     <h5>运价有效期:</h5>
                     {
-                      this.props.cabnewr.cabDispdetail.expiTime == null ? '' :
+                      this.props.cabnewr.cabDispdetail.expiTime == null ?<span></span> :
                         <span>{moment(this.props.cabnewr.cabDispdetail.expiTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                     }
                   </li>
+                  <li>
+                    <h5>运输工具:</h5>
+                    <span>{this.props.cabnewr.cabDispdetail.trans}</span>
+                  </li>
+                  <li>
+                    <h5>航次:</h5>
+                    <span>{this.props.cabnewr.cabDispdetail.voyage}</span>
+                  </li>
+                  <li>
+                    <h5>备注:</h5>
+                    <span>{this.props.cabnewr.cabDispdetail.label}</span>
+                  </li>
+                  <li></li>
                 </ul>
               </div>
               <div className="cab51">

@@ -32,7 +32,9 @@ import rcabPlatform from './cabPlatform/rcabPlatform';//平台舱位
 import rcabMy from './cabMy/rcabMy';//我发布的舱位
 import rcabg from './cabg/rcabg';//求舱方发布的供舱舱位
 import rcabrg from './cabrg/rcabrg';//供舱方发布的供舱舱位
-
+import shareState from './share/rshare';//暂时设定的公共的方法
+import tickets from './tickets/rtickets';//优惠卷的方法
+import owntkt from './owntkt/rowntkt';//已拥有的优惠卷
 import { routerReducer } from 'react-router-redux'
 
 var reducer = combineReducers({
@@ -66,6 +68,9 @@ var reducer = combineReducers({
     rcabPlatform:rcabPlatform,
     rcabMy:rcabMy,
     rcabg:rcabg,
-    rcabrg:rcabrg
+    rcabrg:rcabrg,
+    tickets:tickets,
+    shareState:shareState,
+    owntkt:owntkt,
 });
 export default reducer;

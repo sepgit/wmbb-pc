@@ -23,6 +23,7 @@ export default class Regrlist extends Component {
     renderList(){
         let re=[];
         this.state.page==1?re=this.props.rregrl.czlist:re=this.state.hhs;
+        console.log(re)
         return re.map((item, index) => {
             return <Regrlistall
                 key={index}

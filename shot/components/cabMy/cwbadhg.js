@@ -1,6 +1,10 @@
-/**
- * Created by Chen on 2017/12/13.
+/*
+ * @Author: sepgit 
+ * @Date: 2018-07-26 14:26:33 
+ * @Last Modified by:   sepgit 
+ * @Last Modified time: 2018-07-26 14:26:33 
  */
+
 import React, { Component } from 'react';
 import { Input, DatePicker, Select, message, Checkbox } from 'antd';
 import moment from 'moment';
@@ -564,7 +568,7 @@ export default class Cwbadhg extends Component {
                   <h5>运输工具：</h5>
                   <Input
                     style={{ width: 200 }}
-                    placeholder="请输入运输方式"
+                    placeholder="请输入运输工具"
                     className="cwbadd12"
                     onChange={(e) => { return this.setState({ trans: e.target.value }) }}
                   />

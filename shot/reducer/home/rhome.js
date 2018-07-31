@@ -46,7 +46,9 @@ import {GET_EMPLOYEES,
   GET_SFZZRZ,
   POST_SQRZ,
   PUT_HGERXXGS,
-  PUT_HGERXXYG
+  PUT_HGERXXYG,
+  GET_NOW,
+  GET_SERLISTS
 } from '../../action/home/ahome';
 
 const initialState ={
@@ -95,7 +97,8 @@ const initialState ={
   isAudi:false,
   isshowgs:false,
   isshowyg:false,
-  putcompid:0
+  putcompid:0,
+  now:'',
 };
 export default function homeinfo(state=initialState,action){
   switch (action.type){
@@ -105,6 +108,12 @@ export default function homeinfo(state=initialState,action){
             errMsg:action.errMsg,
             memb:action.memb
         });
+    case GET_NOW:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        now:action.now
+      });
     case GET_SFZZRZ:
       return Object.assign({}, state, {
         err:action.err,

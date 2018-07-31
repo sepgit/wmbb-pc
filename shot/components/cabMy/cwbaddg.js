@@ -536,7 +536,7 @@ export default class Cwbaddg extends Component {
                   <h5>运输工具：</h5>
                   <Input
                     style={{ width: 200 }}
-                    placeholder="请输入运输方式"
+                    placeholder="请输入运输工具"
                     className="cwbadd12"
                     onChange={(e) => { return this.setState({ trans: e.target.value }) }}
                   />

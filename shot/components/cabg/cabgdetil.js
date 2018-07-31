@@ -34,7 +34,7 @@ export default class Cabgdetil extends Component {
     let token = this.state.token;
     let cabDisp = this.props.cabgnew.cabDispdetail.cabDisp;
     let bz = this.state.bz;
-    console.log("bz="+bz);
+    // console.log("bz="+bz);
     this.props.actions.getqcbz(userName,token,cabDisp,bz);
   }
 
@@ -147,6 +147,7 @@ export default class Cabgdetil extends Component {
         break;
     }
     // console.log(this.props.cabgnew.cabDispdetail.cabDisp + '+' + this.props.cabgnew.cabDispdetail.label)
+    console.log(this.props.cabgnew.cabDispdetail);
     return (
       <div className="cabzzc">
         <div className="cab70">
@@ -219,7 +220,10 @@ export default class Cabgdetil extends Component {
                 </li>
                 <li>
                     <h5>内陆费用:</h5>
-                    <span>{this.props.cabgnew.cabDispdetail.cabFee}</span>
+                    {
+                        this.props.cabgnew.cabDispdetail.cabFee !=null?
+                        <span>{this.props.cabgnew.cabDispdetail.curr== '1' ? '¥' : '$'} {this.props.cabgnew.cabDispdetail.cabFee}</span>:undefined
+                    }
                 </li>
                 <li>
                     <h5>舱位状态:</h5>

@@ -50,6 +50,7 @@ import {
   postsqrz,
   puthgerxxgs,
   puthgerxxyg,
+  getnow
 } from '../../action/home/ahome';
 import {
   getcarrscy,
@@ -209,9 +210,12 @@ import {
   getcabyue
 } from '../../action/cabMy/acabMy';
 
+import {
+  getSerLists,
+} from '../../action/share/aShare';
 class Home extends Component {
   render() {
-    const { actions,text,shows,getdetil,getnewlist,bck,zxinfo,replays,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabrnew,cabmynew} = this.props;
+    const { actions,text,shows,getdetil,getnewlist,bck,zxinfo,replays,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabrnew,cabmynew,publicState} = this.props;
     return (
       <div className="homepage">
         <Gotop />
@@ -228,6 +232,7 @@ class Home extends Component {
               yssp={yssp}
               cabnew={cabnew}
               cabmynew={cabmynew}
+              publicState={publicState}
         />
         <Mid actions={actions}
              text={text}
@@ -262,14 +267,17 @@ function mapStateToProps(state){
     yssp:state.yspreduer,
     cabnew:state.rcabs,
     cabrnew:state.rcabrs,
-    cabmynew:state.rcabMy
+    cabmynew:state.rcabMy,
+    publicState:state.shareState
   }
 }
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      getSerLists:getSerLists,
       puthgerxxgs:puthgerxxgs,
       puthgerxxyg:puthgerxxyg,
+      getnow:getnow,
       getyg:getyg,
       getqx:getqx,
       gethgerxx:gethgerxx,

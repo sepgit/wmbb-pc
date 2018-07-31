@@ -416,6 +416,7 @@ export default class NewFCL extends Component {
     }else{
       cabFee=0;
     }
+    // console.log(this.props.getnewlist)
     return (
       <div className="xnewfcl">
         <div className="xnew1">

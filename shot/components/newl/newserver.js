@@ -2,22 +2,29 @@
  * @Author: sepgit 
  * @Date: 2018-07-02 10:01:16 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-05 13:48:02
+ * @Last Modified time: 2018-07-20 12:49:49
  */
 import React,{Component} from 'react';
 import {VelocityComponent, VelocityTransitionGroup} from 'velocity-react';
+import Getser from './getser';
+import NewSerBG from './newSerBG';
 
 export default class Newserver extends Component{
     constructor(props) {
         super(props);
         this.ponMouseEnter=this.ponMouseEnter.bind(this); //鼠标移到
         this.ponMouseLeave=this.ponMouseLeave.bind(this); //鼠标离开
+        this.openSer = this.openSer.bind(this);
+        this.clickAgree = this.clickAgree.bind(this);
+        this.clickClose = this.clickClose.bind(this);
         this.state={
           userName:sessionStorage.getItem("SESSIONUSERACC"),
           token:sessionStorage.getItem("SESSIONTOKEN"),
           userid:sessionStorage.getItem("SESSIONUSER"),
-
+          serID:0,
           pisshow:false,
+          lkser:false,
+          showSerBG:false,
         }
       }
       ponMouseEnter(){
@@ -30,7 +37,28 @@ export default class Newserver extends Component{
           pisshow:false
         })
       }
+      openSer() {
+        this.setState({
+          lkser:true,
+        })
+      }
+      closeSer() {
 
+      }
+      clickAgree(a) {
+        console.log(a);
+        this.setState({
+          lkser:false,
+          showSerBG:true,
+          serID:a,
+        })
+      }
+      clickClose(b) {
+        console.log(b)
+        this.setState({
+          lkser:false
+        })
+      }
       render() {
           return <div>
           <li className='newl2' onMouseEnter={this.ponMouseEnter} onMouseLeave={this.ponMouseLeave}>
@@ -43,31 +71,33 @@ export default class Newserver extends Component{
                     <li>1.供服务方发布服务和价格及其他相关信息，在求服务方购买服务成功后，要确保服务完成并承诺价格不变。</li>
                     <li>2.求供服务双方一旦确认保函有效，双方均承诺接受和遵守平台的要求和规范。</li>
                   </ul>
-                  <a href="javascript:void(0);" onClick={this.linkcwb}>发起服务宝</a>
+                  <a href="javascript:void(0);" onClick={this.openSer}>发起服务宝</a>
                 </div>:undefined
             }
           </li>
-          {/* <VelocityTransitionGroup enter={{animation: "fadeIn",duration:600}} leave={{animation: "fadeOut"}}>
+          <VelocityTransitionGroup enter={{animation: "fadeIn",duration:600}} leave={{animation: "fadeOut"}}>
             {
-              this.state.lkskb?<Getskb pays={this.props.pays}
+              // lk  link service
+              this.state.lkser?<Getser pays={this.props.pays}
                                        actions={this.props.actions}
                                        handqr={this.handqr}
+                                       publicState={this.props.publicState}
                                        text={this.props.text}
-                                       linkskbc={this.linkskbc}/>:undefined
+                                       linkskbc={this.linkskbc}
+                                       clickAgree = {this.clickAgree}
+                                       clickClose = {this.clickClose}
+                                       />:undefined
             }
-          </VelocityTransitionGroup> */}
-         {/*  <VelocityTransitionGroup enter={{animation: "fadeIn"}} leave={{animation: "fadeOut"}}>
+          </VelocityTransitionGroup>
+          <VelocityTransitionGroup enter={{animation: "fadeIn"}} leave={{animation: "fadeOut"}}>
             {
-              this.state.isshow?
-                <Panewadd
-                  pays={this.props.pays}
-                  text={this.props.text}
-                  indexs={this.state.indexs}
-                  actions={this.props.actions}
-                  hnandclose={this.hnandclose}
+              this.state.showSerBG?
+                <NewSerBG
+                  serID={this.state.serID}
+                  
                 />:undefined
             }
-          </VelocityTransitionGroup> */}
+          </VelocityTransitionGroup>
         </div>
       }
 }

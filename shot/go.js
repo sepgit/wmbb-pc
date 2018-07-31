@@ -32,6 +32,8 @@ import './src/css/Galy/Galy.styl';
 import './src/css/comment/comment.styl';
 import './src/css/cabMy/cabMy.styl';
 import './src/css/Myservice/myservice.styl'
+import './src/css/tickets/tickets.styl';
+import './src/css/Share/newLShare.styl'
 // import react router deps
 import { Router, Route, IndexRoute, browserHistory,Redirect,history } from 'react-router';
 import { Provider } from 'react-redux';
@@ -330,6 +332,24 @@ const routes = {
           cb(null, require('./containers/cabMy/cabMy'))
         })
       }
+    },
+    {
+      path: '/tickets',
+      onEnter:handonEnter,
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Tickets/Tickets'))
+        })
+      }
+    },
+    {
+      path: '/Towned',
+      onEnter:handonEnter,
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/Owntkt/owntkt'))
+        })
+      }
     }
   ]
 };
@@ -340,4 +360,6 @@ ReactDOM.render(
   </Provider>, document.getElementById('app')
 );
 
-module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
+}

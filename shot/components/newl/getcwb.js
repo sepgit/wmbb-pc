@@ -77,7 +77,7 @@ export default class Getcwb extends Component {
         return s;
       }
     });
-    console.log(this.props.text);
+    // console.log(this.props.text);
     return (
       <div className="getxp">
         <div className="getxp1">

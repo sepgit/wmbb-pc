@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-07-02 10:30:50 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-11 10:09:13
+ * @Last Modified time: 2018-07-18 12:52:11
  */
 import React,{Component} from 'react';
 import Top from './../../components/home/top';
@@ -28,7 +28,10 @@ import {
   getxxtxxg,
   getservsall,
   getsfzzrz,
-  postsqrz
+  postsqrz,
+  puthgerxxgs,
+  puthgerxxyg,
+  getnow
 } from '../../action/home/ahome';
 import {
   getgyye,
@@ -200,10 +203,15 @@ import {
   postcwbfbot,
   getcabyue
 } from '../../action/cabMy/acabMy';
+import {
+  getserlists
+} from '../../action/Myservice/amyservice';
+
 
 class Server extends Component {
   render() {
-    const { actions,text,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabmynew} = this.props;
+    const { actions,text,getdetil,getnewlist,zxinfo,rsup,pays,ysrdu,yssfw,yssp,cabnew,cabmynew,myservernew} = this.props;
+    // console.log(text)
     return (
       <div className="cabpage">
           <Gotop />
@@ -221,8 +229,7 @@ class Server extends Component {
                 cabnew={cabnew}
                 cabmynew={cabmynew}
           />
-          {/* <Camid actions={actions} text={text} cabnew={cabnew}/> */}
-          <Myserver actions={actions} text={text} ></Myserver>
+          <Myserver actions={actions} text={text} myservernew={myservernew} ></Myserver>
       </div>
     );
   }
@@ -239,12 +246,17 @@ function mapStateToProps(state){
     yssfw:state.yssreduer,
     yssp:state.yspreduer,
     cabnew:state.rcabs,
-    cabmynew:state.rcabMy
+    cabmynew:state.rcabMy,
+    myservernew:state.myserver,
   }
 }
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      getserlists:getserlists,
+      puthgerxxgs:puthgerxxgs,
+      puthgerxxyg:puthgerxxyg,
+      getnow:getnow,
       getsfzzrz:getsfzzrz,
       postsqrz:postsqrz,
       getyg:getyg,
@@ -413,7 +425,8 @@ function mapDispatchToProps(dispatch){
       postcwbfbhg:postcwbfbhg,
       postcwbfbfr:postcwbfbfr,
       postcwbfbot:postcwbfbot,
-      getcabyue:getcabyue
+      getcabyue:getcabyue,
+      //news
     },dispatch)
   }
 }

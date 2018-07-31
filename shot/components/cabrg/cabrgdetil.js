@@ -182,7 +182,11 @@ export default class Cabpdetil extends Component {
                         </li>
                         <li>
                             <h5>内陆费用:</h5>
-                            <span>{this.props.cabrgnew.cabDispdetail.cabFee}</span>
+                            {/* <span>{this.props.cabrgnew.cabDispdetail.cabFee}</span> */}
+                            {
+                                this.props.cabrgnew.cabDispdetail.cabFee != null?
+                                <span>{this.props.cabrgnew.cabDispdetail.curr == 1? '¥' : '$'}{this.props.cabrgnew.cabDispdetail.cabFee}</span>:undefined
+                            }
                         </li>
                         <li>
                             <h5>舱位状态:</h5>

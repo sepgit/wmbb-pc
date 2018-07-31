@@ -105,7 +105,8 @@ export default class NewCab extends Component {
                  stat={this.state.stat}
                  fonClose={this.fonClose}
                  cabmynew={this.props.cabmynew}
-               />: this.state.stat=='DG'?
+               />
+              : this.state.stat=='DG'?
                 <Cwbaddg
                   actions={this.props.actions}
                   text={this.props.text}
@@ -113,7 +114,8 @@ export default class NewCab extends Component {
                   stat={this.state.stat}
                   fonClose={this.fonClose}
                   cabmynew={this.props.cabmynew}
-                />: this.state.stat=='HG'?
+                />
+                : this.state.stat=='HG'?
                   <Cwbadhg
                     actions={this.props.actions}
                     text={this.props.text}
@@ -121,7 +123,8 @@ export default class NewCab extends Component {
                     stat={this.state.stat}
                     fonClose={this.fonClose}
                     cabmynew={this.props.cabmynew}
-                  />: this.state.stat=='FR'?
+                  />
+                  : this.state.stat=='FR'?
                     <Cwbadfr
                       actions={this.props.actions}
                       text={this.props.text}
@@ -129,7 +132,8 @@ export default class NewCab extends Component {
                       stat={this.state.stat}
                       fonClose={this.fonClose}
                       cabmynew={this.props.cabmynew}
-                    />: this.state.stat=='OT'?
+                    />
+                    : this.state.stat=='OT'?
                       <Cwbadot
                         actions={this.props.actions}
                         text={this.props.text}
@@ -137,7 +141,8 @@ export default class NewCab extends Component {
                         stat={this.state.stat}
                         fonClose={this.fonClose}
                         cabmynew={this.props.cabmynew}
-                      />:undefined:undefined
+                      />:undefined
+            :undefined
           }
         </VelocityTransitionGroup>
       </div>

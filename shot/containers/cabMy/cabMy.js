@@ -29,7 +29,10 @@ import {
   getkanzsm,
   getyjcarrs,
     getsfzzrz,
-    postsqrz
+    postsqrz,
+    puthgerxxgs,
+    puthgerxxyg,
+    getnow
 } from '../../action/home/ahome';
 import {
   getcarrscy,
@@ -177,7 +180,8 @@ import {
   getcabDisps,
   getcabDisp,
   putcwbcx,
-  getcabyue
+  getcabyue,
+  getsearchlists
 } from '../../action/cabMy/acabMy';
 
 class cabMy extends Component {
@@ -227,6 +231,10 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      getsearchlists:getsearchlists,
+      puthgerxxgs:puthgerxxgs,
+      puthgerxxyg:puthgerxxyg,
+      getnow:getnow,
       getyg:getyg,
       getqx:getqx,
       gethgerxx:gethgerxx,

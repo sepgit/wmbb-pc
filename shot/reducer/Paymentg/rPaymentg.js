@@ -20,7 +20,8 @@ import {
   GET_DELBH,
   GET_USERMHP,
   GET_USERLBP,
-  GET_ZJUSRF
+  GET_ZJUSRF,
+  GET_NOW,
 } from '../../action/Paymentg/aPaymentg';
 
 
@@ -44,7 +45,8 @@ const initialState ={
   guarde:0,
   usermhp:[],
   userlbp:[],
-  zjusrf:[]
+  zjusrf:[],
+  now:''
 };
 export default function rpaymentgs(state=initialState,action){
   switch (action.type){
@@ -54,6 +56,7 @@ export default function rpaymentgs(state=initialState,action){
         errMsg:action.errMsg,
         zjusrf:action.zjusrf
       });
+
     case GET_USERLBP:
       return Object.assign({}, state, {
         err:action.err,

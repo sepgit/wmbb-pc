@@ -164,7 +164,7 @@ function get_cabDisps(date) {
 
 export function getcabDisps(userName,token,pageIndex,serv,depaPort,destPort,carr){
   return function(dispatch) {
-    let path= HTTPED+'api/cabDisps/?userName='+userName+'&token='+token+'&rowCount=10&listType=2';   //1看别人的；2看自己发布未成交；3看自己发布已成交；4看购买。
+    let path= HTTPED+'api/cabDisps/?userName='+userName+'&token='+token+'&rowCount=10&listType=5';   //1看别人的；2看自己发布未成交；3看自己发布已成交；4看购买；5所有自己发布的
     if (pageIndex>0){
       path = path + '&pageIndex='+pageIndex;
     }
@@ -548,6 +548,61 @@ export function getcabyue(userName,token,user){
         res.json().then(function(date){
           if(!date.err){
             dispatch(get_cabyue(date));
+          }else{
+            Backlogin(date.errMsg)
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
+}
+
+
+
+//搜索平台舱位列表
+export const GET_SEARCHLISTS = 'GET_SEARCHLISTS';
+
+function get_searchlists(date) {
+  return {
+    type: GET_SEARCHLISTS,
+    err:date.err,
+    errMsg:date.errMsg,
+    rowCount:date.rowCount,
+    cabDispsList:date.rows
+  }
+}
+
+export function getsearchlists(userName,token,pageIndex,serv,depaPort,destPort,carr,listType,cabSt){
+  return function(dispatch) {
+    let path= HTTPED+'api/cabDisps/?userName='+userName+'&token='+token+'&rowCount=10&listType='+listType+'&cabSt='+cabSt;   //1看别人的；2看自己发布未成交；3看自己发布已成交；4看购买；5所有自己发布的
+    if (pageIndex>0){
+      path = path + '&pageIndex='+pageIndex;
+    }
+    if (serv>0&&serv!=''){
+      path = path + '&serv='+serv;
+    }
+    if (depaPort>0&&depaPort!=''){
+      path = path + '&depaPort='+depaPort;
+    }
+    if (destPort>0&&destPort!=''){
+      path = path + '&destPort='+destPort;
+    }
+    if (carr>0&&carr!=''){
+      path = path + '&carr='+carr;
+    }
+
+    fetch(path,{
+      method: "get",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      }
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date){
+          if(!date.err){
+            dispatch(get_searchlists(date));
           }else{
             Backlogin(date.errMsg)
           }

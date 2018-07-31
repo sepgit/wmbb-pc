@@ -39,6 +39,7 @@ export default class Emadd extends Component {
     let mail=this.state.yx;
     //let addr=this.state.dz;
     let addr=this.props.text.comps.addr;//默认公司地址
+    console.log(comp);
     if(userAcco==''||name==''||posi==''){
       message.error("请填写完整再提交！");
     }else{

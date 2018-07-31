@@ -90,7 +90,11 @@ export default class NewL extends Component {
                    text={this.props.text}
                    cabmynew={this.props.cabmynew}
           />
-          <Newserver />
+          <Newserver  
+            actions={this.props.actions} 
+            text={this.props.text} 
+            publicState={this.props.publicState}
+          />
         </ul>
         <div className='newla' onClick={this.handcjyw}>
           <span>

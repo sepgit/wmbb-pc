@@ -16,7 +16,8 @@ import {
   POST_CWBFBOT,
   GET_CARRSCWBA,
   PUT_CWBCX,
-  GET_CABYUE
+  GET_CABYUE,
+  GET_SEARCHLISTS
 } from '../../action/cabMy/acabMy';
 
 const initialState ={
@@ -47,6 +48,12 @@ export default function rcabMy(state=initialState,action){
         errMsg:action.errMsg,
         residual:action.residual,
         resiUsd:action.resiUsd
+      });
+      case GET_SEARCHLISTS:
+      return Object.assign({}, state, {
+        err:action.err,
+        errMsg:action.errMsg,
+        cabDispsList:action.cabDispsList
       });
     case GET_CARRSCWBA:
       return Object.assign({}, state, {

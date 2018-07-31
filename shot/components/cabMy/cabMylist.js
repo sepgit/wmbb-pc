@@ -44,8 +44,9 @@ export default class CabMylist extends Component {
     let sohe=v.deltaY;//每次滚动高
     this.state.Hes+=sohe;//每次滚动叠加
     if((bodyheight-this.state.Hes)<=(bodyheight/2)){
+      console.log(this.props.Fstate);
       this.state.page++;
-      this.props.actions.getcabDisps(userName, token, this.state.page, ...this.props.Fstate);//获取搜索条件
+      this.props.actions.getsearchlists(userName, token, this.state.page, ...this.props.Fstate);//获取搜索条件
       this.setState({
         hhs:[
           ...this.state.hhs,

@@ -74,7 +74,7 @@ export default class Getskb extends Component {
     this.props.actions.getbhr(this.state.userName,this.state.token,this.state.userid,this.state.comp);//获取收款列表收款人.
   }
   render() {
-    console.log(this.props.text);
+    // console.log(this.props.text);
     return (
       <div className="getxp">
           <div className="getxp1">

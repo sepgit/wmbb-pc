@@ -3,6 +3,7 @@
  */
 import 'fetch-detector';
 import 'fetch-ie8';
+import md5 from 'md5';
 require('es6-promise').polyfill();
 import fetch from 'isomorphic-fetch';
 import HTTPED from '../../date/address';
@@ -29,7 +30,7 @@ export function getemxj(userName,token,userAcco,comp,name,posi,mobi,phon,fax,mai
       headers: {
         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
       },
-      body:"userName="+userName+"&token="+token+"&userAcco="+userAcco+"&comp="+comp+"&name="+name+"&posi="+posi+"&mobi="+mobi+"&phon="+phon+"&fax="+fax+"&mail="+mail+"&addr="+addr+"password=111111"
+      body:"userName="+userName+"&token="+token+"&userAcco="+userAcco+"&comp="+comp+"&name="+name+"&posi="+posi+"&mobi="+mobi+"&phon="+phon+"&fax="+fax+"&mail="+mail+"&addr="+addr+"&password="+md5('111111').toUpperCase()
     }).then(function(res){
       if(res.ok){
         res.json().then(function(date){

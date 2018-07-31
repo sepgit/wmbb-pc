@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-06-11 10:35:12 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-12 13:50:46
+ * @Last Modified time: 2018-07-17 11:21:36
  */
 
 import React,{Component} from 'react';
@@ -331,12 +331,8 @@ export default class Hgrxx extends Component {
     }else {
       vipti = true;
     }
-    // console.log(this.props.text.user);
+    console.log(this.props.actions);
 
-    // console.log(this.props.text.user.induName);
-    // console.log(this.props.text.user.portName);
-    //  console.log(this.props.text.user.phon);
-    // console.log(this.props.text);
     return (
       <div className="hgrxx">
         <div className="grxx">
@@ -432,27 +428,11 @@ export default class Hgrxx extends Component {
                   }
                 </Select> 
                 } */}
-                {/* {
-                  this.state.user!=this.props.text.user.admi?
-                  <p>{this.props.text.user.induName}</p>:
-                    <Select showSearch
-                      value={this.props.text.user.induName}
-                      optionFilterProp="children"
-                      style={{ width: 140 }}
-                      range={false}
-                      notFoundContent="无法找到"
-                      placeholder="行业"
-                      className="grxxkan"
-                      onChange={(v)=>{return this.setState({hy:v})}} 
-                    >
-                  {
-                    this.props.text.indus.map(s => <Option key={s.indu}>{s.induName}</Option>)
-                  }
-                </Select> 
-                } */}
+
                 {
-                  this.state.user!=this.props.text.user.admi?
+                  this.state.user != this.props.text.user.admi ?
                   <p>{this.props.text.user.induName}</p>:
+                  this.props.text.user.userVip ==1 ? <p>{this.props.text.user.induName}</p>:
                     <Select showSearch
                       value={this.props.text.user.induName}
                       optionFilterProp="children"
@@ -519,6 +499,7 @@ export default class Hgrxx extends Component {
                 {
                   this.state.user!=this.props.text.user.admi?
                   <p>{this.props.text.user.portName}</p>:
+                  this.props.text.user.userVip ==1 ?<p>{this.props.text.user.portName}</p>:
                   <Select
                     combobox
                     value={this.state.qydn}
@@ -589,6 +570,7 @@ export default class Hgrxx extends Component {
                   {
                     this.state.user!=this.props.text.user.admi?
                     this.props.text.user.compName:
+                    this.props.text.user.userVip ==1 ?this.props.text.user.compName:
                     <Input
                       style={{ width:140}}
                       value={gsqc}
@@ -622,6 +604,7 @@ export default class Hgrxx extends Component {
                   {
                     this.state.user!=this.props.text.user.admi?
                     this.props.text.user.compAlia:
+                    this.props.text.user.userVip ==1 ?this.props.text.user.compAlia:
                     <Input
                       // style={{ width: 120}}
                       value={gsjc}

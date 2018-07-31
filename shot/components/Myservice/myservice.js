@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-07-03 13:21:47 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-12 13:42:12
+ * @Last Modified time: 2018-07-18 12:53:43
  */
 import React,{Component} from 'react';
 import { Link } from 'react-router';
@@ -24,7 +24,7 @@ export default class Myserver extends Component {
         let token = this.state.token;
         let userid = this.state.userid;
         let comp = this.state.comp;
-        // this.props.actions.getysusers(userName,token,userid);//获取用户详情
+        this.props.actions.getysusers(userName,token,userid);//获取用户详情
         // console.log('admin');
     }
     render() {
@@ -46,7 +46,8 @@ export default class Myserver extends Component {
                             <Link activeClassName="activad" to="/Myserrel">我的服务发布</Link>
                         </li>
                     </ul>
-                    <SeekserList />
+                    
+                    <SeekserList actions={this.props.actions}  text={this.props.text} myservernew={this.props.myservernew}/>
                 </div>
             </div>
         );

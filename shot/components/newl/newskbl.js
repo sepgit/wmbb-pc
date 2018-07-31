@@ -82,6 +82,7 @@ export default class NewskbL extends Component {
         xnewL = xnewWu;
       }
     }
+    // console.log(this.props.actions)
     return (
       <div>
         <li className='newl2' onMouseEnter={this.handskb} onMouseLeave={this.handskbc}>

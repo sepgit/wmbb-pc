@@ -104,7 +104,7 @@ export default class Cabglistall extends Component {
         zt ='';
         break;
     }
-    
+    // console.log(this.props.rows);
     return (
       
       <li className="cab9">{/* className='cab99'*/}
@@ -188,7 +188,7 @@ export default class Cabglistall extends Component {
                     <span>{this.props.rows.curr == '1' ? '¥' : '$'} {this.props.rows.cabFee}</span>:undefined
                   } */}
                   {
-                    this.props.rows.cabFee != null ?
+                    this.props.rows.cabFee != null?
                     <span>{this.props.rows.curr == '1' ? '¥' : '$'}{this.props.rows.cabFee}</span>: undefined
                   }                               
               </div>

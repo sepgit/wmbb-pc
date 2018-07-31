@@ -2,7 +2,7 @@
  * @Author: sepgit 
  * @Date: 2018-07-09 10:39:13 
  * @Last Modified by: sepgit
- * @Last Modified time: 2018-07-09 14:54:21
+ * @Last Modified time: 2018-07-19 14:21:01
  */
 
 import 'fetch-detector';
@@ -1884,3 +1884,41 @@ export function puthgerxxyg(userid,userName,token,name,qq,posi,phon,fax,mobi,mob
     });
   }
 }
+
+
+//获得当前付款时间
+export const GET_NOW= 'GET_NOW';
+
+function get_now(date) {
+  return {
+    type: GET_NOW,
+    err:date.err,
+    errMsg:date.errMsg,
+    now:date.Now
+  }
+}
+
+export function getnow(userName,token){
+  return function(dispatch) {
+    fetch(HTTPED+'api/guars/guar/Now/?userName='+userName+'&token='+token,{
+      method: "get",
+      headers: {
+        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+      }
+    }).then(function(res){
+      if(res.ok){
+        res.json().then(function(date){
+          if(!date.err){
+            dispatch(get_now(date));
+          }else{
+            Backlogin(date.errMsg)
+          }
+        });
+      }
+    }, function(e) {
+      message.error("连接服务器失败，请联系管理员！");
+    });
+  }
+}
+
+

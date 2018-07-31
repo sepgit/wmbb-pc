@@ -31,7 +31,7 @@ export default class Panewadd extends Component {
       fxm:'',
       fgs:'',
       fhy:'',
-      fsj:'',
+      fsj:'',   
       xyye:'下拉显示授信余额',
       ydh:'',
       ysgj:'',
@@ -47,12 +47,23 @@ export default class Panewadd extends Component {
       fcomp:0,
       xyyev:0,
       bz:'',
-      iscp:false
+      iscp:false,
+      now:'',
+      currFKQX:''
     }
+  }
+  
+  componentWillMount() {
+    let userName = this.state.userName;
+    let token = this.state.token;
+    this.props.actions.getnow(userName,token);
+    // console.log(this.props)
   }
   handse(v,e){
     let xyyev;
+    
     xyyev=e.props.date.split('-');
+    console.log(xyyev)
     this.setState({
       bz:xyyev[1],
       xyyev:xyyev[0]
@@ -125,12 +136,12 @@ export default class Panewadd extends Component {
         fsj: '',
         enab:2,
         resiEnab:2,
-        zh:''
+        zh:'',
+        currFKQX:''
       });
     }
   }
   handfs(){
-    
     let userName=this.state.userName;
     let token=this.state.token;
     let payUser=this.state.fkid;
@@ -140,12 +151,13 @@ export default class Panewadd extends Component {
     let billNum=this.state.ydh;
     let cartNum=this.state.xh;
     let depo=parseInt(this.state.ykje);
-    let expiTime=moment(this.state.fkqx).format('YYYY-MM-DD HH:mm');
+    // let expiTime=moment(this.state.fkqx).format('YYYY-MM-DD HH:mm');
     let guarTarget=this.state.lvzb;
     let enab=this.state.enab;
     let resiEnab=this.state.resiEnab;
     let privs=this.props.pays.privs.paym;
-    let comps=this.props.pays.payr[0].comp;
+    // let comps=this.props.pays.payr[0].comp;
+    // let comps=1;
     let zdje;
     if(this.state.bz=='$'){
       zdje=parseInt(this.props.text.user.maxMargUsd);
@@ -154,82 +166,136 @@ export default class Panewadd extends Component {
     }
     let xyye=this.state.xyye;
     let xyyev=parseInt(this.state.xyyev);
-    if(comps>0){
-      if(privs==1){
-        if(payUser==-1||depo==''){
-          message.error("请填写完整再发送！");
-        }else{
-          if(enab==0){
-            message.error("授信余额不可用！");
-          }else{
-            if(resiEnab==0){
-              message.error("该用户有违约！");
-            }else{
-              if(depo>xyyev){
-                message.error("授信余额不足！");
+    let expiTime = this.state.currFKQX+" 00:00"
+  
+    // if(comps>0){
+    //   if(privs==1){
+    //     if(payUser==-1||depo==''){
+    //       message.error("请填写完整再发送！");
+    //     }else{
+    //       if(enab==0){
+    //         message.error("授信余额不可用！");
+    //       }else{
+    //         if(resiEnab==0){
+    //           message.error("该用户有违约！");
+    //         }else{
+    //           if(depo>xyyev){
+    //             message.error("授信余额不足！");
+    //           }else{
+    //             if(depo>zdje){
+    //               message.error("押款金额不可超过最大收款金额！");
+    //             }else {
+    //               //判断是否复制保函
+    //               let This=this;
+    //               confirm({
+    //                 title: '您是否确认',
+    //                 cancelText:"确认并复制该保函",
+    //                 onOk() {
+    //                   //确认该保函
+    //                   This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+    //                   This.props.hnandclose(false, 0);
+    //                 },
+    //                 onCancel() {
+    //                   //确认并复制该保函
+    //                   This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+    //                 }
+    //               });
+    //             }
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }else{
+    //     message.error("该付款人还没权限付款，请让该付款人的公司管理员为其开通权限！");
+    //   }
+    // }else{
+    //   if(payUser==-1||depo==''){
+    //     message.error("请填写完整再发送！");
+    //   }else{
+    //     if(enab==0){
+    //       message.error("授信余额不可用！");
+    //     }else{
+    //       if(resiEnab==0){
+    //         message.error("该用户有违约！");
+    //       }else {
+    //         if (depo > xyyev) {
+    //           message.error("授信余额不足！");
+    //         } else {
+    //           if (depo > zdje) {
+    //             message.error("押款金额不可超过最大收款金额！");
+    //           } else {
+    //             //判断是否复制保函
+    //             let This=this;
+    //             confirm({
+    //               title: '您是否确认',
+    //               cancelText:"确认并复制该保函",
+    //               onOk() {
+    //                 //确认该保函
+    //                 This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+    //                 This.props.hnandclose(false, 0);
+    //               },
+    //               onCancel() {
+    //                 //确认并复制该保函
+    //                 This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+    //               }
+    //             });
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    if(privs==1){
+      if (payUser== -1) {
+        message.error("请选择付款人！");
+      }else {
+        if (enab==0) {
+          message.error("授信余额不可用！")
+        }else {
+          if(resiEnab==0) {
+            message.error("该用户有违约！");
+          }else {
+            if (this.state.bz=='') {
+              message.error("请选择授信余额！");
+            }else {
+              if (isNaN(depo)) {
+                message.error("请填写押款金额！");
               }else{
-                if(depo>zdje){
-                  message.error("押款金额不可超过最大收款金额！");
+                if(expiTime.length<10) {
+                  message.error("请选择付款期限！");
                 }else {
-                  //判断是否复制保函
-                  let This=this;
-                  confirm({
-                    title: '您是否确认',
-                    cancelText:"确认并复制该保函",
-                    onOk() {
-                      //确认该保函
-                      This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
-                      This.props.hnandclose(false, 0);
-                    },
-                    onCancel() {
-                      //确认并复制该保函
-                      This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+                  if (depo>xyyev) {
+                    message.error("授信余额不足！");
+                  }else{
+                    if (depo>zdje) {
+                      message.error("押款金额不可超过最大收款金额！");
+                    }else {
+                      //判断是否复制保函
+                      let This=this;
+                      confirm({
+                        title: '您是否确认',
+                        cancelText:"确认并复制该保函",
+                        onOk() {
+                          //确认该保函
+                          This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+                          This.props.hnandclose(false, 0);
+                        },
+                        onCancel() {
+                          //确认并复制该保函
+                          This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
+                        }
+                      });
                     }
-                  });
+                  }
                 }
               }
             }
           }
         }
-      }else{
-        message.error("该付款人还没权限付款，请让该付款人的公司管理员为其开通权限！");
       }
-    }else{
-      if(payUser==-1||depo==''){
-        message.error("请填写完整再发送！");
-      }else{
-        if(enab==0){
-          message.error("授信余额不可用！");
-        }else{
-          if(resiEnab==0){
-            message.error("该用户有违约！");
-          }else {
-            if (depo > xyyev) {
-              message.error("授信余额不足！");
-            } else {
-              if (depo > zdje) {
-                message.error("押款金额不可超过最大收款金额！");
-              } else {
-                //判断是否复制保函
-                let This=this;
-                confirm({
-                  title: '您是否确认',
-                  cancelText:"确认并复制该保函",
-                  onOk() {
-                    //确认该保函
-                    This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
-                    This.props.hnandclose(false, 0);
-                  },
-                  onCancel() {
-                    //确认并复制该保函
-                    This.props.actions.getnewbh(userName, token, payUser, serv, trans, voyage, billNum, cartNum, depo, expiTime, guarTarget,xyye);
-                  }
-                });
-              }
-            }
-          }
-        }
-      }
+    }else {
+      message.error("该付款人还没权限付款，请让该付款人的公司管理员为其开通权限！");
     }
   }
   handcz(){
@@ -252,7 +318,9 @@ export default class Panewadd extends Component {
       enab:2,
       resiEnab:2,
       xyyev:0,
-      bz:''
+      bz:'',
+      now:'',
+      currFKQX:'',
     })
   }
   handc(){
@@ -272,7 +340,23 @@ export default class Panewadd extends Component {
         <p>手机:{this.state.fsj}</p>
       </div>
     );
-    console.log(this.props.pays);
+    // console.log(this.state.now);
+    //  console.log(this.props.text.now);
+    //  console.log(moment(this.props.text.now).date());
+    //  console.log(moment(this.props.text.now).add(3,'months').format("YYYY-MM-DD"));
+    let currMonth,currDate,firMonth,secMonth,trdMonth;
+    if(this.props.text.now !='') {
+      currDate = moment(this.props.text.now).date();
+      if (currDate <15) {
+        firMonth = moment(this.props.text.now).format("YYYY-MM");//当月
+        secMonth = moment(this.props.text.now).add(1,'months').format("YYYY-MM");//下个月
+        trdMonth = moment(this.props.text.now).add(2,'months').format("YYYY-MM");//下下个月
+      }else{
+        firMonth = moment(this.props.text.now).add(1,'months').format("YYYY-MM");
+        secMonth = moment(this.props.text.now).add(2,'months').format("YYYY-MM");
+        trdMonth = moment(this.props.text.now).add(3,'months').format("YYYY-MM");
+      }
+    }
     return (
       <div className="paydd">
         <div className="paydd1">
@@ -390,14 +474,25 @@ export default class Panewadd extends Component {
                 <li>
                   <h4>付款期限：</h4>
                   <p>
-                    <DatePicker
+                    {/* <DatePicker
                       showTime
                       format="yyyy-MM-dd HH:mm"
                       value={this.state.fkqx}
                       disabledDate={this.disDa}
                       placeholder="付款期限"
                       onChange={(v)=>{return this.setState({fkqx:v})}}
-                    />
+                    /> */}
+                     <Select 
+                      style={{ width: 210 }}
+                      placeholder="付款期限"
+                      // className="grxxkan"
+                      // onChange={this.changeHy}
+                      onChange={(v)=>{return this.setState({currFKQX:v})}}
+                    >
+                    <Option key={firMonth + '-15'}>{firMonth + '-15'}</Option>
+                    <Option key={secMonth + '-15'}>{secMonth + '-15'}</Option>
+                    <Option key={trdMonth + '-15'}>{trdMonth + '-15'}</Option>
+                </Select> 
                   </p>
                 </li>
                 <li>

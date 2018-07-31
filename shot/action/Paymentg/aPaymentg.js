@@ -94,6 +94,7 @@ export function getpayr(userName,token,userAcco){
                 if(res.ok){
                   res.json().then(function(d2){
                     if(!d2.err){
+                      console.log(d2);
                       dispatch(get_payr(date,d2.residual,d2.enab,d2.resiEnab));
                     }
                   });

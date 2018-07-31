@@ -24,7 +24,10 @@ import {
   getxxtxxg,
   getservsall,
     getsfzzrz,
-    postsqrz
+    postsqrz,
+    puthgerxxgs,
+    puthgerxxyg,
+    getnow
 } from '../../action/home/ahome';
 import {
   getcabrxq,
@@ -243,6 +246,9 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      puthgerxxgs:puthgerxxgs,
+      puthgerxxyg:puthgerxxyg,
+      getnow:getnow,
       getyg:getyg,
       getqx:getqx,
       gethgerxx:gethgerxx,

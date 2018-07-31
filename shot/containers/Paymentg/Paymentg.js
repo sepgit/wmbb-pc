@@ -25,7 +25,10 @@ import {
   getxxtxxg,
   getservsall,
     getsfzzrz,
-    postsqrz
+    postsqrz,
+    puthgerxxgs,
+    puthgerxxyg,
+    getnow
 } from '../../action/home/ahome';
 import {
   getbhfw,
@@ -44,7 +47,8 @@ import {
   deldelbh,
   getusermhp,
   getuserlbp,
-  getzjusrf
+  getzjusrf,
+
 } from '../../action/Paymentg/aPaymentg';
 import {
   getxpdetil,
@@ -237,6 +241,10 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
   return {
     actions:bindActionCreators({
+      puthgerxxgs:puthgerxxgs,
+      puthgerxxyg:puthgerxxyg,
+      getnow:getnow,
+      getnow:getnow,
       getyg:getyg,
       getqx:getqx,
       gethgerxx:gethgerxx,
@@ -400,7 +408,8 @@ function mapDispatchToProps(dispatch){
       postcwbfbhg:postcwbfbhg,
       postcwbfbfr:postcwbfbfr,
       postcwbfbot:postcwbfbot,
-      getcabyue:getcabyue
+      getcabyue:getcabyue,
+     
     },dispatch)
   }
 }

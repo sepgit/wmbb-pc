@@ -23,7 +23,7 @@ export default class Wmlxr extends Component{
           <ul>
           <li>
               <h4>大连客服中心：</h4>
-              <span>许 辉&nbsp;&nbsp;13841123128</span>
+              <span>许友恒&nbsp;&nbsp;13841123128</span>
             </li>
             <li>
               <h4>北京客服中心：</h4>
