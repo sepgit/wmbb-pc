@@ -240,16 +240,20 @@ export default class Cabdetil extends Component {
                     <span>{this.props.cabnew.cabEnquL.cabServName}</span>
                 </li>
                 <li>
-                    <h5>内陆费用:</h5>
-                    {/* <span>{this.props.cabnew.cabEnquL.curr== '1' ? '¥' : '$'} {this.props.cabnew.cabEnquL.cabFee}</span> */}
-                    {/* <span> {this.props.cabnew.cabEnquL.cabFee}</span> */}
+                    <h5>内陆费用:</h5>            
+                    {/* {
+                      this.props.cabnew.cabEnquL.cabFee != null?
+                        // <span>{this.props.rows.curr == '1' ? '¥' : '$'} {this.props.rows.cabFee}</span>
+                        // <span> {this.props.rows.cabFee}</span>:undefined
+                      <span>{this.props.cabnew.cabEnquL.curr == '1' ? '¥' : '$'} {this.props.cabnew.cabEnquL.cabFee}</span>
+                      :undefined
+                    } */}
                     {
-                  this.props.cabnew.cabEnquL.cabFee != null?
-                    // <span>{this.props.rows.curr == '1' ? '¥' : '$'} {this.props.rows.cabFee}</span>
-                    // <span> {this.props.rows.cabFee}</span>:undefined
-                   <span>{this.props.cabnew.cabEnquL.curr == '1' ? '¥' : '$'} {this.props.cabnew.cabEnquL.cabFee}</span>
-                  :undefined
-                }
+                      this.props.cabnew.cabEnquL.cabFee != null?
+                        this.props.cabnew.cabEnquL.cabFee != 0?
+                        <span>{this.props.cabnew.cabEnquL.curr == '1' ? '¥' : '$'} {this.props.cabnew.cabEnquL.cabFee}</span>:undefined
+                      :undefined
+                    }
                 </li>
               <li>
                   <h5>舱位状态:</h5>
@@ -290,7 +294,10 @@ export default class Cabdetil extends Component {
               }
               <li>
               </li>
-              
+              <li className="cab140-label">
+                    <h5>备注:</h5>
+                    <span>{this.props.cabnew.cabEnquL.replMemo}</span>
+                </li>
             </ul>
           </div>
           <div className="cab133">
@@ -457,6 +464,46 @@ export default class Cabdetil extends Component {
                         </div>
                         
                       </div>:undefined
+                  }
+                  {
+                    this.props.cabnew.cabEnquL.servName == 'LCL'?
+                    this.props.cabnew.cabEnquL.RTMi?
+                      <div className="cab53">
+                        <div className="cab54">
+                          <span>重量</span>
+                          <p>{this.props.cabnew.cabEnquL.wate}</p>
+                        </div>
+                        <div className="cab54">
+                          <span>体积:</span>
+                          <p>{this.props.cabnew.cabEnquL.bulk}</p>
+                        </div>
+                        <div className="cab54">
+                          <span>总定金:</span>
+                          <p>{this.props.cabnew.cabEnquL.curr==1?'¥':'$'} {this.props.cabnew.cabEnquL.depo}</p>
+                        </div>
+                        
+                      </div>:undefined
+                      :undefined
+                  }
+                  {
+                    this.props.cabnew.cabEnquL.servName == 'AIR'?
+                    this.props.cabnew.cabEnquL.RTMi?
+                      <div className="cab53">
+                        <div className="cab54">
+                          <span>重量</span>
+                          <p>{this.props.cabnew.cabEnquL.wate}KG</p>
+                        </div>
+                        <div className="cab54">
+                          <span>体积:</span>
+                          <p>{this.props.cabnew.cabEnquL.bulk}CBM</p>
+                        </div>
+                        <div className="cab54">
+                          <span>总定金:</span>
+                          <p>{this.props.cabnew.cabEnquL.curr==1?'¥':'$'} {this.props.cabnew.cabEnquL.depo}</p>
+                        </div>
+                        
+                      </div>:undefined
+                      :undefined
                   }
                 </div>
             </div>

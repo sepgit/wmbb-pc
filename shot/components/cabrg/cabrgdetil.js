@@ -181,11 +181,12 @@ export default class Cabpdetil extends Component {
                             <span>{this.props.cabrgnew.cabDispdetail.inldType}</span>
                         </li>
                         <li>
-                            <h5>内陆费用:</h5>
-                            {/* <span>{this.props.cabrgnew.cabDispdetail.cabFee}</span> */}
+                            <h5>内陆费用:</h5>                
                             {
                                 this.props.cabrgnew.cabDispdetail.cabFee != null?
-                                <span>{this.props.cabrgnew.cabDispdetail.curr == 1? '¥' : '$'}{this.props.cabrgnew.cabDispdetail.cabFee}</span>:undefined
+                                    this.props.cabrgnew.cabDispdetail.cabFee != 0?
+                                    <span>{this.props.cabrgnew.cabDispdetail.curr == 1? '¥' : '$'}{this.props.cabrgnew.cabDispdetail.cabFee}</span>:undefined
+                                :undefined
                             }
                         </li>
                         <li>
@@ -212,6 +213,9 @@ export default class Cabpdetil extends Component {
                                     <span>{moment(this.props.cabrgnew.cabDispdetail.expiTime).format('YYYY-MM-DD')}</span>
                             }
                         </li>
+                        <li>
+                            <h5>退关免责:</h5><span>{this.props.cabrgnew.cabDispdetail.delayhours}小时内退关可免责</span>
+                        </li>
                         {
                             this.props.cabrgnew.cabDispdetail.shutTime == null ? <li></li> :
                             <li>
@@ -219,7 +223,7 @@ export default class Cabpdetil extends Component {
                                 <span>{moment(this.props.cabrgnew.cabDispdetail.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                             </li>
                         }
-                        <li></li>
+                       
                         <li  className="cab140-label">
                             <h5>备注:</h5>
                             <span className="overflowH">{this.props.cabrgnew.cabDispdetail.label}</span>

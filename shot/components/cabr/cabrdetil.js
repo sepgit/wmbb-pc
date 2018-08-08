@@ -232,12 +232,12 @@ export default class Cabrdetil extends Component {
                                 <span>{this.props.cabrnew.cabReplr.cabServName}</span>
                             </li>
                             <li>
-                                <h5>内陆费用:</h5>
-                                {/* <span>{this.props.cabrnew.cabReplr.curr== '1' ? '¥' : '$'} {this.props.cabrnew.cabReplr.cabFee}</span> */}
-                                {/* <span> {this.props.cabrnew.cabReplr.cabFee}</span> */}
+                                <h5>内陆费用:</h5>                    
                                 {
                                     this.props.cabrnew.cabReplr.cabFee != null?
-                                    <span>{this.props.cabrnew.cabReplr.curr== '1' ? '¥' : '$'} {this.props.cabrnew.cabReplr.cabFee}</span>:undefined
+                                        this.props.cabrnew.cabReplr.cabFee != 0?
+                                        <span>{this.props.cabrnew.cabReplr.curr== '1' ? '¥' : '$'} {this.props.cabrnew.cabReplr.cabFee}</span>:undefined
+                                    :undefined
                                 }
                             </li>
                             {/*<li>
@@ -283,10 +283,13 @@ export default class Cabrdetil extends Component {
                                 </li>
                             }
                             <li></li>
-                            
+                            <li className="cab140-label">
+                                <h5>备注:</h5>
+                                <span>{this.props.cabrnew.cabReplr.replMemo}</span>
+                            </li>
                             {/* <li>
                                 <h5>备注:</h5>
-                                <span className="overflowH">{this.props.cabrnew.cabReplr.label}</span>
+                                <span className="overflowH">{this.props.cabrnew.cabReplr.replMemo}</span>
                             </li> */}
                         </ul>
                     </div>
@@ -447,6 +450,24 @@ export default class Cabrdetil extends Component {
                                   <div className="cab54">
                                       <span>总运价:</span>
                                       <p>{this.props.cabrnew.cabReplr.freiCurr=="USD"?'$':'¥'}  {parseFloat(this.props.cabrnew.cabReplr.RF40F)*parseFloat(this.props.cabrnew.cabReplr.RF40)}</p>
+                                  </div>
+                                  <div className="cab54">
+                                      <span>总定金:</span>
+                                      <p>{this.props.cabrnew.cabReplr.curr==1?'¥':'$'} {this.props.cabrnew.cabReplr.RF40Fee}</p>
+                                  </div>
+                                  
+                              </div>:undefined
+                          }
+                          {
+                            this.props.cabrnew.cabReplr.RTMi?
+                              <div className="cab53">
+                                  <div className="cab54">
+                                      <span>重量</span>
+                                      <p>{this.props.cabrnew.cabReplr.wate}KG</p>
+                                  </div>
+                                  <div className="cab54">
+                                      <span>体积</span>
+                                      <p>{this.props.cabrnew.cabReplr.bulk}CBM</p>
                                   </div>
                                   <div className="cab54">
                                       <span>总定金:</span>

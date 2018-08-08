@@ -222,7 +222,9 @@ export default class Cabgdetil extends Component {
                     <h5>内陆费用:</h5>
                     {
                         this.props.cabgnew.cabDispdetail.cabFee !=null?
-                        <span>{this.props.cabgnew.cabDispdetail.curr== '1' ? '¥' : '$'} {this.props.cabgnew.cabDispdetail.cabFee}</span>:undefined
+                            this.props.cabgnew.cabDispdetail.cabFee !=0?
+                            <span>{this.props.cabgnew.cabDispdetail.curr== '1' ? '¥' : '$'} {this.props.cabgnew.cabDispdetail.cabFee}</span>:undefined
+                        :undefined
                     }
                 </li>
                 <li>
@@ -255,6 +257,9 @@ export default class Cabgdetil extends Component {
                           <span>{moment(this.props.cabgnew.cabDispdetail.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                   }
                 </li> */}
+                <li>
+                    <h5>退关免责:</h5><span>{this.props.cabgnew.cabDispdetail.delayhours}小时内退关可免责</span>
+                </li>
                 {
                      this.props.cabgnew.cabDispdetail.shutTime == null ?<li></li>:
                      <li>
@@ -262,7 +267,7 @@ export default class Cabgdetil extends Component {
                          <span>{moment(this.props.cabgnew.cabDispdetail.shutTime).format('YYYY-MM-DD HH:mm:ss')}</span>
                      </li>
                 }   
-                <li></li>                         
+                                         
                 <li className="cab140-label">
                     <h5>备注:</h5>
                     <span>{this.props.cabgnew.cabDispdetail.label}</span>

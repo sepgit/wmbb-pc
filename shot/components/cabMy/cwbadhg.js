@@ -1,8 +1,8 @@
 /*
  * @Author: sepgit 
  * @Date: 2018-07-26 14:26:33 
- * @Last Modified by:   sepgit 
- * @Last Modified time: 2018-07-26 14:26:33 
+ * @Last Modified by: sepgit
+ * @Last Modified time: 2018-08-07 10:28:44
  */
 
 import React, { Component } from 'react';
@@ -54,7 +54,8 @@ export default class Cwbadhg extends Component {
       voyage: '',
       trans: '',
       label:'',
-      checked: false
+      checked: false,
+      delayhours:''
     }
   }
   handfilts(inputValue, option) {
@@ -152,6 +153,7 @@ export default class Cwbadhg extends Component {
     let voyage = this.state.voyage;
     let trans = this.state.trans;
     let label=this.state.label;
+    let delayhours = this.state.delayhours;
     let showname;
     if (this.state.checked) {
       showname = 0;
@@ -197,6 +199,8 @@ export default class Cwbadhg extends Component {
       message.error('运价有效期：不能为空');
     } else if (lastShutTime == "") {
       message.error('最晚退关时间不能为空');
+    }else if(delayhours == ""){
+      message.error('退关免责时间不能为空');
     } else if (closTime == "") {
       message.error('截关时间不能为空');
     } else if (sailTime == "") {
@@ -204,7 +208,7 @@ export default class Cwbadhg extends Component {
     } else if (GP20TF && GP40TF && HQ40TF && HQ45TF) {
       message.error('至少填写一个箱型');
     } else {
-      this.props.actions.postcwbfbhg(userName, token, serv, carr, depaPort, destPort, curr, resPref, reqPref, closTime, sailTime, expiTime, lastShutTime, GP20, GP20Fee, GP20Cos, GP40, GP40Fee, GP40Cos, HQ40, HQ40Fee, HQ40Cos, HQ45, HQ45Fee, HQ45Cos, currCos, showname, voyage, trans,label);
+      this.props.actions.postcwbfbhg(userName, token, serv, carr, depaPort, destPort, curr, resPref, reqPref, closTime, sailTime, expiTime, lastShutTime, GP20, GP20Fee, GP20Cos, GP40, GP40Fee, GP40Cos, HQ40, HQ40Fee, HQ40Cos, HQ45, HQ45Fee, HQ45Cos, currCos, showname, voyage, trans,label,delayhours);
       this.props.fonClose(false, '');
     }
     // this.props.actions.postcwbfbhg(userName,token,serv,carr,depaPort,destPort,curr,resPref,reqPref,closTime,sailTime,expiTime,lastShutTime,GP20,GP20Fee,GP20Cos,GP40,GP40Fee,GP40Cos,HQ40,HQ40Fee,HQ40Cos,HQ45,HQ45Fee,HQ45Cos,currCos,showname,voyage,trans);
@@ -542,6 +546,21 @@ export default class Cwbadhg extends Component {
                     value={this.state.lastShutTime}
                     onChange={(v) => { return this.setState({ lastShutTime: v }) }}
                   />
+                </li>
+                <li className="cwbadd17">
+                  <h5><span className="thered">*</span>退关免责时间：</h5>
+                  <Select
+                  showTime
+                  style={{ width: 200, marginTop: 10 }}                 
+                  placeholder="退关免责时间"
+                  onChange={(v) => { return this.setState({ delayhours: v }) }}
+                  >
+                    <Option key='5' value='0'>0小时</Option>
+                    <Option key='1' value='0.5'>0.5小时</Option>
+                    <Option key='2' value='1'>1小时</Option>
+                    <Option key='3' value='1.5'>1.5小时</Option>
+                    <Option key='4' value='2'>2小时</Option>
+                  </Select>
                 </li>
                 <li className="cwbadd17">
                   <h5><span className="thered">*</span>截关时间：</h5>

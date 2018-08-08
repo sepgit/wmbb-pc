@@ -87,7 +87,7 @@ export default class Cabcwn extends Component {
           </ul>
         </div>
         <div className="xnew33">
-          <h4>内陆方式</h4>
+          <h4>内陆运输方式</h4>
           <RadioGroup value={this.props.ptgys} onChange={this.props.hptgys} >
             <Radio className="xnew34" value='1'>
               <Select showSearch
@@ -96,19 +96,19 @@ export default class Cabcwn extends Component {
                       style={{ width: 150}}
                       optionFilterProp="children"
                       notFoundContent="无法找到"
-                      placeholder="请选择内陆方式"
+                      placeholder="请选择内陆运输方式"
                       onChange={this.props.hgys1}
               >
                 {
                   this.props.cabnew.gysfw.map(s => <Option key={s.serv}>{s.servName}</Option>)
                 }
               </Select>
-              <div className="xnew66">
+              {/* <div className="xnew66">
                 <h4>内陆费用</h4>
                 {
                   this.props.cabFee > 0 ?<h5>:{this.props.bz == '1' ? 'CNY' : 'USD'} {this.props.cabFee > 0 ? this.props.cabFee : 0}</h5>:<h5></h5>
                 }
-              </div>
+              </div> */}
             </Radio>
           </RadioGroup>
           <div className="xnew68">

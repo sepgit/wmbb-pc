@@ -74,7 +74,7 @@ export default class Cabcw extends Component {
           </ul>
         </div>
         <div className="xnew33">
-          <h4>内陆方式</h4>
+          <h4>内陆运输方式</h4>
           <RadioGroup value={this.props.ptgys} onChange={this.props.hptgys} >
             <Radio className="xnew34" value='1'>
               <Select showSearch
@@ -83,7 +83,7 @@ export default class Cabcw extends Component {
                       style={{ width: 150}}
                       optionFilterProp="children"
                       notFoundContent="无法找到"
-                      placeholder="请选择内陆方式"
+                      placeholder="请选择内陆运输方式"
                       onChange={this.props.hgys1}
               >
                 {

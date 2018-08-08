@@ -350,10 +350,18 @@ const routes = {
           cb(null, require('./containers/Owntkt/owntkt'))
         })
       }
+    },
+    {
+      path: '/Release',
+      onEnter:handonEnter,
+      getComponent(nextState, cb) {
+        require.ensure([], (require) => {
+          cb(null, require('./containers/myrelease/myrelease'))
+        })
+      }
     }
   ]
 };
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={historys} routes={routes}/>

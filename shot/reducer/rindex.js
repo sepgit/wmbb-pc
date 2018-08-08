@@ -35,6 +35,7 @@ import rcabrg from './cabrg/rcabrg';//供舱方发布的供舱舱位
 import shareState from './share/rshare';//暂时设定的公共的方法
 import tickets from './tickets/rtickets';//优惠卷的方法
 import owntkt from './owntkt/rowntkt';//已拥有的优惠卷
+import myrelease from './myrelease/rmyrelease';
 import { routerReducer } from 'react-router-redux'
 
 var reducer = combineReducers({
@@ -72,5 +73,6 @@ var reducer = combineReducers({
     tickets:tickets,
     shareState:shareState,
     owntkt:owntkt,
+    myrelease:myrelease,
 });
 export default reducer;
